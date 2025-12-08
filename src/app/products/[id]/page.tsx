@@ -7,22 +7,19 @@ import { ChevronLeft, ShoppingCart } from 'lucide-react';
 import Link from 'next/link';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 
-type ProductPageParams = {
-  id: string;
-};
-
 type ProductPageProps = {
-  params: ProductPageParams;
+  params: {
+    id: string;
+  };
 };
 
-// Fix generateMetadata typing
-export async function generateMetadata({ params }: ProductPageProps) {
+export function generateMetadata({ params }: ProductPageProps) {
   const product = products.find((p) => p.id === params.id);
-
   if (!product) {
-    return { title: 'Product Not Found' };
+    return {
+      title: 'Product Not Found',
+    };
   }
-
   return {
     title: product.name,
     description: product.details,
@@ -63,14 +60,14 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
             <h1 className="font-headline text-4xl font-bold text-primary">{product.name}</h1>
             <p className="mt-4 text-2xl font-semibold text-foreground">${product.price}</p>
             <p className="mt-6 text-lg text-foreground/70">{product.details}</p>
-            
+
             <div className="mt-8">
               <Button size="lg" className="w-full sm:w-auto">
                 <ShoppingCart className="mr-2 h-5 w-5" />
                 Add to Cart
               </Button>
             </div>
-            
+
             <div className="mt-10 space-y-6">
               <div>
                 <h3 className="font-headline text-xl font-bold">Ingredients</h3>
