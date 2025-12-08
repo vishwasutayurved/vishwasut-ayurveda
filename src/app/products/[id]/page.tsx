@@ -7,19 +7,22 @@ import { ChevronLeft, ShoppingCart } from 'lucide-react';
 import Link from 'next/link';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 
-type ProductPageProps = {
-  params: {
-    id: string;
-  };
+type ProductPageParams = {
+  id: string;
 };
 
+type ProductPageProps = {
+  params: ProductPageParams;
+};
+
+// Fix generateMetadata typing
 export async function generateMetadata({ params }: ProductPageProps) {
   const product = products.find((p) => p.id === params.id);
+
   if (!product) {
-    return {
-      title: 'Product Not Found',
-    };
+    return { title: 'Product Not Found' };
   }
+
   return {
     title: product.name,
     description: product.details,
