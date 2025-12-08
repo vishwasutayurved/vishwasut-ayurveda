@@ -13,18 +13,18 @@ type ProductPageProps = {
   };
 };
 
-export function generateMetadata({ params }: ProductPageProps) {
-  const product = products.find((p) => p.id === params.id);
-  if (!product) {
-    return {
-      title: 'Product Not Found',
-    };
-  }
-  return {
-    title: product.name,
-    description: product.details,
-  };
-}
+// export function generateMetadata({ params }: ProductPageProps) {
+//   const product = products.find((p) => p.id === params.id);
+//   if (!product) {
+//     return {
+//       title: 'Product Not Found',
+//     };
+//   }
+//   return {
+//     title: product.name,
+//     description: product.details,
+//   };
+// }
 
 export default function ProductDetailPage({ params }: ProductPageProps) {
   const product = products.find((p) => p.id === params.id);
