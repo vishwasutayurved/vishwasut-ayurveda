@@ -7,26 +7,26 @@ import { ChevronLeft, ShoppingCart } from 'lucide-react';
 import Link from 'next/link';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 
-type ProductPageProps = {
-  params: {
-    id: string;
+export function generateStaticParams() {
+  return products.map((product) => ({
+    id: product.id,
+  }));
+}
+
+export async function generateMetadata({ params }: { params: { id: string } }) {
+  const product = products.find((p) => p.id === params.id);
+  if (!product) {
+    return {
+      title: 'Product Not Found',
+    };
+  }
+  return {
+    title: product.name,
+    description: product.details,
   };
-};
+}
 
-// export function generateMetadata({ params }: ProductPageProps) {
-//   const product = products.find((p) => p.id === params.id);
-//   if (!product) {
-//     return {
-//       title: 'Product Not Found',
-//     };
-//   }
-//   return {
-//     title: product.name,
-//     description: product.details,
-//   };
-// }
-
-export default function ProductDetailPage({ params }: ProductPageProps) {
+export default function ProductDetailPage({ params }: { params: { id: string } }) {
   const product = products.find((p) => p.id === params.id);
 
   if (!product) {
