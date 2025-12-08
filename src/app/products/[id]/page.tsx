@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ChevronLeft, ShoppingCart } from 'lucide-react';
 import Link from 'next/link';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 
 type ProductPageProps = {
   params: {
@@ -76,6 +77,29 @@ export default function ProductDetailPage({ params }: ProductPageProps) {
                 <h3 className="font-headline text-xl font-bold">Usage</h3>
                 <p className="mt-2 text-foreground/70">{product.usage}</p>
               </div>
+              {product.dosage && (
+                <div>
+                  <h3 className="font-headline text-xl font-bold">Dosage</h3>
+                  <Card className="mt-2">
+                    <Table>
+                      <TableHeader>
+                        <TableRow>
+                          <TableHead>Age Group</TableHead>
+                          <TableHead>Daily Dosage</TableHead>
+                        </TableRow>
+                      </TableHeader>
+                      <TableBody>
+                        {product.dosage.map((item, index) => (
+                          <TableRow key={index}>
+                            <TableCell>{item.ageGroup}</TableCell>
+                            <TableCell>{item.dailyDosage}</TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </Card>
+                </div>
+              )}
             </div>
           </div>
         </div>
