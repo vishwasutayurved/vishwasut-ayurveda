@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 export function Preloader() {
   const [loading, setLoading] = useState(true);
@@ -19,16 +20,14 @@ export function Preloader() {
 
   return (
     <div
-      className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background transition-opacity duration-500 ${
-        closing ? 'opacity-0' : 'opacity-100'
-      }`}
+      className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background transition-opacity duration-500 ${closing ? 'opacity-0' : 'opacity-100'
+        }`}
     >
-      <div className="text-7xl mb-4 animate-pulse">
-        ❤️
-      </div>
-      <div className="mt-4 flex items-center space-x-2">
-         <p className="font-headline text-lg text-primary">आरोग्य ही संपत्ती आहे</p>
-      </div>
+      <DotLottieReact
+        src="https://lottie.host/3d0a4726-326f-47d4-a24d-a71cfd4630fc/LTRlP4fSwz.lottie"
+        loop
+        autoplay
+      />
     </div>
   );
 }
