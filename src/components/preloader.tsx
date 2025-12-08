@@ -24,7 +24,7 @@ export function Preloader() {
         }`}
     >
       <DotLottieReact
-        src="https://lottie.host/3d0a4726-326f-47d4-a24d-a71cfd4630fc/LTRlP4fSwz.lottie"
+        src="https://lottie.host/55230a3d-1952-499d-b04a-85a1fb5aa204/KPiI70dEO5.lottie"
         loop
         autoplay
       />
