@@ -15,6 +15,7 @@ export const metadata: Metadata = {
   description: 'Experience authentic Ayurvedic treatments and personalized wellness at श्री विश्वसुता आयुर्वेदिक आणि पंचकर्म क्लिनिक. Specializing in Panchakarma and holistic therapies.',
   keywords: ['Ayurveda', 'Dahake Clinic', 'Panchakarma', 'Holistic Health', 'Wellness', 'Ayurvedic Clinic', 'श्री विश्वसुता आयुर्वेदिक आणि पंचकर्म क्लिनिक'],
 };
+export const dynamic = "force-dynamic";
 
 export default function RootLayout({
   children,
