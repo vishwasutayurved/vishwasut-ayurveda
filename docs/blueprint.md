@@ -8,6 +8,9 @@
 - Site Navigation: Provide easy navigation with the app site.
 - Image Banner: Implement a banner with auto-sliding images related to Ayurveda.
 - Personalized Wellness Tips: Implement an AI tool that suggests personalized wellness tips based on user input about their lifestyle.
+- Product Listing: Display a list of Ayurvedic products available for purchase.
+- Product Details: Show detailed information for each product, including ingredients, benefits, and usage instructions.
+- Firebase Integration: Utilize Firebase Firestore to store and manage product data.
 
 ## Style Guidelines:
 
