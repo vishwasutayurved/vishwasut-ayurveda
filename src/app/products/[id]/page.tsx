@@ -1,19 +1,22 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import { products } from '@/lib/products';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ChevronLeft, ShoppingCart } from 'lucide-react';
 import Link from 'next/link';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { getProductById, getProducts } from '@/lib/firebase/firestore';
+import type { Product } from '@/lib/products';
 
-type ProductPageProps = {
-  params: {
-    id: string
-  }
+export async function generateStaticParams() {
+  const products: Product[] = await getProducts();
+  return products.map((product) => ({
+    id: product.id,
+  }));
 }
-export async function generateMetadata({ params }: ProductPageProps) {
-  const product = products.find((p) => p.id === params.id);
+
+export async function generateMetadata({ params }: { params: { id: string } }) {
+  const product: Product | null = await getProductById(params.id);
   if (!product) {
     return {
       title: 'Product Not Found',
@@ -25,8 +28,8 @@ export async function generateMetadata({ params }: ProductPageProps) {
   };
 }
 
-export default function ProductDetailPage({ params }: ProductPageProps) {
-  const product = products.find((p) => p.id === params.id);
+export default async function ProductDetailPage({ params }: { params: { id: string } }) {
+  const product: Product | null = await getProductById(params.id);
 
   if (!product) {
     notFound();

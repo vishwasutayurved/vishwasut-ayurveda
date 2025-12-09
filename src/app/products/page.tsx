@@ -1,17 +1,21 @@
+
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { products } from '@/lib/products';
 import { ArrowRight } from 'lucide-react';
+import { getProducts } from '@/lib/firebase/firestore';
+import type { Product } from '@/lib/products';
 
 export const metadata: Metadata = {
   title: 'Our Products',
   description: 'Browse our collection of authentic Ayurvedic medicines and wellness products.',
 };
 
-export default function ProductsPage() {
+export default async function ProductsPage() {
+  const products: Product[] = await getProducts();
+
   return (
     <div className="bg-background">
       <div className="container mx-auto px-4 py-16 sm:py-24">
