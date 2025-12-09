@@ -41,7 +41,7 @@ export function TopLoader() {
       observer.disconnect();
       handleStop();
     };
-  }, [pathname, searchParams]);
+  }, []);
 
   useEffect(() => {
     NProgress.done();
