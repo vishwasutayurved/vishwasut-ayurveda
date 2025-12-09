@@ -1,9 +1,9 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Leaf, Menu, X } from "lucide-react";
+import { NavLink } from "./nav-link";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -33,16 +33,16 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
-        <Link href="/" className="mr-6 flex items-center space-x-2">
+        <NavLink href="/" className="mr-6 flex items-center space-x-2">
           <Leaf className="h-6 w-6 text-primary" />
           <span className="font-bold font-headline text-lg hidden sm:inline-block">
           श्री विश्वसुता आयुर्वेदिक आणि पंचकर्म क्लिनिक
           </span>
-        </Link>
+        </NavLink>
         <div className="flex flex-1 items-center justify-end space-x-2">
           <nav className="hidden md:flex md:gap-6">
             {navItems.map((item) => (
-              <Link
+              <NavLink
                 key={item.href}
                 href={item.href}
                 className={cn(
@@ -51,7 +51,7 @@ export function Header() {
                 )}
               >
                 {item.label}
-              </Link>
+              </NavLink>
             ))}
           </nav>
           {/* <ThemeToggle /> */}
@@ -64,13 +64,13 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="left">
               <div className="flex flex-col p-6">
-                <Link href="/" className="mb-8 flex items-center space-x-2">
+                <NavLink href="/" className="mb-8 flex items-center space-x-2">
                    <Leaf className="h-6 w-6 text-primary" />
                    <span className="font-bold font-headline text-lg">श्री विश्वसुता आयुर्वेदिक आणि पंचकर्म क्लिनिक</span>
-                </Link>
+                </NavLink>
                 <nav className="flex flex-col gap-4">
                   {navItems.map((item) => (
-                    <Link
+                    <NavLink
                       key={item.href}
                       href={item.href}
                       className={cn(
@@ -79,7 +79,7 @@ export function Header() {
                       )}
                     >
                       {item.label}
-                    </Link>
+                    </NavLink>
                   ))}
                 </nav>
               </div>

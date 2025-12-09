@@ -1,7 +1,7 @@
 
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
+import { NavLink } from '@/components/layout/nav-link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight } from 'lucide-react';
@@ -31,7 +31,7 @@ export default async function ProductsPage() {
         <div className="mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
           {products.map((product) => (
             <Card key={product.id} className="flex flex-col overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl">
-              <Link href={`/products/${product.id}`} className="flex-shrink-0">
+              <NavLink href={`/products/${product.id}`} className="flex-shrink-0">
                 <div className="relative h-56 w-full">
                   <Image
                     src={product.image}
@@ -41,12 +41,12 @@ export default async function ProductsPage() {
                     className="object-cover"
                   />
                 </div>
-              </Link>
+              </NavLink>
               <CardHeader className="flex-grow">
                 <CardTitle>
-                  <Link href={`/products/${product.id}`} className="text-lg font-bold hover:text-primary">
+                  <NavLink href={`/products/${product.id}`} className="text-lg font-bold hover:text-primary">
                     {product.name}
-                  </Link>
+                  </NavLink>
                 </CardTitle>
               </CardHeader>
               <CardContent className="flex-grow">
@@ -55,9 +55,9 @@ export default async function ProductsPage() {
               <CardFooter className="flex items-center justify-between">
                 <p className="text-lg font-semibold text-primary">₹ {product.price}</p>
                 <Button asChild size="sm">
-                  <Link href={`/products/${product.id}`}>
+                  <NavLink href={`/products/${product.id}`}>
                     View Details <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
+                  </NavLink>
                 </Button>
               </CardFooter>
             </Card>

@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ChevronLeft, ShoppingCart } from 'lucide-react';
-import Link from 'next/link';
+import { NavLink } from '@/components/layout/nav-link';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { getProductById, getProducts } from '@/lib/firebase/firestore';
 import type { Product } from '@/lib/products';
@@ -42,10 +42,10 @@ export default async function ProductDetailPage({ params }: { params: { id: stri
       <div className="container mx-auto px-4 py-16 sm:py-24">
         <div className="mb-8">
           <Button asChild variant="outline">
-            <Link href="/products">
+            <NavLink href="/products">
               <ChevronLeft className="mr-2 h-4 w-4" />
               Back to Products
-            </Link>
+            </NavLink>
           </Button>
         </div>
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
