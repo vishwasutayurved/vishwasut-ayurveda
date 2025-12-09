@@ -1,52 +1,38 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import NProgress from "nprogress";
 
 export function TopLoader() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const previousPath = useRef(pathname + searchParams.toString());
 
   useEffect(() => {
     NProgress.configure({ showSpinner: false });
+    const currentPath = pathname + searchParams.toString();
+    if (previousPath.current !== currentPath) {
+      NProgress.start();
+    }
+    previousPath.current = currentPath;
 
-    const handleStart = () => NProgress.start();
-    const handleStop = () => NProgress.done();
-
-    // We need to use a mutation observer to listen for route changes
-    // as the Next.js router events are not always reliable.
-    const observer = new MutationObserver((mutations) => {
-      const oldUrl = mutations[0]?.target?.baseURI;
-      if (oldUrl) {
-        const newUrl = window.location.href;
-        if (oldUrl !== newUrl) {
-          handleStart();
-        }
-      }
-    });
-
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true,
-      attributes: true,
-      attributeOldValue: true,
-    });
-    
-    // Fallback for initial load
-    handleStop();
-
-
-    return () => {
-      observer.disconnect();
-      handleStop();
+    const handleStop = () => {
+      NProgress.done();
     };
-  }, []);
+    
+    // The 'load' event is a good fallback for when the page is fully interactive.
+    if (document.readyState === 'complete') {
+        handleStop();
+    } else {
+        window.addEventListener('load', handleStop);
+        return () => window.removeEventListener('load', handleStop);
+    }
+  }, [pathname, searchParams]);
 
   useEffect(() => {
     NProgress.done();
   }, [pathname, searchParams]);
-
 
   return null;
 }
