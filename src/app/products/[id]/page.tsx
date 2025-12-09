@@ -8,6 +8,8 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { getProductById, getProducts } from '@/lib/firebase/firestore';
 import type { Product } from '@/lib/products';
 
+export const dynamic = "force-dynamic";
+
 export async function generateStaticParams() {
   const products: Product[] = await getProducts();
   return products.map((product) => ({
