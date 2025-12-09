@@ -60,7 +60,7 @@ export default async function ProductDetailPage({ params }: { params: { id: stri
           </div>
           <div className="flex flex-col justify-center">
             <h1 className="font-headline text-4xl font-bold text-primary">{product.name}</h1>
-            <p className="mt-4 text-2xl font-semibold text-foreground">₹{product.price}</p>
+            <p className="mt-4 text-2xl font-semibold text-foreground">₹ {product.price}</p>
             <p className="mt-6 text-lg text-foreground/70">{product.details}</p>
 
             <div className="mt-8">
