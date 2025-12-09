@@ -6,6 +6,7 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Preloader } from '@/components/preloader';
+import { TopLoader } from '@/components/layout/top-loader';
 
 export const metadata: Metadata = {
   title: {
@@ -49,6 +50,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange={false}
         >
+          <TopLoader />
           <Preloader />
           <div className="relative flex min-h-dvh flex-col bg-background">
             <Header />
