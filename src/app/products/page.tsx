@@ -53,7 +53,7 @@ export default async function ProductsPage() {
                 <p className="text-sm text-foreground/70">{product.description}</p>
               </CardContent>
               <CardFooter className="flex items-center justify-between">
-                <p className="text-lg font-semibold text-primary">${product.price}</p>
+                <p className="text-lg font-semibold text-primary">₹{product.price}</p>
                 <Button asChild size="sm">
                   <Link href={`/products/${product.id}`}>
                     View Details <ArrowRight className="ml-2 h-4 w-4" />
