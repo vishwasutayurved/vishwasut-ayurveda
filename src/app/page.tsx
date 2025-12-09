@@ -9,6 +9,7 @@ import { getFeaturedProducts } from '@/lib/firebase/firestore';
 import type { Product } from '@/lib/products';
 
 export default async function Home() {
+  
   const therapies = [
     {
       title: 'Panchakarma',
