@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { HeroCarousel } from '@/components/home/hero-carousel';
 import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { getFeaturedProducts } from '@/lib/firebase/firestore';
 import type { Product } from '@/lib/products';
 
@@ -65,23 +65,38 @@ export default async function Home() {
                 Handpicked selections to support your wellness journey.
               </p>
             </div>
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
               {featuredProducts.map((product) => (
-                <Card key={product.id} className="transform-gpu transition-all duration-300 hover:-translate-y-1 hover:shadow-xl overflow-hidden">
-                  <div className="flex flex-col items-stretch">
-                    <div className="p-4 flex items-center justify-center">
-                       <div className="relative aspect-square w-full">
-                        <Image src={product.image} alt={product.name} data-ai-hint={product.hint} fill className="object-cover rounded-md" />
-                      </div>
+                <Card key={product.id} className="flex flex-col overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl">
+                  <Link href={`/products/${product.id}`} className="flex-shrink-0">
+                    <div className="relative h-56 w-full">
+                      <Image
+                        src={product.image}
+                        alt={product.name}
+                        data-ai-hint={product.hint}
+                        fill
+                        className="object-cover"
+                      />
                     </div>
-                    <div className="flex flex-col p-6 justify-center text-center">
-                      <h4 className="font-headline text-2xl font-bold">{product.name}</h4>
-                      <p className="mt-2 text-foreground/70 flex-grow">{product.description}</p>
-                      <Button asChild variant="link" className="self-center mt-4 p-0 h-auto text-primary">
-                        <Link href={`/products/${product.id}`}>View Details <ArrowRight className="ml-2 h-4 w-4" /></Link>
-                      </Button>
-                    </div>
-                  </div>
+                  </Link>
+                  <CardHeader className="flex-grow">
+                    <CardTitle>
+                      <Link href={`/products/${product.id}`} className="text-lg font-bold hover:text-primary">
+                        {product.name}
+                      </Link>
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex-grow">
+                    <p className="text-sm text-foreground/70">{product.description}</p>
+                  </CardContent>
+                  <CardFooter className="flex items-center justify-between">
+                    <p className="text-lg font-semibold text-primary">${product.price}</p>
+                    <Button asChild size="sm">
+                      <Link href={`/products/${product.id}`}>
+                        View Details <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </CardFooter>
                 </Card>
               ))}
             </div>
