@@ -12,7 +12,7 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { ThemeToggle } from "../theme-toggle";
+// import { ThemeToggle } from "../theme-toggle";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -54,7 +54,7 @@ export function Header() {
               </Link>
             ))}
           </nav>
-          <ThemeToggle />
+          {/* <ThemeToggle /> */}
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" className="md:hidden">
