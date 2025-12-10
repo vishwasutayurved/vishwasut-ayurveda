@@ -8,11 +8,12 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { getProductById, getProducts } from '@/lib/firebase/firestore';
 import type { Product } from '@/lib/products';
 import { Metadata } from 'next';
+import { use } from 'react';
 
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const product: Product | null = await getProductById(params.id);
+  const product: Product | null = await getProductById((await params).id);
   if (!product) {
     return {
       title: 'Product Not Found',
@@ -26,7 +27,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
 }
 
 export default async function ProductDetailPage({ params }: { params: { id: string } }) {
-  const product: Product | null = await getProductById(params.id);
+  const product: Product | null = await getProductById((await params).id);
 
   if (!product) {
     notFound();

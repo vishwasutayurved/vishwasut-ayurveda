@@ -9,6 +9,7 @@ export type Product = {
     details: string;
     ingredients: string[];
     usage: string;
+    addToCartUrl: string;
     isFeatured?: boolean;
     dosage?: {
         ageGroup: string;

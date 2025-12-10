@@ -21,3 +21,37 @@
 - Modular grid layout with clear section separation to promote readability and a professional feel.
 - Smooth transitions and subtle hover effects for an engaging user experience.
 - Use line icons that match the earthy and natural theme, and maintain simplicity to reinforce the serene ambiance.
+
+## Current Status:
+
+The project is currently in a foundational stage. The basic structure of the Next.js application has been set up, and key pages and components have been created.
+
+### Existing Pages:
+
+- Home (`src/app/page.tsx`): The main landing page.
+- About (`src/app/about/page.tsx`): A page to describe the clinic.
+- Contact (`src/app/contact/page.tsx`): A page with a contact form.
+- Products (`src/app/products/page.tsx`): A page to list Ayurvedic products.
+- Product Details (`src/app/products/[id]/page.tsx`): A dynamic page to show details for a specific product.
+- Therapies (`src/app/therapies/page.tsx`): A page to describe the available therapies.
+
+### Existing Components:
+
+- **Layout**: `Header`, `Footer`, `NavLink`, `TopLoader`, `Preloader`
+- **UI**: A rich set of UI components are available in `src/components/ui`, including `Accordion`, `Button`, `Card`, `Carousel`, `Dialog`, `Form`, `Input`, `Sheet`, `Toast`, and more.
+- **Home Page**: `HeroCarousel`
+
+### Firebase Integration:
+
+- Firebase is configured in the project (`src/lib/firebase/config.ts`).
+- Firestore is used to fetch product data from the `products` collection (`src/lib/firebase/firestore.ts`).
+
+## Next Steps & Future Development:
+
+- **Content Population**: Populate the pages with actual content, including text, images, and product information.
+- **Contact Form Logic**: Implement the logic for the contact form to send emails or store inquiries in Firestore.
+- **Personalized Wellness Tips**: Develop the AI-powered wellness tips feature. This will likely involve creating a new API route and integrating with a third-party AI service.
+- **Authentication**: If user-specific features are planned (e.g., saving wellness tips, order history), implement user authentication using Firebase Authentication.
+- **Shopping Cart & Checkout**: If the products are to be sold directly, a full e-commerce flow with a shopping cart and payment gateway integration will be necessary.
+- **Testing**: Write unit and integration tests to ensure the application is robust and reliable.
+- **Deployment**: The project is set up for deployment on Firebase Hosting.

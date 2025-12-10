@@ -46,8 +46,8 @@ export default function RootLayout({
       <body>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="light"
+          enableSystem = {false}
           disableTransitionOnChange={false}
         >
           <TopLoader />
