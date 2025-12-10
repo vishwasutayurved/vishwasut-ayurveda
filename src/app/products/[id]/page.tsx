@@ -79,7 +79,7 @@ export default async function ProductDetailPage({ params }: { params: { id: stri
                 <h3 className="font-headline text-xl font-bold">Usage</h3>
                 <p className="mt-2 text-foreground/70">{product.usage}</p>
               </div>
-              {product.dosage && (
+              {product.dosageList && (
                 <div>
                   <h3 className="font-headline text-xl font-bold">Dosage</h3>
                   <Card className="mt-2">
@@ -87,14 +87,14 @@ export default async function ProductDetailPage({ params }: { params: { id: stri
                       <TableHeader>
                         <TableRow>
                           <TableHead>Age Group</TableHead>
-                          <TableHead>Daily Dosage</TableHead>
+                          <TableHead>Dosage</TableHead>
                         </TableRow>
                       </TableHeader>
                       <TableBody>
-                        {product.dosage.map((item, index) => (
+                        {product.dosageList.map((item, index) => (
                           <TableRow key={index}>
                             <TableCell>{item.ageGroup}</TableCell>
-                            <TableCell>{item.dailyDosage}</TableCell>
+                            <TableCell>{item.dosage}</TableCell>
                           </TableRow>
                         ))}
                       </TableBody>

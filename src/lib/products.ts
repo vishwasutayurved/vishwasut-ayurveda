@@ -11,8 +11,8 @@ export type Product = {
     usage: string;
     addToCartUrl: string;
     isFeatured?: boolean;
-    dosage?: {
+    dosageList?: {
         ageGroup: string;
-        dailyDosage: string;
+        dosage: string;
     }[];
 };
