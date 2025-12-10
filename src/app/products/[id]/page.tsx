@@ -7,21 +7,16 @@ import { NavLink } from '@/components/layout/nav-link';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { getProductById, getProducts } from '@/lib/firebase/firestore';
 import type { Product } from '@/lib/products';
+import { Metadata } from 'next';
 
 export const dynamic = "force-dynamic";
 
-export async function generateStaticParams() {
-  const products: Product[] = await getProducts();
-  return products.map((product) => ({
-    id: product.id,
-  }));
-}
-
-export async function generateMetadata({ params }: { params: { id: string } }) {
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
   const product: Product | null = await getProductById(params.id);
   if (!product) {
     return {
       title: 'Product Not Found',
+      description: "The page you are looking for is not available, Please try another page."
     };
   }
   return {

@@ -1,4 +1,5 @@
 
+import { cache } from 'react';
 import { initializeApp, getApps, getApp } from 'firebase/app';
 import { getFirestore, collection, getDocs, doc, getDoc, query, where } from 'firebase/firestore';
 import { firebaseConfig } from './config';
@@ -22,7 +23,7 @@ export async function getProducts(): Promise<Product[]> {
 }
 
 // Function to get a single product by its ID
-export async function getProductById(id: string): Promise<Product | null> {
+export const getProductById = cache(async (id: string): Promise<Product | null> => {
     try {
         const docRef = doc(db, 'products', id);
         const docSnap = await getDoc(docRef);
@@ -36,7 +37,7 @@ export async function getProductById(id: string): Promise<Product | null> {
         console.error("Error fetching product by ID:", error);
         return null;
     }
-}
+});
 
 // Function to get featured products
 export async function getFeaturedProducts(): Promise<Product[]> {
