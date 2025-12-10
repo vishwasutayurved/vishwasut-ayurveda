@@ -52,7 +52,7 @@ export default async function ProductDetailPage({ params }: { params: { id: stri
                 alt={product.name}
                 data-ai-hint={product.hint}
                 fill
-                className="object-cover"
+                className="object-cover rounded-lg"
               />
             </Card>
           </div>
@@ -62,9 +62,11 @@ export default async function ProductDetailPage({ params }: { params: { id: stri
             <p className="mt-6 text-lg text-foreground/70">{product.details}</p>
 
             <div className="mt-8">
-              <Button size="lg" className="w-full sm:w-auto">
-                <ShoppingCart className="mr-2 h-5 w-5" />
-                Add to Cart
+              <Button size="lg" asChild className="w-full sm:w-auto">
+                <NavLink href={`/`}>
+                  <ShoppingCart className="mr-2 h-5 w-5" />
+                  Add to Cart
+                </NavLink>
               </Button>
             </div>
 
