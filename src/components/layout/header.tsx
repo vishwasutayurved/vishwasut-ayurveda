@@ -66,7 +66,7 @@ export function Header() {
               <div className="flex flex-col p-6">
                 <NavLink href="/" className="mb-8 flex items-center space-x-2">
                    <Leaf className="h-6 w-6 text-primary" />
-                   <span className="font-bold font-headline text-lg">श्Shri Vishvasuta Ayurved & Panchkarma Clinic</span>
+                   <span className="font-bold font-headline text-lg">Shri Vishvasuta Ayurved & Panchkarma Clinic</span>
                 </NavLink>
                 <nav className="flex flex-col gap-4">
                   {navItems.map((item) => (
