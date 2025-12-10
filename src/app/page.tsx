@@ -50,7 +50,7 @@ export default async function Home() {
             Embrace Balance, Embrace Life
           </h2>
           <p className="mt-6 text-lg leading-relaxed text-foreground/80">
-            At श्री विश्वसुता आयुर्वेदिक आणि पंचकर्म क्लिनिक, we believe in the timeless wisdom of Ayurveda to restore harmony and vitality. Our holistic approach addresses the root cause of imbalance, guiding you on a transformative journey to optimal health and well-being.
+            At Shri Vishvasuta Ayurved & Panchkarma Clinic, we believe in the timeless wisdom of Ayurveda to restore harmony and vitality. Our holistic approach addresses the root cause of imbalance, guiding you on a transformative journey to optimal health and well-being.
           </p>
         </div>
       </section>

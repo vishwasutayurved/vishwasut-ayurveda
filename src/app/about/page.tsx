@@ -5,7 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 
 export const metadata: Metadata = {
   title: 'About Us',
-  description: 'Learn about the history, philosophy, and expert practitioners at श्री विश्वसुता आयुर्वेदिक आणि पंचकर्म क्लिनिक.',
+  description: 'Learn about the history, philosophy, and expert practitioners at Shri Vishvasuta Ayurved & Panchkarma Clinic.',
 };
 
 const practitioners = [
@@ -36,7 +36,7 @@ export default function AboutPage() {
             Our Journey in Healing
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-foreground/80">
-            श्री विश्वसुता आयुर्वेदिक आणि पंचकर्म क्लिनिक was founded with a simple yet profound mission: to make the holistic wisdom of Ayurveda accessible to all, fostering a community of health, balance, and harmony.
+            Shri Vishvasuta Ayurved & Panchkarma Clinic was founded with a simple yet profound mission: to make the holistic wisdom of Ayurveda accessible to all, fostering a community of health, balance, and harmony.
           </p>
         </div>
 
@@ -57,7 +57,7 @@ export default function AboutPage() {
                 We view health not as the absence of disease, but as a vibrant state of balance in body, mind, and spirit. Our philosophy is rooted in the core principles of Ayurveda, emphasizing personalized care, natural therapies, and preventative health. We believe in empowering our patients with the knowledge and tools to take an active role in their own healing journey.
               </p>
               <p className="mt-4 text-foreground/70">
-                Each treatment plan at श्री विश्वसुता आयुर्वेदिक आणि पंचकर्म क्लिनिक is a bespoke creation, tailored to your unique constitution (Prakriti) and current imbalances (Vikriti). We blend ancient techniques with a modern understanding of health to ensure the most effective and gentle care.
+                Each treatment plan at Shri Vishvasuta Ayurved & Panchkarma Clinic is a bespoke creation, tailored to your unique constitution (Prakriti) and current imbalances (Vikriti). We blend ancient techniques with a modern understanding of health to ensure the most effective and gentle care.
               </p>
             </div>
           </div>

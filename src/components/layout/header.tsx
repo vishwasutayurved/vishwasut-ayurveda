@@ -36,7 +36,7 @@ export function Header() {
         <NavLink href="/" className="mr-6 flex items-center space-x-2">
           <Leaf className="h-6 w-6 text-primary" />
           <span className="font-bold font-headline text-lg hidden sm:inline-block">
-          श्री विश्वसुता आयुर्वेदिक आणि पंचकर्म क्लिनिक
+          Shri Vishvasuta Ayurved & Panchkarma Clinic
           </span>
         </NavLink>
         <div className="flex flex-1 items-center justify-end space-x-2">
@@ -66,7 +66,7 @@ export function Header() {
               <div className="flex flex-col p-6">
                 <NavLink href="/" className="mb-8 flex items-center space-x-2">
                    <Leaf className="h-6 w-6 text-primary" />
-                   <span className="font-bold font-headline text-lg">श्री विश्वसुता आयुर्वेदिक आणि पंचकर्म क्लिनिक</span>
+                   <span className="font-bold font-headline text-lg">श्Shri Vishvasuta Ayurved & Panchkarma Clinic</span>
                 </NavLink>
                 <nav className="flex flex-col gap-4">
                   {navItems.map((item) => (

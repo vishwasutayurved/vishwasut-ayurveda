@@ -9,7 +9,7 @@ export function Footer() {
           <div className="md:col-span-1">
             <NavLink href="/" className="flex items-center space-x-2">
               <Leaf className="h-8 w-8 text-primary" />
-              <span className="font-headline text-xl font-bold">श्री विश्वसुता आयुर्वेदिक आणि पंचकर्म क्लिनिक</span>
+              <span className="font-headline text-xl font-bold">Shri Vishvasuta Ayurved & Panchkarma Clinic</span>
             </NavLink>
             <p className="mt-4 text-foreground/70">
               Your path to holistic wellness and natural healing.
@@ -50,7 +50,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-8 border-t border-border pt-8 text-center text-sm text-foreground/60">
-          <p>&copy; {new Date().getFullYear()} श्री विश्वसुता आयुर्वेदिक आणि पंचकर्म क्लिनिक. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Shri Vishvasuta Ayurved & Panchkarma Clinic. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

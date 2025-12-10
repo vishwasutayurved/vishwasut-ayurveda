@@ -9,7 +9,7 @@ import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
-  description: 'Get in touch with श्री विश्वसुता आयुर्वेदिक आणि पंचकर्म क्लिनिक to book an appointment or for any inquiries. Find our address, phone number, and contact form here.',
+  description: 'Get in touch with Shri Vishvasuta Ayurved & Panchkarma Clinic to book an appointment or for any inquiries. Find our address, phone number, and contact form here.',
 };
 
 export default function ContactPage() {

@@ -5,7 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 
 export const metadata: Metadata = {
   title: 'Ayurvedic Therapies',
-  description: 'Explore traditional Ayurvedic therapies like Panchakarma, Abhyanga, and Shirodhara offered at श्री विश्वसुता आयुर्वेदिक आणि पंचकर्म क्लिनिक.',
+  description: 'Explore traditional Ayurvedic therapies like Panchakarma, Abhyanga, and Shirodhara offered at Shri Vishvasuta Ayurved & Panchkarma Clinic.',
 };
 
 export default function TherapiesPage() {

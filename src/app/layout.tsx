@@ -10,11 +10,11 @@ import { TopLoader } from '@/components/layout/top-loader';
 
 export const metadata: Metadata = {
   title: {
-    default: 'श्री विश्वसुता आयुर्वेदिक आणि पंचकर्म क्लिनिक | Holistic Healing & Wellness',
-    template: '%s | श्री विश्वसुता आयुर्वेदिक आणि पंचकर्म क्लिनिक',
+    default: 'Shri Vishvasuta Ayurved & Panchkarma Clinic',
+    template: '%s | Shri Vishvasuta Ayurved & Panchkarma Clinic',
   },
-  description: 'Experience authentic Ayurvedic treatments and personalized wellness at श्री विश्वसुता आयुर्वेदिक आणि पंचकर्म क्लिनिक. Specializing in Panchakarma and holistic therapies.',
-  keywords: ['Ayurveda', 'Dahake Clinic', 'Panchakarma', 'Holistic Health', 'Wellness', 'Ayurvedic Clinic', 'श्री विश्वसुता आयुर्वेदिक आणि पंचकर्म क्लिनिक'],
+  description: 'Experience authentic Ayurvedic treatments and personalized wellness at Shri Vishvasuta Ayurved & Panchkarma Clinic. Specializing in Panchakarma and holistic therapies.',
+  keywords: ['Ayurveda', 'Dahake Clinic', 'Panchakarma', 'Holistic Health', 'Wellness', 'Ayurvedic Clinic', 'Shri Vishvasuta Ayurved & Panchkarma Clinic'],
 };
 export const dynamic = "force-dynamic";
 
@@ -47,7 +47,7 @@ export default function RootLayout({
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
-          enableSystem = {false}
+          enableSystem={false}
           disableTransitionOnChange={false}
         >
           <TopLoader />
