@@ -1,5 +1,5 @@
 import { NavLink } from "./nav-link";
-import { Leaf, Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 export function Footer() {
   return (
@@ -8,7 +8,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div className="md:col-span-1">
             <NavLink href="/" className="flex items-center space-x-2">
-              <Leaf className="h-8 w-8 text-primary" />
+              <img src="/favicon.ico" alt="Shri Vishvasuta Ayurved & Panchkarma Clinic" className="h-10 w-10" />
               <span className="font-headline text-xl font-bold">Shri Vishvasuta Ayurved & Panchkarma Clinic</span>
             </NavLink>
             <p className="mt-4 text-foreground/70">

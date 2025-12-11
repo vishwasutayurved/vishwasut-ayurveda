@@ -72,7 +72,6 @@ export function Header() {
               </SheetHeader>
               <div className="flex flex-col p-6">
                 <NavLink href="/" className="mb-8 flex items-center space-x-2">
-                   {/* <Leaf className="h-6 w-6 text-primary" /> */}
                    <span className="font-bold font-headline text-lg">Shri Vishvasuta Ayurved & Panchkarma Clinic</span>
                 </NavLink>
                 <nav className="flex flex-col gap-4">
