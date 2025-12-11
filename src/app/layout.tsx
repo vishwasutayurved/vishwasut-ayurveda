@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   },
   description: 'Experience authentic Ayurvedic treatments and personalized wellness at Shri Vishvasuta Ayurved & Panchkarma Clinic. Specializing in Panchakarma and holistic therapies.',
   keywords: ['Ayurveda', 'Dahake Clinic', 'Panchakarma', 'Holistic Health', 'Wellness', 'Ayurvedic Clinic', 'Shri Vishvasuta Ayurved & Panchkarma Clinic'],
+  other: {
+    "google-site-verification": "ROozPfb9haaZrO0LOB5uwb80ukV-yMeDxS-X24quGb8"
+  },
 };
 export const dynamic = "force-dynamic";
 

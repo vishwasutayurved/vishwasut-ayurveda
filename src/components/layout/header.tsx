@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { usePathname } from "next/navigation";
-import { Leaf, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { NavLink } from "./nav-link";
 
 import { cn } from "@/lib/utils";
@@ -10,6 +10,9 @@ import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 // import { ThemeToggle } from "../theme-toggle";
@@ -34,7 +37,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
         <NavLink href="/" className="mr-6 flex items-center space-x-2">
-          <Leaf className="h-6 w-6 text-primary" />
+          <img src="/favicon.ico" alt="Shri Vishvasuta Ayurved & Panchkarma Clinic" className="h-10 w-10" />
           <span className="font-bold font-headline text-lg hidden sm:inline-block">
           Shri Vishvasuta Ayurved & Panchkarma Clinic
           </span>
@@ -63,6 +66,10 @@ export function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="left">
+              <SheetHeader>
+                <SheetTitle className="sr-only">Main Menu</SheetTitle>
+                <SheetDescription className="sr-only">Site navigation menu</SheetDescription>
+              </SheetHeader>
               <div className="flex flex-col p-6">
                 <NavLink href="/" className="mb-8 flex items-center space-x-2">
                    {/* <Leaf className="h-6 w-6 text-primary" /> */}
