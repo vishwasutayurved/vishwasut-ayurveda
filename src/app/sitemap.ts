@@ -3,7 +3,7 @@ import { getProducts } from '@/lib/firebase/firestore';
 import type { Product } from '@/lib/products';
 
 export const dynamic = "force-dynamic";
-const appUrl: string = "https://vishwasutayurveda.vercel.app";
+const appUrl: string = "https://vishvasutayurveda.vercel.app";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const products: Product[] = await getProducts();
