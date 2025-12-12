@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://vishvasutayurveda.vercel.app/sitemap.xml
