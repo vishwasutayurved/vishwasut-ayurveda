@@ -13,6 +13,9 @@ export const metadata: Metadata = {
     default: 'Shri Vishvasuta Ayurved & Panchkarma Clinic',
     template: '%s | Shri Vishvasuta Ayurved & Panchkarma Clinic',
   },
+  icons: {
+    apple:"/favicon.ico"
+  },
   description: 'Experience authentic Ayurvedic treatments and personalized wellness at Shri Vishvasuta Ayurved & Panchkarma Clinic. Specializing in Panchakarma and holistic therapies.',
   keywords: ['Ayurveda', 'Dahake Clinic', 'Panchakarma', 'Holistic Health', 'Wellness', 'Ayurvedic Clinic', 'Shri Vishvasuta Ayurved & Panchkarma Clinic'],
   other: {
