@@ -13,15 +13,22 @@ export const metadata: Metadata = {
     default: 'Shri Vishvasuta Ayurved & Panchkarma Clinic',
     template: '%s | Shri Vishvasuta Ayurved & Panchkarma Clinic',
   },
-  icons: {
-    apple: "/favicon.ico"
-  },
   description: 'Experience authentic Ayurvedic treatments and personalized wellness at Shri Vishvasuta Ayurved & Panchkarma Clinic. Specializing in Panchakarma and holistic therapies.',
   keywords: ['Ayurveda', 'Nishant Dahake Clinic', 'Panchakarma', 'Holistic Health',
     'Wellness', 'Ayurvedic Clinic', 'Shri Vishvasuta Ayurved & Panchkarma Clinic',
     'Shri Vishvasuta Ayurved and Panchkarma Clinic', 'Shri Vishvasuta Ayurved',
     'Dr Dahake\'s Shri Vishwasut Ayurved & Panchakarma Clinic'
   ],
+  openGraph: {
+    url: "https://vishvasutayurveda.vercel.app",
+    type: "website",
+    locale: "en_US",
+    title: "Shri Vishvasuta Ayurved & Panchkarma Clinic",
+    description: "Experience authentic Ayurvedic treatments and personalized wellness at Shri Vishvasuta Ayurved & Panchkarma Clinic. Specializing in Panchakarma and holistic therapies."
+  },
+  icons: {
+    apple: "/favicon.ico"
+  },
   other: {
     "google-site-verification": "ROozPfb9haaZrO0LOB5uwb80ukV-yMeDxS-X24quGb8"
   },
