@@ -14,10 +14,14 @@ export const metadata: Metadata = {
     template: '%s | Shri Vishvasuta Ayurved & Panchkarma Clinic',
   },
   icons: {
-    apple:"/favicon.ico"
+    apple: "/favicon.ico"
   },
   description: 'Experience authentic Ayurvedic treatments and personalized wellness at Shri Vishvasuta Ayurved & Panchkarma Clinic. Specializing in Panchakarma and holistic therapies.',
-  keywords: ['Ayurveda', 'Dahake Clinic', 'Panchakarma', 'Holistic Health', 'Wellness', 'Ayurvedic Clinic', 'Shri Vishvasuta Ayurved & Panchkarma Clinic'],
+  keywords: ['Ayurveda', 'Nishant Dahake Clinic', 'Panchakarma', 'Holistic Health',
+    'Wellness', 'Ayurvedic Clinic', 'Shri Vishvasuta Ayurved & Panchkarma Clinic',
+    'Shri Vishvasuta Ayurved and Panchkarma Clinic', 'Shri Vishvasuta Ayurved',
+    'Dr Dahake\'s Shri Vishwasut Ayurved & Panchakarma Clinic'
+  ],
   other: {
     "google-site-verification": "ROozPfb9haaZrO0LOB5uwb80ukV-yMeDxS-X24quGb8"
   },
