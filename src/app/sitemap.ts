@@ -3,7 +3,7 @@ import type { MetadataRoute } from 'next';
 export const dynamic = "force-dynamic";
 const appUrl: string = "https://vishvasutayurveda.vercel.app";
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+export default function sitemap(): MetadataRoute.Sitemap {
     return [
         {
             url: appUrl,
