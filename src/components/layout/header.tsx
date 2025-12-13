@@ -19,7 +19,7 @@ import {
 
 const navItems = [
   { href: "/", label: "Home" },
-  { href: "/therapies", label: "Therapies" },
+  { href: "/blogs", label: "Blogs" },
   { href: "/products", label: "Products" },
   { href: "/about", label: "About Us" },
   { href: "/contact", label: "Contact" },
