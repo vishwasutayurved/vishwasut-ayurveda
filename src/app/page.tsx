@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import Image from 'next/image';
 import { NavLink } from '@/components/layout/nav-link';
@@ -8,54 +8,17 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { getFeaturedProducts } from '@/lib/firebase/firestore';
 import type { Product } from '@/lib/products';
+import { getBlogs, type Blog } from '@/lib/blogs';
 import { useEffect, useRef, useState } from 'react';
 import { Pagination } from '@/components/ui/pagination';
 
-const blogs = [
-  {
-    title: 'The Power of Turmeric',
-    description: 'A deep dive into the benefits of this golden spice in Ayurvedic medicine.',
-    image: 'https://placehold.co/400x400.png',
-    hint: 'ayurvedic herbs'
-  },
-  {
-    title: 'Understanding Your Dosha',
-    description: 'Learn about the three doshas (Vata, Pitta, and Kapha) and how they relate to your health.',
-    image: 'https://placehold.co/400x400.png',
-    hint: 'dosha illustration'
-  },
-  {
-    title: 'Daily Rituals for a Balanced Life',
-    description: 'Simple Ayurvedic practices you can incorporate into your daily routine for better health.',
-    image: 'https://placehold.co/400x400.png',
-    hint: 'morning routine'
-  },
-  {
-    title: 'The Importance of Agni (Digestive Fire)',
-    description: 'Discover how to maintain a strong digestive fire for optimal health and well-being.',
-    image: 'https://placehold.co/400x400.png',
-    hint: 'digestive system'
-  },
-  {
-    title: 'Herbs for a Healthy Heart',
-    description: 'Explore Ayurvedic herbs that support cardiovascular health.',
-    image: 'https://placehold.co/400x400.png',
-    hint: 'heart health'
-  },
-  {
-    title: 'Ayurvedic Skin Care',
-    description: 'Natural ways to achieve radiant and healthy skin.',
-    image: 'https://placehold.co/400x400.png',
-    hint: 'skin care'
-  }
-];
-
 export default function Home() {
   const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
+  const [featuredBlogs, setFeaturedBlogs] = useState<Blog[]>([]);
   const [currentProductPage, setCurrentProductPage] = useState(1);
   const [currentBlogPage, setCurrentBlogPage] = useState(1);
   const productsPerPage = 4;
-  const blogsPerPage = 4;
+  const blogsPerPage = 3;
 
   const productsSectionRef = useRef<HTMLDivElement>(null);
   const blogsSectionRef = useRef<HTMLDivElement>(null);
@@ -66,6 +29,8 @@ export default function Home() {
       setFeaturedProducts(products);
     }
     fetchProducts();
+    const blogs = getBlogs();
+    setFeaturedBlogs(blogs);
   }, []);
 
   const handleProductPageChange = (pageNumber: number) => {
@@ -96,13 +61,13 @@ export default function Home() {
   // Blogs Pagination
   const indexOfLastBlog = currentBlogPage * blogsPerPage;
   const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
-  const currentBlogs = blogs.slice(indexOfFirstBlog, indexOfLastBlog);
+  const currentBlogs = featuredBlogs.slice(indexOfFirstBlog, indexOfLastBlog);
 
   const paginateBlogs = (pageNumber: number) => handleBlogPageChange(pageNumber);
   const nextBlogPage = () => handleBlogPageChange(currentBlogPage + 1);
   const prevBlogPage = () => handleBlogPageChange(currentBlogPage - 1);
   const firstBlogPage = () => handleBlogPageChange(1);
-  const lastBlogPage = () => handleBlogPageChange(Math.ceil(blogs.length / blogsPerPage));
+  const lastBlogPage = () => handleBlogPageChange(Math.ceil(featuredBlogs.length / blogsPerPage));
 
   return (
     <div className="flex flex-col">
@@ -181,49 +146,64 @@ export default function Home() {
         </section>
       )}
 
-      <section ref={blogsSectionRef} className="bg-secondary/50 py-16 sm:py-24">
-        <div className="container mx-auto px-4">
-          <div className="mx-auto mb-12 max-w-2xl text-center">
-            <h3 className="font-headline text-3xl font-bold md:text-4xl">From Our Blog</h3>
-            <p className="mt-4 text-foreground/70">
-              Explore our latest articles on Ayurvedic wisdom and holistic wellness.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-            {currentBlogs.map((blog) => (
-              <Card key={blog.title} className="transform-gpu transition-all duration-300 hover:-translate-y-1 hover:shadow-xl overflow-hidden">
-                <div className="flex flex-col md:flex-row items-stretch">
-                  <div className="md:w-5/12 p-4 flex items-center justify-center">
-                     <div className="relative aspect-square w-full">
-                      <Image src={blog.image} alt={blog.title} data-ai-hint={blog.hint} fill className="object-cover rounded-md" />
+      {featuredBlogs.length > 0 && (
+        <section ref={blogsSectionRef} className="py-16 sm:py-24">
+          <div className="container mx-auto px-4">
+            <div className="mx-auto mb-12 max-w-2xl text-center">
+              <h3 className="font-headline text-3xl font-bold md:text-4xl">From Our Blog</h3>
+              <p className="mt-4 text-foreground/70">
+                Insights and knowledge from the world of Ayurveda.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
+              {currentBlogs.map((blog) => (
+                <Card key={blog.slug} className="flex flex-col overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl">
+                  <NavLink href={`/blogs/${blog.slug}`} className="flex-shrink-0">
+                    <div className="relative h-56 w-full">
+                      <Image
+                        src={blog.image}
+                        alt={blog.title}
+                        data-ai-hint={blog.hint}
+                        fill
+                        className="object-cover"
+                      />
                     </div>
-                  </div>
-                  <div className="md:w-7/12 flex flex-col p-6 justify-center">
-                    <h4 className="font-headline text-2xl font-bold">{blog.title}</h4>
-                    <p className="mt-2 text-foreground/70 flex-grow">{blog.description}</p>
-                    <Button asChild variant="link" className="self-start mt-4 p-0 h-auto text-primary">
-                      <NavLink href="/blogs">Read More <ArrowRight className="ml-2 h-4 w-4" /></NavLink>
+                  </NavLink>
+                  <CardHeader className="flex-grow">
+                    <CardTitle>
+                      <NavLink href={`/blogs/${blog.slug}`} className="text-lg font-bold hover:text-primary">
+                        {blog.title}
+                      </NavLink>
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="flex-grow">
+                    <p className="text-sm text-foreground/70">{blog.description}</p>
+                  </CardContent>
+                  <CardFooter>
+                    <Button asChild variant="link" size="sm" className="p-0">
+                      <NavLink href={`/blogs/${blog.slug}`}>
+                        Read More <ArrowRight className="ml-2 h-4 w-4" />
+                      </NavLink>
                     </Button>
-                  </div>
-                </div>
-              </Card>
-            ))}
+                  </CardFooter>
+                </Card>
+              ))}
+            </div>
+            <div className="mt-12">
+              <Pagination
+                itemsPerPage={blogsPerPage}
+                totalItems={featuredBlogs.length}
+                currentPage={currentBlogPage}
+                paginate={paginateBlogs}
+                nextPage={nextBlogPage}
+                prevPage={prevBlogPage}
+                firstPage={firstBlogPage}
+                lastPage={lastBlogPage}
+              />
+            </div>
           </div>
-          <div className="mt-12">
-            <Pagination
-              itemsPerPage={blogsPerPage}
-              totalItems={blogs.length}
-              currentPage={currentBlogPage}
-              paginate={paginateBlogs}
-              nextPage={nextBlogPage}
-              prevPage={prevBlogPage}
-              firstPage={firstBlogPage}
-              lastPage={lastBlogPage}
-            />
-          </div>
-        </div>
-      </section>
-
+        </section>
+      )}
     </div>
   );
 }
