@@ -27,6 +27,52 @@ export default function ContactPage() {
           </div>
 
           <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
+
+            <div className="space-y-8">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="font-headline text-2xl">Clinic Information</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-6 text-lg">
+                  <div className="flex items-start">
+                    <MapPin className="mr-4 mt-1 h-6 w-6 flex-shrink-0 text-primary" />
+                    <div>
+                      <h3 className="font-semibold">Our Location</h3>
+                      <p className="text-foreground/70">Plot no 11 A, Hudkeshwar Rd, opposite Domino's Nasare Sabaguha, Dubey Nagar, Chandrakiran Nagar, Nagpur, Maharashtra 440034</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <Phone className="mr-4 mt-1 h-6 w-6 flex-shrink-0 text-primary" />
+                    <div>
+                      <h3 className="font-semibold">Phone Number</h3>
+                      <p className="text-foreground/70">+91 9270220033</p>
+                      <p className="text-foreground/70">+91 9975797624</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <Mail className="mr-4 mt-1 h-6 w-6 flex-shrink-0 text-primary" />
+                    <div>
+                      <h3 className="font-semibold">Email</h3>
+                      <p className="text-foreground/70">vishwasutayurved@gmail.com</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card className="overflow-hidden">
+                <div className="relative h-64 w-full">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3722.3289354196713!2d79.1222725!3d21.0994483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4b9185e882e43%3A0xb7050d53900cc12b!2sDr%20Dahake&#39;s%20Shri%20Vishvasuta%20Ayurved%20%26%20Panchkarma%20Clinic%20%7C%20Panchkarma%20in%20Nagpur!5e0!3m2!1sen!2sin!4v1765634420552!5m2!1sen!2sin"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="absolute inset-0"
+                  ></iframe>
+                </div>
+              </Card>
+            </div>
             <Card className="p-2">
               <CardHeader>
                 <CardTitle className="font-headline text-2xl">Send Us a Message</CardTitle>
@@ -55,42 +101,6 @@ export default function ContactPage() {
                 </form>
               </CardContent>
             </Card>
-
-            <div className="space-y-8">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="font-headline text-2xl">Clinic Information</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-6 text-lg">
-                  <div className="flex items-start">
-                    <MapPin className="mr-4 mt-1 h-6 w-6 flex-shrink-0 text-primary" />
-                    <div>
-                      <h3 className="font-semibold">Our Location</h3>
-                      <p className="text-foreground/70">123 Wellness Lane, Ayurveda City, 45678</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <Phone className="mr-4 mt-1 h-6 w-6 flex-shrink-0 text-primary" />
-                    <div>
-                      <h3 className="font-semibold">Phone Number</h3>
-                      <p className="text-foreground/70">(123) 456-7890</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start">
-                    <Mail className="mr-4 mt-1 h-6 w-6 flex-shrink-0 text-primary" />
-                    <div>
-                      <h3 className="font-semibold">Email</h3>
-                      <p className="text-foreground/70">info@dahakeayurveda.com</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card className="overflow-hidden">
-                <div className="relative h-64 w-full">
-                  <Image src="https://placehold.co/600x400.png" data-ai-hint="clinic exterior" alt="Map of clinic location" fill className="object-cover" />
-                </div>
-              </Card>
-            </div>
           </div>
         </div>
       </div>

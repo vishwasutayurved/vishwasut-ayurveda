@@ -12,18 +12,10 @@ const practitioners = [
   {
     name: 'Dr. Nishant Dahake',
     title: 'Lead Ayurvedic Doctor (B.A.M.S)',
-    image: 'https://placehold.co/128x128.png',
+    image: '/Nishant Dahake.png',
     fallback: 'ND',
-    bio: 'With over 20 years of experience, Dr. Nishant is dedicated to reviving ancient Ayurvedic traditions to address modern health challenges. He specializes in Panchakarma and women\'s health.',
+    bio: 'With over 3+ years of experience, Dr. Nishant is dedicated to reviving ancient Ayurvedic traditions to address modern health challenges. He specializes in Panchakarma and women\'s health.',
     hint: 'doctor portrait'
-  },
-  {
-    name: 'Dr. Rohan Sharma',
-    title: 'Ayurvedic Practitioner',
-    image: 'https://placehold.co/128x128.png',
-    fallback: 'RS',
-    bio: 'Dr. Rohan combines his deep knowledge of herbal medicine with lifestyle counseling to help patients achieve sustainable well-being. His focus is on chronic ailments and stress management.',
-    hint: 'male doctor'
   },
 ];
 
