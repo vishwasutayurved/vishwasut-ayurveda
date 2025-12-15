@@ -1,24 +1,13 @@
-'use client';
-
 import { getBlogs } from '@/lib/firebase/firestore';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { NavLink } from '@/components/layout/nav-link';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
 import type { Blog } from '@/lib/blogs';
 
-export default function BlogsPage() {
-  const [blogs, setBlogs] = useState<Blog[]>([]);
-
-  useEffect(() => {
-    async function fetchBlogs() {
-      const blogs = await getBlogs();
-      setBlogs(blogs);
-    }
-    fetchBlogs();
-  }, []);
+export default async function BlogsPage() {
+const blogs: Blog[] = await getBlogs();
 
   return (
     <div className="bg-background py-16 sm:py-24">
