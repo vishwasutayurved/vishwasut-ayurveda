@@ -32,7 +32,7 @@ export default async function BlogPage({ params }: { params: { slug: string } })
             <p className="mt-4 text-lg text-foreground/80">{blog.description}</p>
           </div>
 
-          <div className="relative mb-8 h-96 w-full overflow-hidden rounded-lg shadow-lg">
+          <div className="relative mb-8 h-60 w-full overflow-hidden rounded-lg shadow-lg md:h-96">
             <Image
               src={blog.image}
               alt={blog.title}
