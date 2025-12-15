@@ -6,9 +6,9 @@ import { ArrowRight } from 'lucide-react';
 import { HeroCarousel } from '@/components/home/hero-carousel';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { getFeaturedProducts } from '@/lib/firebase/firestore';
+import { getFeaturedProducts, getFeaturedBlogs } from '@/lib/firebase/firestore';
 import type { Product } from '@/lib/products';
-import { getFeaturedBlogs, type Blog } from '@/lib/blogs';
+import type { Blog } from '@/lib/blogs';
 import { useEffect, useRef, useState } from 'react';
 import { Pagination } from '@/components/ui/pagination';
 
@@ -28,9 +28,12 @@ export default function Home() {
       const products = await getFeaturedProducts();
       setFeaturedProducts(products);
     }
+    async function fetchBlogs() {
+      const blogs = await getFeaturedBlogs();
+      setFeaturedBlogs(blogs);
+    }
     fetchProducts();
-    const blogs = getFeaturedBlogs();
-    setFeaturedBlogs(blogs);
+    fetchBlogs();
   }, []);
 
   const handleProductPageChange = (pageNumber: number) => {

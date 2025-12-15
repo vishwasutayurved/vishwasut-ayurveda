@@ -1,9 +1,9 @@
-import { getBlogBySlug } from '@/lib/blogs';
+import { getBlogBySlug } from '@/lib/firebase/firestore';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 
-// export const dynamic = "force-dynamic";
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const blog = await getBlogBySlug((await params).slug);
@@ -26,22 +26,24 @@ export default async function BlogPage({ params }: { params: { slug: string } })
   return (
     <div className="bg-background py-16 sm:py-24">
       <div className="container mx-auto px-4">
-        <div className="mx-auto max-w-3xl">
-          <div className="relative mb-8 h-80 w-full">
+        <article className="prose prose-lg mx-auto max-w-4xl dark:prose-invert">
+          <div className="mb-8 text-center">
+            <h1 className="font-headline text-4xl font-bold text-primary md:text-5xl">{blog.title}</h1>
+            <p className="mt-4 text-lg text-foreground/80">{blog.description}</p>
+          </div>
+
+          <div className="relative mb-8 h-96 w-full overflow-hidden rounded-lg shadow-lg">
             <Image
               src={blog.image}
               alt={blog.title}
               data-ai-hint={blog.hint}
               fill
-              className="rounded-lg object-cover"
+              className="object-cover"
             />
           </div>
-          <h1 className="font-headline text-4xl font-bold text-primary md:text-5xl">{blog.title}</h1>
-          <div
-            className="prose prose-lg mt-8 max-w-none text-foreground/80 prose-headings:text-primary prose-a:text-primary prose-strong:text-primary"
-            dangerouslySetInnerHTML={{ __html: blog.content }}
-          />
-        </div>
+
+          <div dangerouslySetInnerHTML={{ __html: blog.content }} />
+        </article>
       </div>
     </div>
   );
