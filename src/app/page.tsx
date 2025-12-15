@@ -153,7 +153,7 @@ export default function Home() {
         <section ref={blogsSectionRef} className="py-8 sm:py-12">
           <div className="container mx-auto px-4">
             <div className="mx-auto mb-12 max-w-2xl text-center">
-              <h3 className="font-headline text-3xl font-bold md:text-4xl">From Our Blog</h3>
+              <h3 className="font-headline text-3xl font-bold md:text-4xl">From Our Blogs</h3>
               <p className="mt-4 text-foreground/70">
                 Insights and knowledge from the world of Ayurveda.
               </p>

@@ -13,7 +13,7 @@ const blogs: Blog[] = await getBlogs();
     <div className="bg-background py-16 sm:py-24">
       <div className="container mx-auto px-4">
         <div className="mx-auto mb-12 max-w-2xl text-center">
-          <h1 className="font-headline text-4xl font-bold text-primary md:text-5xl">Our Blog</h1>
+          <h1 className="font-headline text-4xl font-bold text-primary md:text-5xl">Our Blogs</h1>
           <p className="mt-4 text-lg text-foreground/80">
             Insights, articles, and news from the world of Ayurveda.
           </p>
