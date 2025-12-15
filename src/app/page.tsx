@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { getFeaturedProducts } from '@/lib/firebase/firestore';
 import type { Product } from '@/lib/products';
-import { getBlogs, type Blog } from '@/lib/blogs';
+import { getFeaturedBlogs, type Blog } from '@/lib/blogs';
 import { useEffect, useRef, useState } from 'react';
 import { Pagination } from '@/components/ui/pagination';
 
@@ -29,7 +29,7 @@ export default function Home() {
       setFeaturedProducts(products);
     }
     fetchProducts();
-    const blogs = getBlogs();
+    const blogs = getFeaturedBlogs();
     setFeaturedBlogs(blogs);
   }, []);
 
@@ -75,7 +75,7 @@ export default function Home() {
         <HeroCarousel />
       </section>
 
-      <section className="container mx-auto px-4 py-16 sm:py-24">
+      <section className="container mx-auto px-4 py-8 sm:py-12">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="font-headline text-4xl font-bold text-primary md:text-5xl">
             Embrace Balance, Embrace Life
@@ -87,7 +87,7 @@ export default function Home() {
       </section>
 
       {featuredProducts.length > 0 && (
-        <section ref={productsSectionRef} className="bg-background py-16 sm:py-24">
+        <section ref={productsSectionRef} className="bg-background py-8 sm:py-12">
           <div className="container mx-auto px-4">
             <div className="mx-auto mb-12 max-w-2xl text-center">
               <h3 className="font-headline text-3xl font-bold md:text-4xl">Featured Products</h3>
@@ -147,7 +147,7 @@ export default function Home() {
       )}
 
       {featuredBlogs.length > 0 && (
-        <section ref={blogsSectionRef} className="py-16 sm:py-24">
+        <section ref={blogsSectionRef} className="py-8 sm:py-12">
           <div className="container mx-auto px-4">
             <div className="mx-auto mb-12 max-w-2xl text-center">
               <h3 className="font-headline text-3xl font-bold md:text-4xl">From Our Blog</h3>
@@ -205,7 +205,7 @@ export default function Home() {
         </section>
       )}
 
-      <section className="py-16 sm:py-24">
+      <section className="py-8 sm:py-12">
         <div className="container mx-auto px-4">
           <div className="mx-auto mb-12 max-w-2xl text-center">
             <h3 className="font-headline text-3xl font-bold md:text-4xl">Our Instagram</h3>
