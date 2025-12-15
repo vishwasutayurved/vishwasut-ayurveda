@@ -46,19 +46,6 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,700;1,7..72,400&display=swap" rel="stylesheet" />
-        <meta name="96bc55d1ba4378cc14437838dec51adcd47df1b7" content="96bc55d1ba4378cc14437838dec51adcd47df1b7" />
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-DNEELWN2GZ"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-DNEELWN2GZ');
-          `}
-        </Script>
       </head>
       <body>
         <ThemeProvider
