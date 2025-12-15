@@ -45,8 +45,8 @@ export default function ContactPage() {
                     <Phone className="mr-4 mt-1 h-6 w-6 flex-shrink-0 text-primary" />
                     <div>
                       <h3 className="font-semibold">Phone Number</h3>
-                      <p className="text-foreground/70">+91 9270220033</p>
-                      <p className="text-foreground/70">+91 9975797624</p>
+                      <p className="text-foreground/70">+919270220033</p>
+                      <p className="text-foreground/70">+919975797624</p>
                     </div>
                   </div>
                   <div className="flex items-start">

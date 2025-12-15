@@ -19,32 +19,35 @@ export function Footer() {
             <h3 className="font-headline text-lg font-semibold">Quick Links</h3>
             <ul className="mt-4 space-y-2">
               <li><NavLink href="/about" className="text-foreground/70 hover:text-primary">About Us</NavLink></li>
-              <li><NavLink href="/therapies" className="text-foreground/70 hover:text-primary">Therapies</NavLink></li>
+              <li><NavLink href="/blogs" className="text-foreground/70 hover:text-primary">Blogs</NavLink></li>
               <li><NavLink href="/products" className="text-foreground/70 hover:text-primary">Products</NavLink></li>
               <li><NavLink href="/contact" className="text-foreground/70 hover:text-primary">Contact</NavLink></li>
             </ul>
           </div>
-          <div>
+          {/* <div>
             <h3 className="font-headline text-lg font-semibold">Legal</h3>
             <ul className="mt-4 space-y-2">
               <li><NavLink href="#" className="text-foreground/70 hover:text-primary">Privacy Policy</NavLink></li>
               <li><NavLink href="#" className="text-foreground/70 hover:text-primary">Terms of Service</NavLink></li>
             </ul>
-          </div>
+          </div> */}
           <div>
             <h3 className="font-headline text-lg font-semibold">Contact Us</h3>
             <ul className="mt-4 space-y-3">
               <li className="flex items-start">
                 <MapPin className="mr-3 mt-1 h-5 w-5 flex-shrink-0 text-primary" />
-                <span className="text-foreground/70">123 Wellness Lane, Ayurveda City, 45678</span>
+                <span className="text-foreground/70">Plot no 11 A, Hudkeshwar Rd, opposite Domino's Nasare Sabaguha, Dubey Nagar, Chandrakiran Nagar, Nagpur, Maharashtra 440034</span>
               </li>
-              <li className="flex items-center">
-                <Phone className="mr-3 h-5 w-5 text-primary" />
-                <a href="tel:+1234567890" className="text-foreground/70 hover:text-primary">(123) 456-7890</a>
+              <li className="flex items-start">
+                <Phone className="mr-3 mt-1 h-5 w-5 flex-shrink-0 text-primary" />
+                <div className="flex flex-col">
+                  <a href="tel:+919270220033" className="text-foreground/70 hover:text-primary">+919270220033</a>
+                  <a href="tel:+919975797624" className="text-foreground/70 hover:text-primary">+919975797624</a>
+                </div>
               </li>
               <li className="flex items-center">
                 <Mail className="mr-3 h-5 w-5 text-primary" />
-                <a href="mailto:info@dahakeayurveda.com" className="text-foreground/70 hover:text-primary">info@dahakeayurveda.com</a>
+                <a href="mailto:vishwasutayurved@gmail.com" className="text-foreground/70 hover:text-primary">vishwasutayurved@gmail.com</a>
               </li>
             </ul>
           </div>
