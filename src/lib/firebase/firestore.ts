@@ -65,10 +65,7 @@ export async function getBlogs(): Promise<Blog[]> {
 }
 
 // Function to get a single blog by its slug
-export const getBlogBySlug = cache(async (slug: string): Promise<Blog | null> => {
-    if (!slug) {
-        return null;
-    }
+export const getBlogBySlug = cache(async (slug: string): Promise<Blog> => {
     try {
         const docRef = doc(db, 'blogs', slug);
         const docSnap = await getDoc(docRef);
@@ -76,11 +73,11 @@ export const getBlogBySlug = cache(async (slug: string): Promise<Blog | null> =>
             return { slug: docSnap.id, ...docSnap.data() } as Blog;
         } else {
             console.log("No such document!");
-            return null;
+            return {} as Blog;;
         }
     } catch (error) {
         console.error("Error fetching blog by slug:", error);
-        return null;
+        return {} as Blog;
     }
 });
 
