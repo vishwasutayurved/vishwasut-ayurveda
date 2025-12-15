@@ -18,9 +18,10 @@ export function Footer() {
           <div>
             <h3 className="font-headline text-lg font-semibold">Quick Links</h3>
             <ul className="mt-4 space-y-2">
-              <li><NavLink href="/about" className="text-foreground/70 hover:text-primary">About Us</NavLink></li>
+              <li><NavLink href="/" className="text-foreground/70 hover:text-primary">Home</NavLink></li>
               <li><NavLink href="/blogs" className="text-foreground/70 hover:text-primary">Blogs</NavLink></li>
               <li><NavLink href="/products" className="text-foreground/70 hover:text-primary">Products</NavLink></li>
+              <li><NavLink href="/about" className="text-foreground/70 hover:text-primary">About Us</NavLink></li>
               <li><NavLink href="/contact" className="text-foreground/70 hover:text-primary">Contact</NavLink></li>
             </ul>
           </div>

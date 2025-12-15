@@ -28,7 +28,7 @@ export default async function BlogPage({ params }: { params: { slug: string } })
       <div className="container mx-auto px-4">
         <article className="prose prose-lg mx-auto max-w-4xl dark:prose-invert">
           <div className="mb-8 text-center">
-            <h1 className="font-headline text-4xl font-bold text-primary md:text-5xl">{blog.title}</h1>
+            <h1 className="font-headline text-3xl font-bold text-primary md:text-5xl">{blog.title}</h1>
             <p className="mt-4 text-lg text-foreground/80">{blog.description}</p>
           </div>
 
