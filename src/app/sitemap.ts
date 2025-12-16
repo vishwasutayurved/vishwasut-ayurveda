@@ -1,17 +1,26 @@
 import type { MetadataRoute } from 'next';
-import { getProducts } from '@/lib/firebase/firestore';
+import { getBlogs, getProducts } from '@/lib/firebase/firestore';
 import type { Product } from '@/lib/products';
+import { Blog } from '@/lib/blogs';
 
 export const dynamic = "force-dynamic";
 const appUrl: string = "https://vishvasutayurveda.vercel.app";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const products: Product[] = await getProducts();
+    const blogs: Blog[] = await getBlogs();
 
     const productEntries: MetadataRoute.Sitemap = products.map((product) => ({
         url: `${appUrl}/products/${product.id}`,
         lastModified: new Date(),
         changeFrequency: 'weekly',
+        priority: 0.8,
+    }));
+
+    const blogEntries: MetadataRoute.Sitemap = blogs.map((blog) => ({
+        url: `${appUrl}/blogs/${blog.slug}`,
+        lastModified: new Date(),
+        changeFrequency: 'monthly',
         priority: 0.8,
     }));
 
@@ -47,5 +56,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             priority: 0.7,
         },
         ...productEntries,
+        ...blogEntries,
     ];
 }

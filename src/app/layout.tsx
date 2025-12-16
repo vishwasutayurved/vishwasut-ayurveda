@@ -32,6 +32,10 @@ export const metadata: Metadata = {
   other: {
     "google-site-verification": "ROozPfb9haaZrO0LOB5uwb80ukV-yMeDxS-X24quGb8"
   },
+  robots: {
+    index: false,
+    follow: false,
+  }
 };
 export const dynamic = "force-dynamic";
 
