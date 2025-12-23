@@ -42,7 +42,7 @@ export default async function BlogPage({ params }: { params: { slug: string } })
             />
           </div>
 
-          <div dangerouslySetInnerHTML={{ __html: blog.content }} />
+          <div dangerouslySetInnerHTML={{ __html: blog.htmlBlogDetails }} />
         </article>
       </div>
     </div>

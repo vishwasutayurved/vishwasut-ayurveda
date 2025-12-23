@@ -59,7 +59,7 @@ export default async function ProductDetailPage({ params }: { params: { id: stri
           <div className="flex flex-col justify-center">
             <h1 className="font-headline text-3xl font-bold text-primary">{product.name}</h1>
             <p className="mt-4 text-xl font-semibold text-foreground">₹ {product.price}</p>
-            <p className="mt-6 text-base text-foreground/70">{product.details}</p>
+            <div className="mt-6 text-base text-foreground/70" dangerouslySetInnerHTML={{ __html: product.htmlProductDetails }} />
 
             <div className="mt-8">
               <Button size="lg" asChild className="w-full sm:w-auto">

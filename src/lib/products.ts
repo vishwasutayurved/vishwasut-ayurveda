@@ -7,6 +7,7 @@ export type Product = {
     hint: string;
     description: string;
     details: string;
+    htmlProductDetails: string;
     ingredients: string[];
     usage: string;
     addToCartUrl: string;

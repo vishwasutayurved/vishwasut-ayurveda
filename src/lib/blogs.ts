@@ -5,5 +5,6 @@ export interface Blog {
   image: string;
   hint: string;
   content: string;
+  htmlBlogDetails: string;
   isFeatured: boolean;
 }
