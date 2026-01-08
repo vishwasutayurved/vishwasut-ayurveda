@@ -79,7 +79,7 @@ export default async function ProductDetailPage({ params }: { params: { id: stri
                 <h3 className="font-headline text-lg font-bold">Usage</h3>
                 <p className="mt-2 text-sm text-foreground/70">{product.usage}</p>
               </div>
-              {product.dosageList && (
+              {(product.dosageList && product.dosageList.length > 0) && (
                 <div>
                   <h3 className="font-headline text-lg font-bold">Dosage</h3>
                   <Card className="mt-2">
