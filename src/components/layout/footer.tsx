@@ -23,6 +23,8 @@ export function Footer() {
               <li><NavLink href="/products" className="text-foreground/70 hover:text-primary">Products</NavLink></li>
               <li><NavLink href="/about" className="text-foreground/70 hover:text-primary">About Us</NavLink></li>
               <li><NavLink href="/contact" className="text-foreground/70 hover:text-primary">Contact</NavLink></li>
+              <li><NavLink href="/treatments/panchkarma" className="text-foreground/70 hover:text-primary">Panchkarma</NavLink></li>
+              <li><NavLink href="/treatments/packages" className="text-foreground/70 hover:text-primary">Packages</NavLink></li>
             </ul>
           </div>
           {/* <div>
