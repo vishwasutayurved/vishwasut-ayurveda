@@ -80,10 +80,10 @@ export default function Home() {
 
       <section className="container mx-auto px-4 py-8 sm:py-12">
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="font-headline text-4xl font-bold text-primary md:text-5xl" style={{ color: "green" }}>
+          <h2 className="font-headline text-4xl font-bold text-primary md:text-5xl">
             Embrace Balance, Embrace Life
           </h2>
-          <p className="mt-6 text-lg leading-relaxed text-foreground/80">
+          <p className="mt-6 text-md leading-relaxed text-foreground/80">
             At Shri Vishvasuta Ayurved & Panchkarma Clinic, we believe in the timeless wisdom of Ayurveda to restore harmony and vitality. Our holistic approach addresses the root cause of imbalance, guiding you on a transformative journey to optimal health and well-being.
           </p>
         </div>
@@ -91,14 +91,14 @@ export default function Home() {
 
       <section className="container mx-auto px-4 py-8 sm:py-12">
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="font-headline text-4xl font-bold text-primary md:text-5xl" style={{ color: "green" }}>
+          <h2 className="font-headline text-4xl font-bold text-primary md:text-5xl">
             Book an appointment
           </h2>
-          <div className="mt-6 text-lg leading-relaxed text-foreground/80">
+          <div className="mt-6 text-md leading-relaxed text-foreground/80">
             Heal from the root with the Ayurveda, One-to-One personalized consultation.
             <div className="mt-8">
               <Button size="lg" asChild className="w-full sm:w-auto">
-                <NavLink href={`https://wa.me/+919270220033?text=I'm%20interested%20in%20your%20car%20for%20sale`}>
+                <NavLink href={`https://wa.me/+919270220033?text=${encodeURIComponent("My name is Siddhesh Gathibandhe")}`}>
                   {/* <ShoppingCart className="mr-2 h-5 w-5" /> */}
                   Book an appointment Now
                 </NavLink>
