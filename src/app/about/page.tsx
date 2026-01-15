@@ -29,8 +29,8 @@ const practitioners = [
     title: 'Ayurveda and Panchakarma Consultant',
     image: '/Nishant Dahake.png',
     fallback: 'ND',
-    bio: `With over ${calculateYearDifferenceDecimal("2022-06-17")} years of experience,
-    Dr. Nishant Dahake, Ayurvedacharya &amp; Panchkarma Consultant, helping people overcome chronic pain, lifestyle disorders, and long-standing health issues through authentic, result-oriented Ayurvedic treatment.
+    bio: `With over ${calculateYearDifferenceDecimal("2022-06-17")} years of experience of
+     Ayurvedacharya &amp; Panchkarma Consultant, helping people overcome chronic pain, lifestyle disorders, and long-standing health issues through authentic, result-oriented Ayurvedic treatment.
     <br><br>At my clinic — Shri Vishvasut Ayurved &amp; Panchkarma Clinic, Nagpur — I focus on transforming patient outcomes with:<br>✨ Panchkarma therapies tailored to root-cause diagnosis<br>✨ Ayurvedic solutions for back pain, joint disorders, skin issues, acidity, stress &amp; hormonal imbalance<br>✨ Long-term wellness planning with simple, practical guidance
     `,
     hint: 'doctor portrait'
@@ -45,12 +45,12 @@ export default function AboutPage() {
           <h1 className="font-headline text-4xl font-bold text-primary md:text-5xl">
             Our Journey in Healing
           </h1>
-          <p className="mt-6 text-lg leading-relaxed text-foreground/80">
+          <p className="mt-6 leading-relaxed text-foreground/80">
             Shri Vishvasuta Ayurved & Panchkarma Clinic was founded with a simple yet profound mission: to make the holistic wisdom of Ayurveda accessible to all, fostering a community of health, balance, and harmony.
           </p>
         </div>
 
-        <Card className="mt-16 overflow-hidden">
+        <Card className="mt-16 overflow-hidden animate-content">
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="relative h-80 w-full md:h-full">
               <Image
@@ -73,7 +73,7 @@ export default function AboutPage() {
           </div>
         </Card>
 
-        <section className="mt-16 sm:mt-24">
+        <section className="mt-16 sm:mt-24 animate-content">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="font-headline text-3xl font-bold text-primary md:text-4xl">
               Meet Our Practitioners
@@ -92,7 +92,7 @@ export default function AboutPage() {
                   </Avatar>
                   <h3 className="mt-6 font-headline text-2xl font-bold">{practitioner.name}</h3>
                   <p className="mt-1 text-primary">{practitioner.title}</p>
-                  <div dangerouslySetInnerHTML={{ __html: practitioner.bio }} />
+                  <div className='text-left' dangerouslySetInnerHTML={{ __html: practitioner.bio }} />
                 </CardContent>
               </Card>
             ))}
