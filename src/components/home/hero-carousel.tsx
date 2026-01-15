@@ -28,7 +28,7 @@ const slides = [
     hint: "ayurvedic massage"
   },
   {
-    src: "https://www.shutterstock.com/image-photo/ayurvedic-herbs-collage-on-wooden-600nw-2518490771.jpg",
+    src: "https://lh3.googleusercontent.com/pw/AP1GczOIRqhs8hvqqSmK-fhG4omOwMuD5u9a_GDStp5bluk92Y3NznJ6aLSBghm5ZI2ASXZA_rC_7Z-VTuWILi3K-mW88um_bWp0bphuDnKoAp252VcJD1xWu1rFIlEmePlkWjvnmBtu9EPcbq961jR9z43D=w1024-h683-s-no-gm?authuser=0",
     alt: "Woman meditating in a serene setting",
     title: "Find Your Inner Harmony",
     description: "Achieve mental peace and clarity through holistic practices.",

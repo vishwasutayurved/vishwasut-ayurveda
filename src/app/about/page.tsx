@@ -8,13 +8,31 @@ export const metadata: Metadata = {
   description: 'Learn about the history, philosophy, and expert practitioners at Shri Vishvasuta Ayurved & Panchkarma Clinic.',
 };
 
+//"YYYY-MM-DD" format of date as input
+function calculateYearDifferenceDecimal(educationDate: string | Date): number {
+  const startDate = new Date(educationDate);
+  const currentDate = new Date();
+
+  if (isNaN(startDate.getTime())) {
+    throw new Error("Invalid education date");
+  }
+
+  const diffInMs: number = currentDate.getTime() - startDate.getTime();
+  const diffInDays: number = diffInMs / (1000 * 60 * 60 * 24);
+
+  return Number((diffInDays / 365.25).toFixed(1));
+}
+
 const practitioners = [
   {
     name: 'Dr. Nishant Dahake',
-    title: 'Lead Ayurvedic Doctor (B.A.M.S)',
+    title: 'Ayurveda and Panchakarma Consultant',
     image: '/Nishant Dahake.png',
     fallback: 'ND',
-    bio: 'With over 3+ years of experience, Dr. Nishant is dedicated to reviving ancient Ayurvedic traditions to address modern health challenges. He specializes in Panchakarma and women\'s health.',
+    bio: `With over ${calculateYearDifferenceDecimal("2022-06-17")} years of experience,
+    Dr. Nishant Dahake, Ayurvedacharya &amp; Panchkarma Consultant, helping people overcome chronic pain, lifestyle disorders, and long-standing health issues through authentic, result-oriented Ayurvedic treatment.
+    <br><br>At my clinic — Shri Vishvasut Ayurved &amp; Panchkarma Clinic, Nagpur — I focus on transforming patient outcomes with:<br>✨ Panchkarma therapies tailored to root-cause diagnosis<br>✨ Ayurvedic solutions for back pain, joint disorders, skin issues, acidity, stress &amp; hormonal imbalance<br>✨ Long-term wellness planning with simple, practical guidance
+    `,
     hint: 'doctor portrait'
   },
 ];
@@ -54,7 +72,7 @@ export default function AboutPage() {
             </div>
           </div>
         </Card>
-        
+
         <section className="mt-16 sm:mt-24">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="font-headline text-3xl font-bold text-primary md:text-4xl">
@@ -74,7 +92,7 @@ export default function AboutPage() {
                   </Avatar>
                   <h3 className="mt-6 font-headline text-2xl font-bold">{practitioner.name}</h3>
                   <p className="mt-1 text-primary">{practitioner.title}</p>
-                  <p className="mt-4 text-foreground/70">{practitioner.bio}</p>
+                  <div dangerouslySetInnerHTML={{ __html: practitioner.bio }} />
                 </CardContent>
               </Card>
             ))}
