@@ -58,7 +58,11 @@ export function HeroCarousel() {
 
     const interval = setInterval(() => {
       if (!isHovering && api) {
-        api.scrollNext();
+        if (api.canScrollNext()) {
+          api.scrollNext();
+        } else {
+          api.scrollTo(0);
+        }
       }
     }, 3000);
 
@@ -106,9 +110,8 @@ export function HeroCarousel() {
             <button
               key={index}
               onClick={() => api?.scrollTo(index)}
-              className={`h-2 w-2 rounded-full transition-all duration-300 ${
-                index === current ? 'w-6 bg-white' : 'bg-white/50'
-              }`}
+              className={`h-2 w-2 rounded-full transition-all duration-300 ${index === current ? 'w-6 bg-white' : 'bg-white/50'
+                }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
