@@ -83,18 +83,18 @@ export default function Home() {
           <h2 className="font-headline text-4xl font-bold text-primary md:text-5xl">
             Embrace Balance, Embrace Life
           </h2>
-          <p className="mt-6 text-lg leading-relaxed text-foreground/80">
+          <p className="mt-6 text-base md:text-lg leading-relaxed text-foreground/80">
             At Shri Vishvasuta Ayurved & Panchkarma Clinic, we believe in the timeless wisdom of Ayurveda to restore harmony and vitality. Our holistic approach addresses the root cause of imbalance, guiding you on a transformative journey to optimal health and well-being.
           </p>
         </div>
       </section>
 
       <section className="container mx-auto px-4 py-8 sm:py-12 animate-content">
-        <div className="mx-auto max-w-4xl text-center">
+        <div className="mx-auto max-w-10xl text-center">
           <h2 className="font-headline text-4xl font-bold text-primary md:text-5xl">
             Book an appointment
           </h2>
-          <div className="mt-6 text-lg leading-relaxed text-foreground/80">
+          <div className="mt-6 text-base md:text-lg leading-relaxed text-foreground/80">
             Heal from the root with the Ayurveda, One-to-One personalized consultation.
             <div className="mt-8">
               <Button size="lg" asChild className="w-full sm:w-auto">
@@ -238,6 +238,27 @@ export default function Home() {
           <div className="flex justify-center">
             <iframe
               src="https://www.instagram.com/vd_nishant_dahake/embed"
+              width="100%"
+              height="480"
+              style={{ border: 'none', overflow: 'hidden' }}
+              title="Instagram Post"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
+
+      <section className="py-8 sm:py-12 animate-content">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto mb-12 max-w-2xl text-center">
+            <h3 className="font-headline text-3xl font-bold md:text-4xl">Testimonial</h3>
+            <p className="mt-4 text-foreground/70">
+              Please hear out from our all happy customer's.
+            </p>
+          </div>
+          <div className="flex justify-center">
+            <iframe
+              src="https://widgets.sociablekit.com/google-reviews/iframe/25644069"
               width="100%"
               height="480"
               style={{ border: 'none', overflow: 'hidden' }}
