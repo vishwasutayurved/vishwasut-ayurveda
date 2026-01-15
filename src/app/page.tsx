@@ -230,27 +230,6 @@ export default function Home() {
       <section className="py-8 sm:py-12 animate-content">
         <div className="container mx-auto px-4">
           <div className="mx-auto mb-12 max-w-2xl text-center">
-            <h3 className="font-headline text-3xl font-bold md:text-4xl">Our Instagram</h3>
-            <p className="mt-4 text-foreground/70">
-              Follow us on Instagram for the latest updates and wellness tips.
-            </p>
-          </div>
-          <div className="flex justify-center">
-            <iframe
-              src="https://www.instagram.com/vd_nishant_dahake/embed"
-              width="100%"
-              height="480"
-              style={{ border: 'none', overflow: 'hidden' }}
-              title="Instagram Post"
-            ></iframe>
-          </div>
-        </div>
-      </section>
-
-
-      <section className="py-8 sm:py-12 animate-content">
-        <div className="container mx-auto px-4">
-          <div className="mx-auto mb-12 max-w-2xl text-center">
             <h3 className="font-headline text-3xl font-bold md:text-4xl">Testimonial</h3>
             <p className="mt-4 text-foreground/70">
               Please hear out from our all happy customer's.
@@ -259,6 +238,27 @@ export default function Home() {
           <div className="flex justify-center">
             <iframe
               src="https://widgets.sociablekit.com/google-reviews/iframe/25644069"
+              width="100%"
+              height="480"
+              style={{ border: 'none', overflow: 'hidden' }}
+              title="Instagram Post"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+      
+      
+      <section className="py-8 sm:py-12 animate-content">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto mb-12 max-w-2xl text-center">
+            <h3 className="font-headline text-3xl font-bold md:text-4xl">Our Instagram</h3>
+            <p className="mt-4 text-foreground/70">
+              Follow us on Instagram for the latest updates and wellness tips.
+            </p>
+          </div>
+          <div className="flex justify-center">
+            <iframe
+              src="https://www.instagram.com/vd_nishant_dahake/embed"
               width="100%"
               height="480"
               style={{ border: 'none', overflow: 'hidden' }}
