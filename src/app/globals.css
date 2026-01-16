@@ -118,3 +118,11 @@
   animation-timeline: view();
   animation-range: entry 0% cover 40%;
 }
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.ring-gray {
+  --tw-ring-color: hsl(222deg 17.95% 76.2%);
+}
