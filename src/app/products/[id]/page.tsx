@@ -48,7 +48,7 @@ export default async function ProductDetailPage({ params }: { params: { id: stri
           <div className="relative aspect-square w-full">
             <Card className="overflow-hidden rounded-lg shadow-lg">
               <Image
-                src={product.image}
+                src={product.images[0]}
                 alt={product.name}
                 data-ai-hint={product.hint}
                 fill

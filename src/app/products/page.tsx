@@ -34,7 +34,7 @@ export default async function ProductsPage() {
               <NavLink href={`/products/${product.id}`} className="flex-shrink-0">
                 <div className="relative h-56 w-full">
                   <Image
-                    src={product.image}
+                    src={product.images[0]}
                     alt={product.name}
                     data-ai-hint={product.hint}
                     fill
