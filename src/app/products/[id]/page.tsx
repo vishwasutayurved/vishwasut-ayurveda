@@ -73,11 +73,11 @@ export default async function ProductDetailPage({ params }: { params: { id: stri
             <div className="mt-10 space-y-6">
               <div>
                 <h3 className="font-headline text-lg font-bold">Ingredients</h3>
-                <p className="mt-2 text-sm text-foreground/70">{product.ingredients.join(', ')}</p>
+                <p className="mt-2 text-base text-foreground/70">{product.ingredients.join(', ')}</p>
               </div>
               <div>
                 <h3 className="font-headline text-lg font-bold">Usage</h3>
-                <p className="mt-2 text-sm text-foreground/70">{product.usage}</p>
+                <p className="mt-2 text-base text-foreground/70">{product.usage}</p>
               </div>
               {(product.dosageList && product.dosageList.length > 0) && (
                 <div>

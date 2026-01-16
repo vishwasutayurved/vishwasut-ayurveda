@@ -51,7 +51,7 @@ export default function PackagesPage() {
           </p>
         </div>
 
-        <section className="mt-16 sm:mt-24 animate-content">
+        <section className="mt-16 sm:mt-24 scale-up-content-animation">
           <div className="mt-12 grid grid-cols-1 gap-9 md:grid-cols-3">
             {practitioners.map((practitioner) => (
               <Card key={practitioner.name} className="p-6 text-center">

@@ -78,7 +78,7 @@ export default function Home() {
         <HeroCarousel />
       </section>
 
-      <section className="container mx-auto px-4 py-8 sm:py-12 animate-content">
+      <section className="container mx-auto px-4 py-8 sm:py-12 scale-up-content-animation">
         <div className="mx-auto max-w-10xl text-center">
           <h2 className="font-headline text-4xl font-bold text-primary md:text-5xl">
             Embrace Balance, Embrace Life
@@ -89,7 +89,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container mx-auto px-4 py-8 sm:py-12 animate-content">
+      <section className="container mx-auto px-4 py-8 sm:py-12 scale-up-content-animation">
         <div className="mx-auto max-w-10xl text-center">
           <h2 className="font-headline text-4xl font-bold text-primary md:text-5xl">
             Book an appointment
@@ -109,7 +109,7 @@ export default function Home() {
       </section>
 
       {featuredProducts.length > 0 && (
-        <section ref={productsSectionRef} className="bg-background py-8 sm:py-12 animate-content">
+        <section ref={productsSectionRef} className="bg-background py-8 sm:py-12 scale-up-content-animation">
           <div className="container mx-auto px-4">
             <div className="mx-auto mb-12 max-w-2xl text-center">
               <h3 className="font-headline text-3xl font-bold md:text-4xl">Featured Products</h3>
@@ -169,7 +169,7 @@ export default function Home() {
       )}
 
       {featuredBlogs.length > 0 && (
-        <section ref={blogsSectionRef} className="py-8 sm:py-12 animate-content">
+        <section ref={blogsSectionRef} className="py-8 sm:py-12 scale-up-content-animation">
           <div className="container mx-auto px-4">
             <div className="mx-auto mb-12 max-w-2xl text-center">
               <h3 className="font-headline text-3xl font-bold md:text-4xl">From Our Blogs</h3>
@@ -227,7 +227,7 @@ export default function Home() {
         </section>
       )}
 
-      <section className="py-8 sm:py-12 animate-content">
+      <section className="py-8 sm:py-12 scale-up-content-animation">
         <div className="container mx-auto px-4">
           <div className="mx-auto mb-12 max-w-2xl text-center">
             <h3 className="font-headline text-3xl font-bold md:text-4xl">Testimonial</h3>
@@ -248,7 +248,7 @@ export default function Home() {
       </section>
       
       
-      <section className="py-8 sm:py-12 animate-content">
+      <section className="py-8 sm:py-12 scale-up-content-animation">
         <div className="container mx-auto px-4">
           <div className="mx-auto mb-12 max-w-2xl text-center">
             <h3 className="font-headline text-3xl font-bold md:text-4xl">Our Instagram</h3>

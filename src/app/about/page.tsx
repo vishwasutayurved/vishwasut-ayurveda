@@ -50,7 +50,7 @@ export default function AboutPage() {
           </p>
         </div>
 
-        <Card className="mt-16 overflow-hidden animate-content">
+        <Card className="mt-16 overflow-hidden scale-up-content-animation">
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="relative h-80 w-full md:h-full">
               <Image
@@ -73,7 +73,7 @@ export default function AboutPage() {
           </div>
         </Card>
 
-        <section className="mt-16 sm:mt-24 animate-content">
+        <section className="mt-16 sm:mt-24 scale-up-content-animation">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="font-headline text-3xl font-bold text-primary md:text-4xl">
               Meet Our Practitioners
