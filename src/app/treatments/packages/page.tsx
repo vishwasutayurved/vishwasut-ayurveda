@@ -12,30 +12,6 @@ export const metadata: Metadata = {
   description: "Treatment packages.",
 };
 
-// const treatments = [
-//   {
-//     name: '1 Day DETOX',
-//     amount: '1399',
-//     image: 'https://lh3.googleusercontent.com/pw/AP1GczN5cJeFn4jwUWABllFlTqDeM9FX7IzHOiVFi3FsO0Y-AbXgldftz_VLbyg49UwrLorB_FRvBKrnJtMD16-8EOc5T-2Bxd4M4SJumYR9yNQjHOn8w0cT14Erx9YAlJaahPEbTDf-YfdpTWOWOrQfmpHn=w459-h347-s-no-gm?authuser=0',
-//     description: '1 Abhyangam (Body massage) ,+ 1 Swedanam (Steam Bath ).',
-//     hint: 'doctor portrait'
-//   },
-//   {
-//     name: 'Dr. Nishant Dahake 1',
-//     amount: '111111',
-//     image: 'https://lh3.googleusercontent.com/pw/AP1GczN5cJeFn4jwUWABllFlTqDeM9FX7IzHOiVFi3FsO0Y-AbXgldftz_VLbyg49UwrLorB_FRvBKrnJtMD16-8EOc5T-2Bxd4M4SJumYR9yNQjHOn8w0cT14Erx9YAlJaahPEbTDf-YfdpTWOWOrQfmpHn=w459-h347-s-no-gm?authuser=0',
-//     description: 'With over 3+ years of experience, Dr. Nishant is dedicated to reviving ancient Ayurvedic traditions to address modern health challenges. He specializes in Panchakarma and women\'s health.',
-//     hint: 'doctor portrait'
-//   },
-//   {
-//     name: 'Day 3 Detox',
-//     amount: '11111',
-//     image: 'https://lh3.googleusercontent.com/pw/AP1GczN5cJeFn4jwUWABllFlTqDeM9FX7IzHOiVFi3FsO0Y-AbXgldftz_VLbyg49UwrLorB_FRvBKrnJtMD16-8EOc5T-2Bxd4M4SJumYR9yNQjHOn8w0cT14Erx9YAlJaahPEbTDf-YfdpTWOWOrQfmpHn=w459-h347-s-no-gm?authuser=0',
-//     description: 'With over 3+ years of experience, Dr. Nishant is dedicated to reviving ancient Ayurvedic traditions to address modern health challenges. He specializes in Panchakarma and women\'s health.',
-//     hint: 'doctor portrait'
-//   }
-// ];
-
 export default async function PackagesPage() {
   const treatments = await getAllTreatments();
   return (
@@ -63,7 +39,7 @@ export default async function PackagesPage() {
                   <p className="mt-4 text-foreground/70">{treatment.description}</p>
                   <div className="mt-8">
                     <Button size="lg" asChild className="w-full sm:w-auto">
-                      <NavLink href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(treatment.whatsAppMessage)}`}>
+                      <NavLink href={`https://wa.me/${WHATSAPP_NUMBER}?text=${treatment.whatsAppMessage}`}>
                         Try Now
                       </NavLink>
                     </Button>
