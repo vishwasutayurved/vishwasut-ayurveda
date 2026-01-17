@@ -27,39 +27,6 @@ const images = [
 ];
 
 export function ImageGallery() {
-  const galleryRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const imageItem = entry.target as HTMLDivElement;
-            const index = parseInt(imageItem.dataset.index || '0', 10);
-            imageItem.classList.remove('opacity-0');
-            if (index % 2 === 0) {
-              imageItem.classList.add('scale-left-content-animation');
-            } else {
-              imageItem.classList.add('scale-right-content-animation');
-            }
-            observer.unobserve(imageItem);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    const imageElements = galleryRef.current?.querySelectorAll('.image-item');
-    if (imageElements) {
-      imageElements.forEach((el) => observer.observe(el));
-    }
-
-    return () => {
-      if (imageElements) {
-        imageElements.forEach((el) => observer.unobserve(el));
-      }
-    };
-  }, []);
 
   return (
     <section className="py-16 sm:py-24">
@@ -72,12 +39,13 @@ export function ImageGallery() {
             A glimpse into our serene and healing environment.
           </p>
         </div>
-        <div ref={galleryRef} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {images.map((image, index) => (
             <div
               key={index}
               data-index={index}
-              className="image-item opacity-0"
+              className={`${((index + 1) % 2 === 0 ?
+                "scale-left-content-animation" : "scale-right-content-animation")}`}
             >
               <div className="overflow-hidden rounded-lg shadow-lg">
                 <div className="relative aspect-video w-full">
@@ -94,6 +62,6 @@ export function ImageGallery() {
           ))}
         </div>
       </div>
-    </section>
+    </section >
   );
 }
