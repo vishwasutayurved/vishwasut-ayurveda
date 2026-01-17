@@ -30,7 +30,7 @@ const blogs: Blog[] = await getBlogs();
                       alt={blog.title}
                       data-ai-hint={blog.hint}
                       fill
-                      className="object-cover"
+                      className="object-cover transition-transform duration-500 hover:scale-110"
                     />
                   </div>
                 </NavLink>

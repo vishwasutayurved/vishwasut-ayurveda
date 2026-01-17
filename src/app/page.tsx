@@ -137,7 +137,7 @@ export default function Home() {
                         alt={product.name}
                         data-ai-hint={product.hint}
                         fill
-                        className="object-cover"
+                        className="object-cover transition-transform duration-500 hover:scale-110"
                       />
                     </div>
                   </NavLink>
@@ -197,7 +197,7 @@ export default function Home() {
                         alt={blog.title}
                         data-ai-hint={blog.hint}
                         fill
-                        className="object-cover"
+                        className="object-cover transition-transform duration-500 hover:scale-110"
                       />
                     </div>
                   </NavLink>

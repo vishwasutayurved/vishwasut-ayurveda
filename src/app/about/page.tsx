@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card, CardContent } from '@/components/ui/card';
+import { ImageGallery } from '@/components/about/image-gallery';
 
 export const metadata: Metadata = {
   title: 'About Us',
@@ -50,28 +50,7 @@ export default function AboutPage() {
           </p>
         </div>
 
-        <Card className="mt-16 overflow-hidden scale-up-content-animation scale-up-content-animation">
-          <div className="grid grid-cols-1 md:grid-cols-2">
-            <div className="relative h-80 w-full md:h-full">
-              <Image
-                src="https://placehold.co/800x600.png"
-                alt="Clinic Interior"
-                data-ai-hint="clinic interior"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="p-8 md:p-12">
-              <h2 className="font-headline text-3xl font-bold">Our Philosophy</h2>
-              <p className="mt-4 text-foreground/70">
-                We view health not as the absence of disease, but as a vibrant state of balance in body, mind, and spirit. Our philosophy is rooted in the core principles of Ayurveda, emphasizing personalized care, natural therapies, and preventative health. We believe in empowering our patients with the knowledge and tools to take an active role in their own healing journey.
-              </p>
-              <p className="mt-4 text-foreground/70">
-                Each treatment plan at Shri Vishvasuta Ayurved & Panchkarma Clinic is a bespoke creation, tailored to your unique constitution (Prakriti) and current imbalances (Vikriti). We blend ancient techniques with a modern understanding of health to ensure the most effective and gentle care.
-              </p>
-            </div>
-          </div>
-        </Card>
+        {/* <ImageGallery /> */}
 
         <section className="mt-16 sm:mt-24">
           <div className="mx-auto max-w-4xl text-center">
