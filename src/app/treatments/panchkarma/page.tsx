@@ -42,7 +42,7 @@ const therapies = [
 
 export default function PanchkarmaPage() {
   return (
-    <div className="bg-background py-24 sm:py-32">
+    <div className="bg-background py-12 sm:py-16">
       <div className="container mx-auto px-4">
         <article className="prose prose-lg mx-auto max-w-4xl dark:prose-invert">
           <div className="mb-12 text-center">
