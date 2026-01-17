@@ -5,6 +5,7 @@ import { getFirestore, collection, getDocs, doc, getDoc, query, where } from 'fi
 import { firebaseConfig } from './config';
 import type { Product } from '@/lib/products';
 import type { Blog } from '@/lib/blogs';
+import { Treatments } from '../treatments';
 
 // Initialize Firebase
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
@@ -12,6 +13,7 @@ const db = getFirestore(app);
 
 const productsCollection = collection(db, 'products');
 const blogsCollection = collection(db, 'blogs');
+const treatmentsCollection = collection(db, 'treatments');
 
 // Function to get all products
 export async function getProducts(): Promise<Product[]> {
@@ -92,6 +94,17 @@ export async function getFeaturedBlogs(): Promise<Blog[]> {
         return snapshot.docs.map(doc => ({ slug: doc.id, ...doc.data() } as Blog));
     } catch (error) {
         console.error("Error fetching featured blogs:", error);
+        return [];
+    }
+}
+
+// Function to get featured blogs
+export async function getAllTreatments(): Promise<Treatments[]> {
+    try {
+        const snapshot = await getDocs(treatmentsCollection);
+        return snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as Treatments));
+    } catch (error) {
+        console.error("Error fetching blogs:", error);
         return [];
     }
 }

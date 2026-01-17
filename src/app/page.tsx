@@ -11,6 +11,7 @@ import type { Product } from '@/lib/products';
 import type { Blog } from '@/lib/blogs';
 import { useEffect, useRef, useState } from 'react';
 import { Pagination } from '@/components/ui/pagination';
+import { WHATSAPP_APOINTMENT_MESSAGE, WHATSAPP_NUMBER } from '@/lib/constants';
 
 export default function Home() {
   const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
@@ -98,8 +99,7 @@ export default function Home() {
             Heal from the root with the Ayurveda, One-to-One personalized consultation.
             <div className="mt-8">
               <Button size="lg" asChild className="w-full sm:w-auto">
-                <NavLink href={`https://wa.me/+919270220033?text=${encodeURIComponent("My name is Siddhesh Gathibandhe")}`}>
-                  {/* <ShoppingCart className="mr-2 h-5 w-5" /> */}
+                <NavLink href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_APOINTMENT_MESSAGE)}`}>
                   Book an appointment Now
                 </NavLink>
               </Button>

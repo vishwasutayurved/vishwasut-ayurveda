@@ -31,7 +31,7 @@ const navItems = [
     subItems: [
       { href: "/treatments/panchkarma", label: "Panchkarma" },
       { href: "/treatments/packages", label: "Packages" },
-      { href: "/treatments/packages", label: "Diseases" },
+      { href: "/treatments/diseases", label: "Diseases" },
     ],
   },
   { href: "/about", label: "About Us" },
