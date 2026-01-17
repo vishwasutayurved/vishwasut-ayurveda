@@ -12,6 +12,7 @@ import type { Blog } from '@/lib/blogs';
 import { useEffect, useRef, useState } from 'react';
 import { Pagination } from '@/components/ui/pagination';
 import { WHATSAPP_APPOINTMENT_MESSAGE, WHATSAPP_NUMBER } from '@/lib/constants';
+import { Faq } from "@/components/home/faq";
 
 export default function Home() {
   const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
@@ -276,6 +277,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Faq />
     </div>
   );
 }
