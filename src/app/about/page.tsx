@@ -50,9 +50,9 @@ export default function AboutPage() {
           </p>
         </div>
 
-        {/* <ImageGallery /> */}
+        <ImageGallery />
 
-        <section className="mt-4 sm:mt-18">
+        <section className="mt-16 sm:mt-24">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="font-headline text-3xl font-bold text-primary md:text-4xl">
               Meet Our Practitioners

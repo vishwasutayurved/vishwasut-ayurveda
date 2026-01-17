@@ -1,7 +1,4 @@
-'use client';
-
 import Image from 'next/image';
-import { useEffect, useRef } from 'react';
 
 const images = [
   {
@@ -29,39 +26,30 @@ const images = [
 export function ImageGallery() {
 
   return (
-    <section className="py-16 sm:py-24">
-      <div className="container mx-auto px-4">
-        <div className="mx-auto mb-12 max-w-2xl text-center">
-          <h2 className="font-headline text-3xl font-bold text-primary md:text-4xl">
-            Our Clinic Gallery
-          </h2>
-          <p className="mt-6 text-lg leading-relaxed text-foreground/80">
-            A glimpse into our serene and healing environment.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {images.map((image, index) => (
-            <div
-              key={index}
-              data-index={index}
-              className={`${((index + 1) % 2 === 0 ?
-                "scale-left-content-animation" : "scale-right-content-animation")}`}
-            >
-              <div className="overflow-hidden rounded-lg shadow-lg">
-                <div className="relative aspect-video w-full">
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    data-ai-hint={image.hint}
-                    fill
-                    className="object-cover transition-transform duration-500 hover:scale-110"
-                  />
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+
+    <section className="mt-4 sm:mt-18">
+      <div className="mx-auto max-w-4xl text-center">
+        <h2 className="font-headline text-3xl font-bold text-primary md:text-4xl">
+          Our Clinic Gallery
+        </h2>
+        <p className="mt-6 text-lg leading-relaxed text-foreground/80">
+          A glimpse into our serene and healing environment.
+        </p>
       </div>
-    </section >
+      <div className="mt-12 grid grid-cols-1 gap-10 md:grid-cols-2">
+        {images.map((practitioner, index) => (
+          <div key={index} className="relative aspect-video w-full">
+            <Image
+              src={practitioner.src}
+              alt={practitioner.alt}
+              data-ai-hint={practitioner.hint}
+              fill
+              className={`object-cover rounded-lg 
+                ${(index + 1) % 2 === 0 ? "scale-left-content-animation" : "scale-right-content-animation"}`}
+            />
+          </div>
+        ))}
+      </div>
+    </section>
   );
 }
