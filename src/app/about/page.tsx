@@ -50,7 +50,7 @@ export default function AboutPage() {
           </p>
         </div>
 
-        <ImageGallery />
+        {/* <ImageGallery /> */}
 
         <section className="mt-4 sm:mt-18">
           <div className="mx-auto max-w-4xl text-center">
