@@ -67,7 +67,7 @@ export default function RootLayout({
           </div>
           <Toaster />
         </ThemeProvider>
-        <Script
+        <Script async
           id="tawk-to-script"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
