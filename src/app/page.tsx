@@ -11,7 +11,7 @@ import type { Product } from '@/lib/products';
 import type { Blog } from '@/lib/blogs';
 import { useEffect, useRef, useState } from 'react';
 import { Pagination } from '@/components/ui/pagination';
-import { WHATSAPP_APOINTMENT_MESSAGE, WHATSAPP_NUMBER } from '@/lib/constants';
+import { WHATSAPP_APPOINTMENT_MESSAGE, WHATSAPP_NUMBER } from '@/lib/constants';
 
 export default function Home() {
   const [featuredProducts, setFeaturedProducts] = useState<Product[]>([]);
@@ -86,11 +86,20 @@ export default function Home() {
           </h2>
           <p className="mt-6 text-base md:text-lg leading-relaxed text-foreground/80">
             At Shri Vishvasuta Ayurved & Panchkarma Clinic, we believe in the timeless wisdom of Ayurveda to restore harmony and vitality. Our holistic approach addresses the root cause of imbalance, guiding you on a transformative journey to optimal health and well-being.
+            <br />
+            Heal from the root with the Ayurveda, One-to-One personalized consultation.
           </p>
+          <div className="mt-8">
+            <Button size="lg" asChild className="w-full sm:w-auto" style={{ borderRadius: "100px"}}>
+              <NavLink href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_APPOINTMENT_MESSAGE)}`}>
+                Book an appointment Now
+              </NavLink>
+            </Button>
+          </div>
         </div>
       </section>
 
-      <section className="container mx-auto px-4 py-8 sm:py-12 scale-up-content-animation">
+      {/* <section className="container mx-auto px-4 py-8 sm:py-12 scale-up-content-animation">
         <div className="mx-auto max-w-10xl text-center">
           <h2 className="font-headline text-4xl font-bold text-primary md:text-5xl">
             Book an appointment
@@ -106,10 +115,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {featuredProducts.length > 0 && (
-        <section ref={productsSectionRef} className="bg-background py-8 sm:py-12 scale-up-content-animation">
+        <section ref={productsSectionRef} className="bg-background py-8 sm:py-12">
           <div className="container mx-auto px-4">
             <div className="mx-auto mb-12 max-w-2xl text-center">
               <h3 className="font-headline text-3xl font-bold md:text-4xl">Featured Products</h3>
@@ -119,7 +128,7 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
               {currentProducts.map((product) => (
-                <Card key={product.id} className="flex flex-col overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl">
+                <Card key={product.id} className="flex flex-col overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl scale-up-content-animation">
                   <NavLink href={`/products/${product.id}`} className="flex-shrink-0">
                     <div className="relative h-56 w-full">
                       <Image
@@ -169,7 +178,7 @@ export default function Home() {
       )}
 
       {featuredBlogs.length > 0 && (
-        <section ref={blogsSectionRef} className="py-8 sm:py-12 scale-up-content-animation">
+        <section ref={blogsSectionRef} className="py-8 sm:py-12">
           <div className="container mx-auto px-4">
             <div className="mx-auto mb-12 max-w-2xl text-center">
               <h3 className="font-headline text-3xl font-bold md:text-4xl">From Our Blogs</h3>
@@ -179,7 +188,7 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
               {currentBlogs.map((blog) => (
-                <Card key={blog.slug} className="flex flex-col overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl">
+                <Card key={blog.slug} className="flex flex-col overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl scale-up-content-animation">
                   <NavLink href={`/blogs/${blog.slug}`} className="flex-shrink-0">
                     <div className="relative h-56 w-full">
                       <Image
@@ -227,7 +236,7 @@ export default function Home() {
         </section>
       )}
 
-      <section className="py-8 sm:py-12 scale-up-content-animation">
+      <section className="py-8 sm:py-12">
         <div className="container mx-auto px-4">
           <div className="mx-auto mb-12 max-w-2xl text-center">
             <h3 className="font-headline text-3xl font-bold md:text-4xl">Testimonial</h3>
@@ -235,7 +244,7 @@ export default function Home() {
               Please hear out from our all happy customer's.
             </p>
           </div>
-          <div className="flex justify-center">
+          <div className="flex justify-center  scale-up-content-animation">
             <iframe
               src="https://widgets.sociablekit.com/google-reviews/iframe/25644069"
               width="100%"
@@ -246,9 +255,9 @@ export default function Home() {
           </div>
         </div>
       </section>
-      
-      
-      <section className="py-8 sm:py-12 scale-up-content-animation">
+
+
+      <section className="py-8 sm:py-12">
         <div className="container mx-auto px-4">
           <div className="mx-auto mb-12 max-w-2xl text-center">
             <h3 className="font-headline text-3xl font-bold md:text-4xl">Our Instagram</h3>
@@ -256,7 +265,7 @@ export default function Home() {
               Follow us on Instagram for the latest updates and wellness tips.
             </p>
           </div>
-          <div className="flex justify-center">
+          <div className="flex justify-center scale-up-content-animation">
             <iframe
               src="https://www.instagram.com/vd_nishant_dahake/embed"
               width="100%"
