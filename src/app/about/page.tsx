@@ -50,7 +50,7 @@ export default function AboutPage() {
           </p>
         </div>
 
-        <Card className="mt-16 overflow-hidden scale-up-content-animation">
+        <Card className="mt-16 overflow-hidden scale-up-content-animation scale-up-content-animation">
           <div className="grid grid-cols-1 md:grid-cols-2">
             <div className="relative h-80 w-full md:h-full">
               <Image
@@ -73,7 +73,7 @@ export default function AboutPage() {
           </div>
         </Card>
 
-        <section className="mt-16 sm:mt-24 scale-up-content-animation">
+        <section className="mt-16 sm:mt-24">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="font-headline text-3xl font-bold text-primary md:text-4xl">
               Meet Our Practitioners
@@ -84,7 +84,7 @@ export default function AboutPage() {
           </div>
           <div className="mt-12 grid grid-cols-1 gap-10 md:grid-cols-2">
             {practitioners.map((practitioner) => (
-              <Card key={practitioner.name} className="p-6 text-center">
+              <Card key={practitioner.name} className="p-6 text-center scale-up-content-animation">
                 <CardContent className="flex flex-col items-center">
                   <Avatar className="h-32 w-32 border-4 border-primary/20">
                     <AvatarImage src={practitioner.image} alt={practitioner.name} data-ai-hint={practitioner.hint} />
