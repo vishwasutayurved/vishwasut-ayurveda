@@ -13,7 +13,7 @@ on:
   workflow_dispatch:
 
   repository_dispatch:
-    types: [build-nextjs]
+    types: [triggered-through-app-script]
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
