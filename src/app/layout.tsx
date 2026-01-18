@@ -28,6 +28,7 @@ export const metadata: Metadata = {
     description: "Experience authentic Ayurvedic treatments and personalized wellness at Shri Vishvasuta Ayurved & Panchkarma Clinic. Specializing in Panchakarma and holistic therapies."
   },
   icons: {
+    icon: "/favicon.ico",
     apple: "/favicon.ico"
   },
   other: {
@@ -58,8 +59,8 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange={false}
         >
-        <Suspense fallback={null}>
-          <TopLoader />
+          <Suspense fallback={null}>
+            <TopLoader />
           </Suspense>
           <Preloader />
           <div className="relative flex min-h-dvh flex-col bg-background">
