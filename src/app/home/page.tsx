@@ -92,7 +92,7 @@ export default function HomePage() {
           </p>
           <div className="mt-8">
             <Button size="lg" asChild className="w-full sm:w-auto" style={{ borderRadius: "100px"}}>
-              <NavLink href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_APPOINTMENT_MESSAGE)}`}>
+              <NavLink openInNewTab={true} href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_APPOINTMENT_MESSAGE)}`}>
                 Book an appointment Now
               </NavLink>
             </Button>

@@ -39,7 +39,7 @@ export default async function PackagesPage() {
                   <p className="mt-4 text-foreground/70">{treatment.description}</p>
                   <div className="mt-8">
                     <Button size="lg" asChild className="w-full sm:w-auto">
-                      <NavLink href={`https://wa.me/${WHATSAPP_NUMBER}?text=${treatment.whatsAppMessage}`}>
+                      <NavLink openInNewTab={true} href={`https://wa.me/${WHATSAPP_NUMBER}?text=${treatment.whatsAppMessage}`}>
                         Try Now
                       </NavLink>
                     </Button>

@@ -58,7 +58,7 @@ export default async function ProductDetailPage({ params }: { params: { id: stri
 
             <div className="mt-6 sm:mt-8">
               <Button size="lg" asChild className="w-full sm:w-auto">
-                <NavLink href={product.addToCartUrl ? product.addToCartUrl : '/'}>
+                <NavLink openInNewTab={true} href={product.addToCartUrl ? product.addToCartUrl : '/'}>
                   <ShoppingCart className="mr-2 h-5 w-5" />
                   Buy Now
                 </NavLink>
