@@ -50,7 +50,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
         <NavLink href="/" className="mr-6 flex items-center space-x-2">
-          <img src="/logo.png" alt="Shri Vishvasuta Ayurved & Panchkarma Clinic" className="h-10 w-10" />
+          <img src="./logo.png" alt="Shri Vishvasuta Ayurved & Panchkarma Clinic" className="h-10 w-10" />
           <span className="font-bold font-headline text-lg hidden sm:inline-block">
             Shri Vishvasuta Ayurved & Panchkarma Clinic
           </span>
