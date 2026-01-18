@@ -4,12 +4,11 @@ import { Card } from '@/components/ui/card';
 import { ChevronLeft, ShoppingCart } from 'lucide-react';
 import { NavLink } from '@/components/layout/nav-link';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { getProductById } from '@/lib/firebase/firestore';
+import { getProductById, getProducts } from '@/lib/firebase/firestore';
 import type { Product } from '@/lib/products';
 import { Metadata } from 'next';
 import { ProductImageGallery } from '@/components/product-image-gallery';
 
-export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
   const product: Product | null = await getProductById((await params).id);
@@ -23,6 +22,13 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
     title: product.name,
     description: product.details,
   };
+}
+
+export async function generateStaticParams() {
+  const products = await getProducts();
+  return products.map((product) => ({
+    id: product.id,
+  }));
 }
 
 export default async function ProductDetailPage({ params }: { params: { id: string } }) {

@@ -1,9 +1,7 @@
-import { getBlogBySlug } from '@/lib/firebase/firestore';
+import { getBlogBySlug, getBlogs } from '@/lib/firebase/firestore';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import Image from 'next/image';
-
-export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const blog = await getBlogBySlug((await params).slug);
@@ -14,6 +12,13 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     title: blog.title,
     description: blog.description,
   };
+}
+
+export async function generateStaticParams() {
+  const blogs = await getBlogs();
+  return blogs.map((blog) => ({
+    slug: blog.slug,
+  }));
 }
 
 export default async function BlogPage({ params }: { params: { slug: string } }) {
@@ -39,6 +44,7 @@ export default async function BlogPage({ params }: { params: { slug: string } })
               data-ai-hint={blog.hint}
               fill
               className="object-cover"
+              unoptimized
             />
           </div>
 

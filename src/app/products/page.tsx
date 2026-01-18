@@ -39,6 +39,7 @@ export default async function ProductsPage() {
                     data-ai-hint={product.hint}
                     fill
                     className="object-cover transition-transform duration-500 hover:scale-110"
+                    unoptimized
                   />
                 </div>
               </NavLink>

@@ -7,13 +7,14 @@ import { Footer } from '@/components/layout/footer';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Preloader } from '@/components/preloader';
 import { TopLoader } from '@/components/layout/top-loader';
+import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: {
     default: 'Shri Vishvasuta Ayurved & Panchkarma Clinic',
     template: '%s | Shri Vishvasuta Ayurved & Panchkarma Clinic',
   },
-  description: 'Experience authentic Ayurvedic treatments and personalized wellness at Shri Vishvasuta Ayurved & Panchkarma Clinic. Specializing in Panchakarma and holistic therapies.',
+  description: 'Experience authentic Ayurvedic treatments and personalized wellness at Shri Vishvasutayurveda & Panchkarma Clinic. Specializing in Panchakarma and holistic therapies.',
   keywords: ['Ayurveda', 'Nishant Dahake Clinic', 'Panchakarma', 'Holistic Health',
     'Wellness', 'Ayurvedic Clinic', 'Shri Vishvasuta Ayurved & Panchkarma Clinic',
     'Shri Vishvasuta Ayurved and Panchkarma Clinic', 'Shri Vishvasuta Ayurved',
@@ -37,7 +38,6 @@ export const metadata: Metadata = {
     follow: false,
   }
 };
-export const dynamic = "force-dynamic";
 
 export default function RootLayout({
   children,
@@ -58,7 +58,9 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange={false}
         >
+        <Suspense fallback={null}>
           <TopLoader />
+          </Suspense>
           <Preloader />
           <div className="relative flex min-h-dvh flex-col bg-background">
             <Header />
