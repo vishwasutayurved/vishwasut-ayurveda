@@ -138,7 +138,6 @@ export default function HomePage() {
                         data-ai-hint={product.hint}
                         fill
                         className="object-cover transition-transform duration-500 hover:scale-110"
-                        unoptimized
                       />
                     </div>
                   </NavLink>
@@ -199,7 +198,6 @@ export default function HomePage() {
                         data-ai-hint={blog.hint}
                         fill
                         className="object-cover transition-transform duration-500 hover:scale-110"
-                        unoptimized
                       />
                     </div>
                   </NavLink>

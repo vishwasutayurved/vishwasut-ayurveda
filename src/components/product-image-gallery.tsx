@@ -28,7 +28,6 @@ export function ProductImageGallery({ images, alt }: ProductImageGalleryProps) {
             className="object-cover w-full h-full rounded-lg"
             src={selectedImage}
             fill
-            unoptimized
           />
         </div>
       </Card>
@@ -55,7 +54,6 @@ export function ProductImageGallery({ images, alt }: ProductImageGalleryProps) {
                         className="object-cover w-full h-full rounded-lg"
                         src={image}
                         fill
-                        unoptimized
                       />
                     </div>
                   </Card>

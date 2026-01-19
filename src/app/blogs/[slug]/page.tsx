@@ -44,7 +44,6 @@ export default async function BlogPage({ params }: { params: { slug: string } })
               data-ai-hint={blog.hint}
               fill
               className="object-cover"
-              unoptimized
             />
           </div>
 

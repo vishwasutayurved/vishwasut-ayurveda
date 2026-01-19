@@ -8,8 +8,6 @@ import { ArrowRight } from 'lucide-react';
 import { getProducts } from '@/lib/firebase/firestore';
 import type { Product } from '@/lib/products';
 
-export const dynamic = 'force-static';
-
 export const metadata: Metadata = {
   title: 'Our Products',
   description: 'Browse our collection of authentic Ayurvedic medicines and wellness products.',
@@ -41,7 +39,6 @@ export default async function ProductsPage() {
                     data-ai-hint={product.hint}
                     fill
                     className="object-cover transition-transform duration-500 hover:scale-110"
-                    unoptimized
                   />
                 </div>
               </NavLink>

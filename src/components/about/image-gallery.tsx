@@ -46,7 +46,6 @@ export function ImageGallery() {
               fill
               className={`object-cover rounded-lg 
                 ${(index + 1) % 2 === 0 ? "scale-left-content-animation" : "scale-right-content-animation"}`}
-              unoptimized
             />
           </div>
         ))}

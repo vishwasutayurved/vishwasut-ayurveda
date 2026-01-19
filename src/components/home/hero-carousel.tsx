@@ -90,7 +90,6 @@ export function HeroCarousel() {
                 fill
                 className="object-cover"
                 priority={index === 0}
-                unoptimized
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-8 text-white text-center md:p-16">

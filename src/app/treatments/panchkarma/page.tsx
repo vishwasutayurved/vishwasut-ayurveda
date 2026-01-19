@@ -58,7 +58,6 @@ export default function PanchkarmaPage() {
               fill
               className="object-cover"
               data-ai-hint="ayurvedic treatment banner"
-              unoptimized
             />
           </div>
 
