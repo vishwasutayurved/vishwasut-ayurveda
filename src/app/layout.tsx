@@ -28,8 +28,8 @@ export const metadata: Metadata = {
     description: "Experience authentic Ayurvedic treatments and personalized wellness at Shri Vishvasuta Ayurved & Panchkarma Clinic. Specializing in Panchakarma and holistic therapies."
   },
   icons: {
-    icon: "/vishvasutfav.ico",
-    apple: "/vishvasutfav.ico"
+    icon: "/favicon.ico",
+    apple: "/favicon.ico"
   },
   other: {
     "google-site-verification": "bf7_iTFphnpreO9PW-d5YWnTR7-MlulIaMPYmeSSt8M"
