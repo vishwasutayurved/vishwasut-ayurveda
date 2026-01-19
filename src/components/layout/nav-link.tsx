@@ -22,7 +22,7 @@ export function NavLink({ children, href, className, openInNewTab = false, ...pr
     }
 
     // Prevent navigation if the link is for the current page.
-    if (pathname === href) {
+    if (pathname === (href + "/")) {
       e.preventDefault();
       return;
     }
