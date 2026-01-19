@@ -32,11 +32,11 @@ export const metadata: Metadata = {
     apple: "/vishvasutfav.ico"
   },
   other: {
-    "google-site-verification": "ROozPfb9haaZrO0LOB5uwb80ukV-yMeDxS-X24quGb8"
+    "google-site-verification": "bf7_iTFphnpreO9PW-d5YWnTR7-MlulIaMPYmeSSt8M"
   },
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
   }
 };
 
