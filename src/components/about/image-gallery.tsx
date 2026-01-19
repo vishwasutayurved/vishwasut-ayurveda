@@ -28,7 +28,7 @@ export function ImageGallery() {
 
   return (
 
-    <section className="mt-4 sm:mt-18">
+    <section className="py-16 sm:py-24 animation-wrapper">
       <div className="mx-auto max-w-4xl text-center">
         <h2 className="font-headline text-3xl font-bold text-primary md:text-4xl">
           Our Clinic Gallery
