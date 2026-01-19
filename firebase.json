@@ -1,6 +1,6 @@
 {
   "hosting": {
-     "site": "vishwasutayurveda",
+    "site": "vishwasutayurveda",
     "public": "out",
     "ignore": [
       "firebase.json",
@@ -8,6 +8,14 @@
       "**/node_modules/**"
     ],
     "rewrites": [
+      {
+        "source": "/sitemap.xml",
+        "destination": "/sitemap.xml"
+      },
+      {
+        "source": "/robots.txt",
+        "destination": "/robots.txt"
+      },
       {
         "source": "**",
         "destination": "/index.html"
