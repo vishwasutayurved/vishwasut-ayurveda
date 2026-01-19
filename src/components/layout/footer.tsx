@@ -7,8 +7,8 @@ export function Footer() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div className="md:col-span-1">
-            <NavLink href="/" className="flex items-center space-x-2">
-              <img src="./logo.png" alt="Shri Vishvasuta Ayurved & Panchkarma Clinic" className="h-10 w-10" />
+            <NavLink href="/home" className="flex items-center space-x-2">
+              <img src="/logo.png" alt="Shri Vishvasuta Ayurved & Panchkarma Clinic" className="h-10 w-10" />
               <span className="font-headline text-xl font-bold">Shri Vishvasuta Ayurved & Panchkarma Clinic</span>
             </NavLink>
             <p className="mt-4 text-foreground/70">
