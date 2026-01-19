@@ -8,11 +8,9 @@ import { Timestamp } from 'firebase/firestore';
 export const dynamic = "force-static"
 const appUrl: string = "https://vishwasutayurveda.web.app";
 
-const getTimeIsValidElseCurrentTime = (time: Timestamp): Date => time ? time?.toDate() : new Date();
-
 const getHighestDateFromList = (timestamps: Timestamp[]): Date => {
     return timestamps.reduce((prev, current) => {
-        return getTimeIsValidElseCurrentTime(prev) > getTimeIsValidElseCurrentTime(current) ?
+        return prev > current ?
             prev : current;
     })?.toDate();
 }
@@ -29,21 +27,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     const productEntries: MetadataRoute.Sitemap = products?.map((product) => ({
         url: `${appUrl}/products/${product.id}/`,
-        lastModified: getTimeIsValidElseCurrentTime(product.lastModifiedAt),
+        lastModified: product.lastModifiedAt.toDate(),
         changeFrequency: 'weekly',
         priority: 0.8,
     }));
 
     const blogEntries: MetadataRoute.Sitemap = blogs?.map((blog) => ({
         url: `${appUrl}/blogs/${blog.slug}/`,
-        lastModified: getTimeIsValidElseCurrentTime(blog.lastModifiedAt),
+        lastModified: blog.lastModifiedAt.toDate(),
         changeFrequency: 'monthly',
         priority: 0.8,
     }));
 
     const treatmentsEntries: MetadataRoute.Sitemap = treatments?.map((treatment) => ({
         url: `${appUrl}/packages/${treatment.id}/`,
-        lastModified: getTimeIsValidElseCurrentTime(treatment.lastModifiedAt),
+        lastModified: treatment.lastModifiedAt.toDate(),
         changeFrequency: 'monthly',
         priority: 0.8,
     }));
