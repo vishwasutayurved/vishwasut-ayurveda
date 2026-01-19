@@ -50,7 +50,6 @@ export default function AboutPage() {
           </p>
         </div>
 
-        <ImageGallery />
 
         <section className="mt-16 sm:mt-24">
           <div className="mx-auto max-w-4xl text-center">
@@ -77,6 +76,9 @@ export default function AboutPage() {
             ))}
           </div>
         </section>
+
+        
+        <ImageGallery />
       </div>
     </div>
   );
