@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     'Dr Dahake\'s Shri Vishwasut Ayurved & Panchakarma Clinic'
   ],
   openGraph: {
-    url: "https://vishvasutayurveda.vercel.app",
+    url: "https://vishwasutayurveda.web.app/",
     type: "website",
     locale: "en_US",
     title: "Shri Vishvasuta Ayurved & Panchkarma Clinic",
