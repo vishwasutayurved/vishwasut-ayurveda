@@ -1,3 +1,5 @@
+import { Timestamp } from "firebase/firestore";
+
 export interface Treatments {
     id: string;
     title: string;
@@ -6,4 +8,5 @@ export interface Treatments {
     description: string;
     hint: string;
     whatsAppMessage: string;
+    lastModifiedAt: Timestamp;
 }

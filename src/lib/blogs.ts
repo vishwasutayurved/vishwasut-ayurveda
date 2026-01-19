@@ -1,3 +1,5 @@
+import { Timestamp } from "firebase/firestore";
+
 export interface Blog {
   slug: string;
   title: string;
@@ -7,4 +9,5 @@ export interface Blog {
   content: string;
   htmlBlogDetails: string;
   isFeatured: boolean;
+  lastModifiedAt: Timestamp;
 }

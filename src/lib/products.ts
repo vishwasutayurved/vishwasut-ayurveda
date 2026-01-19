@@ -1,3 +1,4 @@
+import { Timestamp } from "firebase/firestore";
 
 export type Product = {
     id: string;
@@ -16,4 +17,5 @@ export type Product = {
         ageGroup: string;
         dosage: string;
     }[];
+    lastModifiedAt: Timestamp;
 };

@@ -21,8 +21,11 @@ export function NavLink({ children, href, className, openInNewTab = false, ...pr
       return;
     }
 
+    let ignoreProgressBar: boolean = (pathname === "/" && href === "/") 
+    || (pathname === (href + '/'));
+    
     // Prevent navigation if the link is for the current page.
-    if (pathname === (href + "/")) {
+    if (ignoreProgressBar) {
       e.preventDefault();
       return;
     }
