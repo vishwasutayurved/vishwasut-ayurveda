@@ -8,6 +8,8 @@ import { ArrowRight } from 'lucide-react';
 import { getProducts } from '@/lib/firebase/firestore';
 import type { Product } from '@/lib/products';
 
+export const dynamic = 'force-static';
+
 export const metadata: Metadata = {
   title: 'Our Products',
   description: 'Browse our collection of authentic Ayurvedic medicines and wellness products.',

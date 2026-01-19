@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export": "next export",
     "start": "npx serve@latest out",
-    "dynamic-start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "build-start": "npm run build && npm run start",
