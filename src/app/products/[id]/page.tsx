@@ -21,6 +21,13 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
   return {
     title: product.name,
     description: product.details,
+    openGraph: {
+      url: "https://vishwasutayurveda.web.app/",
+      type: "website",
+      locale: "en_US",
+      title: product.name,
+      description: product.description
+    },
   };
 }
 
