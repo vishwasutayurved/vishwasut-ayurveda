@@ -5,7 +5,7 @@ import { Toaster } from "@/components/ui/toaster"
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { ThemeProvider } from '@/components/theme-provider';
-import { Preloader } from '@/components/preloader';
+// import { Preloader } from '@/components/preloader';
 import { TopLoader } from '@/components/layout/top-loader';
 import { Suspense } from 'react';
 
@@ -62,7 +62,7 @@ export default function RootLayout({
           <Suspense fallback={null}>
             <TopLoader />
           </Suspense>
-          <Preloader />
+          {/* <Preloader /> */}
           <div className="relative flex min-h-dvh flex-col bg-background">
             <Header />
             <main className="flex-1">{children}</main>
