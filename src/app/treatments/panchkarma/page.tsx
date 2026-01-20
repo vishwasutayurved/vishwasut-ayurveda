@@ -107,7 +107,7 @@ export default function PanchkarmaPage() {
           <h2 className="font-headline text-2xl font-bold text-primary md:text-3xl mt-16 mb-8">
             Benefits of Panchakarma
           </h2>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8">
             <li>Completely purifies the body</li>
             <li>Riddance of toxins</li>
             <li>Speeds up metabolism</li>
