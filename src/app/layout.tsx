@@ -31,7 +31,8 @@ export const metadata: Metadata = {
     apple: "/favicon.ico"
   },
   other: {
-    "google-site-verification": "bf7_iTFphnpreO9PW-d5YWnTR7-MlulIaMPYmeSSt8M"
+    "google-site-verification": "bf7_iTFphnpreO9PW-d5YWnTR7-MlulIaMPYmeSSt8M",
+    "msvalidate.01": "BF855C788715FDB445E7050524D22D53"
   },
   robots: {
     index: true,
