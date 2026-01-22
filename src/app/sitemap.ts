@@ -6,7 +6,7 @@ import { Treatments } from '@/lib/treatments';
 import { Timestamp } from 'firebase/firestore';
 
 export const dynamic = "force-static"
-const appUrl: string = "https://vishwasutayurveda.web.app/";
+const appUrl: string = "https://vishwasutayurveda.web.app";
 
 const getHighestDateFromList = (timestamps: Timestamp[]): Date => {
     return timestamps.reduce((prev, current) => {
@@ -26,21 +26,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
 
     const productEntries: MetadataRoute.Sitemap = products?.map((product) => ({
-        url: `${appUrl}products/${product.id}/`,
+        url: `${appUrl}/products/${product.id}/`,
         lastModified: product.lastModifiedAt.toDate(),
         changeFrequency: 'weekly',
         priority: 0.8,
     }));
 
     const blogEntries: MetadataRoute.Sitemap = blogs?.map((blog) => ({
-        url: `${appUrl}blogs/${blog.slug}/`,
+        url: `${appUrl}/blogs/${blog.slug}/`,
         lastModified: blog.lastModifiedAt.toDate(),
         changeFrequency: 'monthly',
         priority: 0.8,
     }));
 
     const treatmentsEntries: MetadataRoute.Sitemap = treatments?.map((treatment) => ({
-        url: `${appUrl}packages/${treatment.id}/`,
+        url: `${appUrl}/packages/${treatment.id}/`,
         lastModified: treatment.lastModifiedAt.toDate(),
         changeFrequency: 'monthly',
         priority: 0.8,
@@ -48,7 +48,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     return [
         {
-            url: appUrl,
+            url: `${appUrl}/`,
             lastModified: new Date(2026, 0, 19),
             changeFrequency: 'monthly',
             priority: 1.0,
