@@ -84,7 +84,8 @@ export function Header() {
                   href={item.href!}
                   className={cn(
                     "flex items-center text-lg font-medium transition-colors hover:text-primary sm:text-sm px-3",
-                    pathname === item.href ? "text-primary" : "text-foreground/60"
+                    ((pathname === "/" && item.href === "/")
+                      || (pathname === (item.href + '/'))) ? "text-primary" : "text-foreground/60"
                   )}
                 >
                   {item.label}
