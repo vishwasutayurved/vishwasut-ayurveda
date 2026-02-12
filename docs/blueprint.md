@@ -10,6 +10,7 @@
 - Personalized Wellness Tips: Implement an AI tool that suggests personalized wellness tips based on user input about their lifestyle.
 - Product Listing: Display a list of Ayurvedic products available for purchase.
 - Product Details: Show detailed information for each product, including ingredients, benefits, and usage instructions.
+- Treatments: Information about various treatments offered, including Panchakarma, disease-specific treatments, and wellness packages.
 - Firebase Integration: Utilize Firebase Firestore to store and manage product and blog data.
 
 ## Style Guidelines:
@@ -35,12 +36,18 @@ The project is currently in a foundational stage. The basic structure of the Nex
 - Product Details (`src/app/products/[id]/page.tsx`): A dynamic page to show details for a specific product.
 - Blogs (`src/app/blogs/page.tsx`): A page to list all blog posts.
 - Blog Details (`src/app/blogs/[slug]/page.tsx`): A dynamic page to show a single blog post.
+- Treatments:
+    - Diseases (`src/app/treatments/diseases/page.tsx`): Page for disease-specific treatments.
+    - Packages (`src/app/treatments/packages/page.tsx`): Page for treatment packages.
+    - Panchkarma (`src/app/treatments/panchkarma/page.tsx`): Page for Panchkarma treatments.
+
 
 ### Existing Components:
 
-- **Layout**: `Header`, `Footer`, `NavLink`, `TopLoader`, `Preloader`
+- **Layout**: `Header`, `Footer`, `NavLink`, `TopLoader`
 - **UI**: A rich set of UI components are available in `src/components/ui`, including `Accordion`, `Button`, `Card`, `Carousel`, `Dialog`, `Form`, `Input`, `Sheet`, `Toast`, and more.
-- **Home Page**: `HeroCarousel`
+- **Home Page**: `HeroCarousel`, `FeaturedBlogs`, `FeaturedProducts`, `Faq`
+- **About Page**: `ImageGallery`
 - **Theme**: `ThemeProvider`, `ThemeToggle`
 
 ### Firebase Integration:
