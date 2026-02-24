@@ -211,3 +211,43 @@ li {
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
 }
+
+p {
+  margin-bottom: 0.5rem;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-headline;
+  margin-bottom: 0.7rem;
+}
+
+h1 {
+  @apply text-4xl font-bold tracking-tight md:text-5xl;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  @apply text-3xl font-bold tracking-tight md:text-4xl;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  @apply text-2xl font-bold tracking-tight md:text-3xl;
+  margin-bottom: 0.5rem;
+}
+
+h4 {
+  @apply text-xl font-bold tracking-tight md:text-2xl;
+  margin-bottom: 0.5rem;
+}
+
+h5 {
+  @apply text-lg font-bold tracking-tight md:text-xl;
+  margin-bottom: 0.5rem;
+}
+
+h6 {
+  @apply text-base font-bold tracking-tight;
+  margin-bottom: 0.5rem;
+}
