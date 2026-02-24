@@ -61,7 +61,7 @@ export default async function ProductDetailPage({ params }: { params: { id: stri
           <div className="flex flex-col justify-start">
             <h1 className="font-headline text-2xl sm:text-3xl font-bold text-primary">{product.name}</h1>
             <p className="mt-2 sm:mt-4 text-lg sm:text-xl font-semibold text-foreground">₹ {product.price}</p>
-            <div className="mt-4 sm:mt-6 text-sm sm:text-base text-foreground/100" dangerouslySetInnerHTML={{ __html: product.htmlProductDetails }} />
+            <div dangerouslySetInnerHTML={{ __html: product.htmlProductDetails }} />
 
             <div className="mt-6 sm:mt-8">
               <Button size="lg" asChild className="w-full sm:w-auto">
@@ -74,16 +74,16 @@ export default async function ProductDetailPage({ params }: { params: { id: stri
 
             <div className="mt-8 sm:mt-10 space-y-6">
               <div>
-                <h3 className="font-headline text-base sm:text-lg font-bold">Ingredients</h3>
-                <p className="mt-2 text-sm sm:text-base text-foreground/70">{product.ingredients.join(', ')}</p>
+                <h3 className="font-headline text-lg font-bold">Ingredients</h3>
+                <p>{product.ingredients.join(', ')}</p>
               </div>
               <div>
-                <h3 className="font-headline text-base sm:text-lg font-bold">Usage</h3>
-                <p className="mt-2 text-sm sm:text-base text-foreground/70">{product.usage}</p>
+                <h3 className="font-headline text-lg font-bold">Usage</h3>
+                <p>{product.usage}</p>
               </div>
               {(product.dosageList && product.dosageList.length > 0) && (
                 <div>
-                  <h3 className="font-headline text-base sm:text-lg font-bold">Dosage</h3>
+                  <h3 className="font-headline text-lg font-bold">Dosage</h3>
                   <Card className="mt-2 overflow-x-auto">
                     <Table>
                       <TableHeader>
