@@ -7,6 +7,7 @@
 - Contact Form: Enable users to easily send inquiries and book appointments.
 - Site Navigation: Provide easy navigation with the app site.
 - Image Banner: Implement a banner with auto-sliding images related to Ayurveda.
+- Pushya Nakshatra: A dedicated page with a countdown to the next Pushya Nakshatra and a list of upcoming dates.
 - Personalized Wellness Tips: Implement an AI tool that suggests personalized wellness tips based on user input about their lifestyle.
 - Product Listing: Display a list of Ayurvedic products available for purchase.
 - Product Details: Show detailed information for each product, including ingredients, benefits, and usage instructions.
@@ -29,13 +30,14 @@ The project is currently in a foundational stage. The basic structure of the Nex
 
 ### Existing Pages:
 
-- Home (`src/app/page.tsx`): The main landing page.
+- Home (`src/app/page.tsx` and `src/app/home/page.tsx`): The main landing page.
 - About (`src/app/about/page.tsx`): A page to describe the clinic.
 - Contact (`src/app/contact/page.tsx`): A page with a contact form.
 - Products (`src/app/products/page.tsx`): A page to list Ayurvedic products.
 - Product Details (`src/app/products/[id]/page.tsx`): A dynamic page to show details for a specific product.
 - Blogs (`src/app/blogs/page.tsx`): A page to list all blog posts.
 - Blog Details (`src/app/blogs/[slug]/page.tsx`): A dynamic page to show a single blog post.
+- Pushya Nakshatra (`src/app/pushya-nakshatra/page.tsx`): Page with countdown and dates.
 - Treatments:
     - Diseases (`src/app/treatments/diseases/page.tsx`): Page for disease-specific treatments.
     - Packages (`src/app/treatments/packages/page.tsx`): Page for treatment packages.
@@ -48,6 +50,7 @@ The project is currently in a foundational stage. The basic structure of the Nex
 - **UI**: A rich set of UI components are available in `src/components/ui`, including `Accordion`, `Button`, `Card`, `Carousel`, `Dialog`, `Form`, `Input`, `Sheet`, `Toast`, and more.
 - **Home Page**: `HeroCarousel`, `FeaturedBlogs`, `FeaturedProducts`, `Faq`
 - **About Page**: `ImageGallery`
+- **Pushya Nakshatra Page**: `Countdown`, `UpcomingDates`
 - **Theme**: `ThemeProvider`, `ThemeToggle`
 
 ### Firebase Integration:

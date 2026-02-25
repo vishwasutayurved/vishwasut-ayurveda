@@ -62,4 +62,25 @@ export const upcomingPushyaNakshatraDates = [
         ends: "11:10 PM" ,
         isNext : false
     },
+    { 
+        date: "01-Nov-2026", 
+        day: "Sunday", 
+        starts: "05:40 AM", 
+        ends: "11:59 PM" ,
+        isNext : false
+    },
+    { 
+        date: "28 & 29-Nov-2026", 
+        day: "Saturday-Sunday", 
+        starts: "12:51 PM", 
+        ends: "11:00 AM" ,
+        isNext : false
+    },
+    { 
+        date: "26-Dec-2026", 
+        day: "Saturday", 
+        starts: "12:00 AM", 
+        ends: "08:14 PM" ,
+        isNext : false
+    },
 ];
