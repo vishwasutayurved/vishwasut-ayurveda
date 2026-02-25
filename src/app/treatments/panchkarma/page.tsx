@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -7,6 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { FlipCard } from "@/components/ui/flip-card";
+import { WHATSAPP_NUMBER, WHATSAPP_PANCHAKARMA_MESSAGE } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Panchkarma",
@@ -252,6 +254,28 @@ export default function PanchkarmaPage() {
             This ensures that the treatment is carefully tailored to your individual health needs and current condition, maximizing safety and effectiveness.
           </p>
         </article>
+
+        
+        <section className="mx-auto max-w-4xl mt-24 text-center">
+          <h2 className="font-headline text-3xl font-bold text-primary md:text-4xl mb-8">
+            Book Your Panchakarma Appointment
+          </h2>
+          <p className="prose prose-lg dark:prose-invert mx-auto">
+            Ready to experience the rejuvenating benefits of Panchakarma? Contact us
+            to schedule your consultation with our Ayurvedic expert.
+          </p>
+          <div className="mt-8">
+            <Button asChild size="lg">
+              <a
+                href={`https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(WHATSAPP_PANCHAKARMA_MESSAGE)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Book on WhatsApp
+              </a>
+            </Button>
+          </div>
+        </section>
       </div>
     </div>
   );
