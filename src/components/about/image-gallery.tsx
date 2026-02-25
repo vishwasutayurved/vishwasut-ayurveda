@@ -1,82 +1,54 @@
-import Image from 'next/image';
-// import { Card } from '../ui/card';
 
-const images = [
+import Image from "next/image";
+
+const clinicImages = [
   {
-    src: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    alt: 'Doctor with stethoscope',
-    hint: 'healthcare professional',
+    src: "https://fazlaninaturesnest.com/wp-content/uploads/2024/02/relaxed-man-enjoying-back-massage-with-herbal-compress-during-spa-treatment-2.webp",
+    alt: "Clinic Reception Area",
+    aiHint: "clinic reception area"
   },
   {
-    src: 'https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&id=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    alt: 'Ayurvedic herbs and spices',
-    hint: 'natural remedies',
+    src: "https://lh3.googleusercontent.com/pw/AP1GczPD6_lLvbh4BuXR8kzK9efp848vTCn8Vl7J6l3v5FPfnTEVKrhiF5uiiub_BLf7_5ukfaNOncZDKIA98CTDJWhZuMVBOAhx8b3NPN-z-KILLTYflDhqi3EOzlUbFGHF7fKxcsumO8-VI4PpcCFCJR8=w913-h913-s-no-gm?authuser=0",
+    alt: "Spacious Consultation Room",
+    aiHint: "spacious consultation room"
   },
   {
-    src: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    alt: 'Doctor with stethoscope',
-    hint: 'healthcare professional',
+    src: "https://www.shutterstock.com/image-photo/ayurvedic-herbs-collage-on-wooden-600nw-2518490771.jpg",
+    alt: "Panchkarma Therapy Room with modern equipment",
+    aiHint: "panchkarma therapy room with modern equipment"
   },
   {
-    src: 'https://images.unsplash.com/photo-1584432810601-6c7f27d2362b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&id=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    alt: 'Ayurvedic herbs and spices',
-    hint: 'natural remedies',
-  },
+    src: "https://lh3.googleusercontent.com/pw/AP1GczOIRqhs8hvqqSmK-fhG4omOwMuD5u9a_GDStp5bluk92Y3NznJ6aLSBghm5ZI2ASXZA_rC_7Z-VTuWILi3K-mW88um_bWp0bphuDnKoAp252VcJD1xWu1rFIlEmePlkWjvnmBtu9EPcbq961jR9z43D=w1024-h683-s-no-gm?authuser=0",
+    alt: "Display of authentic herbal medicines",
+    aiHint: "display of authentic herbal medicines"
+  }
 ];
 
 export function ImageGallery() {
-
   return (
-
-    <section className="py-16 sm:py-24 animation-wrapper">
-      <div className="mx-auto max-w-4xl text-center">
-        <h2 className="font-headline text-3xl font-bold text-primary md:text-4xl">
-          Our Clinic Gallery
-        </h2>
-        <p className="mt-6 text-lg leading-relaxed text-foreground/80">
-          A glimpse into our serene and healing environment.
+    <section className="py-16 bg-background">
+      <div className="container mx-auto px-4">
+        <h2 className="font-headline text-4xl font-bold text-center text-primary">Our Clinic Gallery</h2>
+        <p className="text-center text-lg text-foreground/70 mt-4 mb-12 max-w-2xl mx-auto">
+          Step inside our serene and healing environment. Our clinic is designed to provide a peaceful and comfortable space for your wellness journey.
         </p>
-      </div>
-      <div className="mt-12 grid grid-cols-1 gap-10 md:grid-cols-2">
-        {images.map((practitioner, index) => (
-          <div key={index} className="relative aspect-video w-full">
-            <Image
-              src={practitioner.src}
-              alt={practitioner.alt}
-              data-ai-hint={practitioner.hint}
-              fill
-              className={`object-cover rounded-lg 
-                ${(index + 1) % 2 === 0 ? "scale-left-content-animation" : "scale-right-content-animation"}`}
-            />
-          </div>
-        ))}
-      </div>
-
-      {/* <Card className="mt-16 overflow-hidden">
-        <div className="grid grid-cols-1 md:grid-cols-2">
-          <div className="relative h-80 w-full md:h-full">
-            <Image
-              src="https://placehold.co/800x600.png"
-              alt="Clinic Interior"
-              data-ai-hint="clinic interior"
-              fill
-              className="object-cover"
-            />
-          </div>
-          <div className="p-8 md:p-12">
-            <h2 className="font-headline text-3xl font-bold">Our Philosophy</h2>
-            <p className="mt-4 text-foreground/70">
-              We view health not as the absence of disease, but as a vibrant state of balance in body, mind, and spirit. Our philosophy is rooted in the core principles of Ayurveda, emphasizing personalized care, natural therapies, and preventative health. We believe in empowering our patients with the knowledge and tools to take an active role in their own healing journey.
-            </p>
-            <p className="mt-4 text-foreground/70">
-              Each treatment plan at Shri Vishvasuta Ayurved & Panchkarma Clinic is a bespoke creation, tailored to your unique constitution (Prakriti) and current imbalances (Vikriti). We blend ancient techniques with a modern understanding of health to ensure the most effective and gentle care.
-            </p>
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
+          {clinicImages.map((image, index) => (
+            <div key={index} className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-lg group transform transition-transform duration-300 hover:scale-105">
+              <Image
+                src={image.src}
+                alt={image.alt}
+                data-ai-hint={image.aiHint}
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <p className="text-white text-lg font-semibold text-center px-4">{image.alt}</p>
+              </div>
+            </div>
+          ))}
         </div>
-      </Card> */}
-
+      </div>
     </section>
-
-
   );
 }

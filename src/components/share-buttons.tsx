@@ -1,4 +1,3 @@
-
 "use client";
 
 import {
@@ -23,7 +22,11 @@ export const ShareButtons = ({ title }: { title: string }) => {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(shareUrl).then(() => {
+    navigator.clipboard.writeText(
+`${title}
+
+${shareUrl}`
+    ).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000); // Reset after 2 seconds
     });
@@ -45,7 +48,7 @@ export const ShareButtons = ({ title }: { title: string }) => {
         <WhatsappIcon size={32} round />
       </WhatsappShareButton>
       <a
-        href="https://www.instagram.com/vishwasut_ayurved/"
+        href="https://www.instagram.com/"
         target="_blank"
         rel="noopener noreferrer"
         className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-500 text-white"
