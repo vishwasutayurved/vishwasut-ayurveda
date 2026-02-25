@@ -17,26 +17,31 @@ const therapies = [
     name: "Vaman",
     description:
       "In this therapy, the patient undergoes both internal and external oil massages along with warm poultice treatments over several days, supported by specific Ayurvedic medicines. Once the toxins are softened and move toward the upper regions of the body, herbal preparations are administered to induce therapeutic vomiting, often followed by a special medicinal soup. This process effectively eliminates harmful substances from the body. Vamana therapy is particularly recommended for conditions associated with excess kapha, such as obesity, asthma, and hyperacidity.",
+      imageUrl: "https://lh3.googleusercontent.com/pw/AP1GczPz2mG51M_4hRHKnWoUdSCnn7oigGQ-iXrd4fQwZwNkBTULc5S0OHXLZ1_sATKRF-UPlCXXOWs1S76vCdsdVNIKf7UUOt8IfOKDbNS-JTgP919fiOtRhod1ago0cCdvX2n2o5oLXVqHYi6YdCm6EOVb=w913-h913-s-no-gm?authuser=0",
   },
   {
     name: "Virechan",
     description:
       "In Virechana therapy, toxins are eliminated from the body through the cleansing of the bowels. During this procedure, the patient receives both internal and external oleation treatments along with heat therapy. Afterward, a natural herbal laxative is administered to cleanse the intestines, aiding in the removal of accumulated toxins. This therapy is primarily recommended for pitta-dominant conditions such as herpes zoster, jaundice, colitis, and celiac disease.",
+      imageUrl: "https://lh3.googleusercontent.com/pw/AP1GczOVVUkKo3heNnW9TfYlbBkC1-GGqimRsvcvtgnyX7eMdbw5ulSa6xgnopqgSaV8cY856POZeyE7AIxDxq-04rrjCX1gIxx8E1xyIvdBLgPwwTnmJrEMwKMEPslDsGajck0R6LKdf_9RoCLMLmLFJ-tw=w609-h913-s-no-gm?authuser=0",
   },
   {
     name: "Basti",
     description:
       "In Ayurveda, administering medicated substances through enema therapy is a specialized and effective approach for treating various illnesses, particularly chronic and complex conditions. Depending on the nature of the disorder, carefully prepared herbal decoctions, oils, ghee, or milk are introduced through the rectum, producing significant therapeutic benefits. This treatment is especially effective for disorders caused by an imbalance in vata, such as arthritis, hemorrhoids, and chronic constipation.",
+      imageUrl: "https://lh3.googleusercontent.com/pw/AP1GczO_JcRw4imjXzwEclwoUPqlXsliXd-cs25oGsVVcsqibVgRgXSamLF_s2976N8zXjscfCo98pu5tRP3fhPVVf4CmxVtUD9A5QqVbGAGb2LfgwfUVeBuB1C40zxo-pGztSfuwq0zeJpXk_c71TrZE-yF=w609-h913-s-no-gm?authuser=0",
   },
   {
     name: "Nasya",
     description:
       "This therapy is highly effective in cleansing and purifying the head region. The treatment begins with a gentle massage and the application of warmth to the head and shoulders. Following this, medicated nasal drops are administered into both nostrils. This process helps cleanse the entire head area and alleviates various conditions, including headaches, neurological discomfort, hair-related disorders, sleep disturbances, nervous system imbalances, sinus infections, chronic nasal discharge, and breathing difficulties.",
+      imageUrl: "https://images.unsplash.com/photo-1605200332828-a627237c89f9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "Raktamokshan",
     description:
       "This treatment is designed to purify the blood and is highly effective for health conditions that arise from blood impurities. It may be applied either to a specific area or to the entire body, depending on the condition. This therapy is particularly beneficial for various skin disorders such as psoriasis and dermatitis, as well as for localized problems including infections and skin discoloration.",
+      imageUrl: "https://images.unsplash.com/photo-1512291319078-3a1e9c5b0c78?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 
@@ -127,7 +132,15 @@ export default function PanchkarmaPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {therapies.map((therapy) => (
-              <Card key={therapy.name} className="flex flex-col">
+                <Card key={therapy.name} className="flex flex-col">
+                <div className="relative h-48 w-full">
+                  <Image
+                    src={therapy.imageUrl}
+                    alt={therapy.name}
+                    fill
+                    className="object-cover rounded-t-lg"
+                  />
+                </div>
                 <CardHeader>
                   <CardTitle className="font-headline text-2xl font-bold">
                     {therapy.name}
