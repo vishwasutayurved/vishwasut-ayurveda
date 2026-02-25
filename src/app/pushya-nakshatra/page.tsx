@@ -45,7 +45,7 @@ const pushyaNakshatraContent = `
 `;
 
 const pushyaNakshatraDates2024 = [
-    { month: "January", dates: ["25th"] },
+    { month: "January", dates: [] },
     { month: "February", dates: ["21st"] },
     { month: "March", dates: ["19th"] },
     { month: "April", dates: ["15th"] },
@@ -84,7 +84,7 @@ export default function PushyaNakshatraPage() {
             <div className="py-8">
               <NextPushyaNakshatraCountdown />
             </div>
-
+        
             <div className="py-16 sm:py-12">
                 <div className="container mx-auto px-4">
                     <div className="flex flex-col lg:flex-row gap-12">
@@ -107,7 +107,7 @@ export default function PushyaNakshatraPage() {
                                     </CardHeader>
                                     <CardContent>
                                         <ul>
-                                            {pushyaNakshatraDates2024.map((item, index) => (
+                                            {pushyaNakshatraDates2024.filter((item) => item.dates.length > 0).map((item, index) => (
                                                 <li key={index} className="flex items-center mb-3">
                                                     <CheckCircle className="h-5 w-5 text-primary mr-3" />
                                                     <span className="font-semibold">{item.month}:</span>

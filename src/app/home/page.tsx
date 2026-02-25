@@ -53,7 +53,7 @@ export default async function HomePage() {
 
       <FeaturedProducts featuredProducts={featuredProducts} />
       
-      {/* <section className="container mx-auto px-4 py-8 sm:py-12 scale-up-content-animation">
+      <section className="container mx-auto px-4 py-8 sm:py-12 scale-up-content-animation">
         <div className="mx-auto max-w-10xl text-center">
           <h2 className="font-headline text-4xl font-bold text-primary md:text-5xl">
           What is Pushya Nakshatra?
@@ -81,7 +81,7 @@ export default async function HomePage() {
           </div>
 
         </div>
-      </section> */}
+      </section>
 
       <FeaturedBlogs featuredBlogs={featuredBlogs} />
 
