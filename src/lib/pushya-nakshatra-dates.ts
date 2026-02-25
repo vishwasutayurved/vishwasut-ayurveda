@@ -4,7 +4,6 @@ export const upcomingPushyaNakshatraDates = [
         day: "Saturday-Sunday", 
         starts: "09:35 AM", 
         ends: "08:35 AM",
-        isNext: true,
     },
     { 
         date: "27 & 28-Mar-2026", 

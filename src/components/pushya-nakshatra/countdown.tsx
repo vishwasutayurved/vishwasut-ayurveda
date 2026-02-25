@@ -8,36 +8,35 @@ interface TimeLeft {
     days: number;
     hours: number;
     minutes: number;
+    seconds: number;
 }
 
 const NextPushyaNakshatraCountdown = () => {
     const nextPushyaDate = new Date("2026-02-28T16:35:00");
     const endDate = new Date("2026-03-01T08:35:00");
 
-    const calculateTimeLeft = (): TimeLeft => {
+    const calculateTimeLeft = (): TimeLeft | null => {
         const difference = +nextPushyaDate - +new Date();
-        let timeLeft: TimeLeft = { days: 0, hours: 0, minutes: 0 };
-
-        if (difference > 0) {
-            timeLeft = {
-                days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-                hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-                minutes: Math.floor((difference / 1000 / 60) % 60),
-            };
+        if (difference <= 0) {
+            return null;
         }
-
-        return timeLeft;
+        return {
+            days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+            hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+            minutes: Math.floor((difference / 1000 / 60) % 60),
+            seconds: Math.floor((difference / 1000) % 60),
+        };
     };
 
-    const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft());
+    const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
     useEffect(() => {
-        const timer = setTimeout(() => {
+        const timer = setInterval(() => {
             setTimeLeft(calculateTimeLeft());
         }, 1000);
 
-        return () => clearTimeout(timer);
-    });
+        return () => clearInterval(timer);
+    }, []);
 
     return (
         <div className="flex items-center justify-center px-4">
@@ -51,20 +50,28 @@ const NextPushyaNakshatraCountdown = () => {
                     <p className="text-sm text-yellow-600">Saturday-Sunday</p>
                 </CardHeader>
                 <CardContent>
-                    <div className="grid grid-cols-3 gap-4 text-center">
-                        <div className="p-4 bg-white rounded-lg shadow-md">
-                            <div className="text-3xl font-bold">{timeLeft.days}</div>
-                            <div className="text-sm text-gray-500">Days</div>
+                    {timeLeft ? (
+                        <div className="grid grid-cols-4 gap-4 text-center">
+                            <div className="p-4 bg-white rounded-lg shadow-md">
+                                <div className="text-3xl font-bold">{timeLeft.days}</div>
+                                <div className="text-sm text-gray-500">Days</div>
+                            </div>
+                            <div className="p-4 bg-white rounded-lg shadow-md">
+                                <div className="text-3xl font-bold">{timeLeft.hours}</div>
+                                <div className="text-sm text-gray-500">Hours</div>
+                            </div>
+                            <div className="p-4 bg-white rounded-lg shadow-md">
+                                <div className="text-3xl font-bold">{timeLeft.minutes}</div>
+                                <div className="text-sm text-gray-500">Minutes</div>
+                            </div>
+                            <div className="p-4 bg-white rounded-lg shadow-md">
+                                <div className="text-3xl font-bold">{timeLeft.seconds}</div>
+                                <div className="text-sm text-gray-500">Seconds</div>
+                            </div>
                         </div>
-                        <div className="p-4 bg-white rounded-lg shadow-md">
-                            <div className="text-3xl font-bold">{timeLeft.hours}</div>
-                            <div className="text-sm text-gray-500">Hours</div>
-                        </div>
-                        <div className="p-4 bg-white rounded-lg shadow-md">
-                            <div className="text-3xl font-bold">{timeLeft.minutes}</div>
-                            <div className="text-sm text-gray-500">Minutes</div>
-                        </div>
-                    </div>
+                    ) : (
+                        <div className="text-center text-2xl font-bold text-primary-dark mt-4">The auspicious time has begun!</div>
+                    )}
                     <div className="text-center text-sm text-gray-600 mt-4">
                         <p>Starts: {nextPushyaDate.toLocaleString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })} on February 28, 2026</p>
                         <p>Ends: {endDate.toLocaleString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })} on March 1, 2026</p>
