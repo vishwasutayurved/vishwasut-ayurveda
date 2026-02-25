@@ -2,10 +2,11 @@
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { NavLink } from '@/components/layout/nav-link';
-import { WHATSAPP_APPOINTMENT_MESSAGE, WHATSAPP_NUMBER, WHATSAPP_PUSHYA_NAKSHATRA_MESSAGE } from '@/lib/constants';
+import { WHATSAPP_NUMBER, WHATSAPP_PUSHYA_NAKSHATRA_MESSAGE } from '@/lib/constants';
 import { Metadata } from 'next';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle } from 'lucide-react';
+import NextPushyaNakshatraCountdown from '@/components/pushya-nakshatra/countdown';
 
 export const metadata: Metadata = {
   title: 'Pushya Nakshatra 2024 - A Special Day for Ayurvedic Healing',
@@ -79,8 +80,12 @@ export default function PushyaNakshatraPage() {
                     </div>
                 </div>
             </div>
+            
+            <div className="py-8">
+              <NextPushyaNakshatraCountdown />
+            </div>
 
-            <div className="py-16 sm:py-24">
+            <div className="py-16 sm:py-12">
                 <div className="container mx-auto px-4">
                     <div className="flex flex-col lg:flex-row gap-12">
                         {/* Main Content */}

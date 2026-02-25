@@ -1,0 +1,78 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Sparkles } from "lucide-react";
+
+interface TimeLeft {
+    days: number;
+    hours: number;
+    minutes: number;
+}
+
+const NextPushyaNakshatraCountdown = () => {
+    const nextPushyaDate = new Date("2026-02-28T09:35:00");
+    const endDate = new Date("2026-03-01T08:35:00");
+
+    const calculateTimeLeft = (): TimeLeft => {
+        const difference = +nextPushyaDate - +new Date();
+        let timeLeft: TimeLeft = { days: 0, hours: 0, minutes: 0 };
+
+        if (difference > 0) {
+            timeLeft = {
+                days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+                hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+                minutes: Math.floor((difference / 1000 / 60) % 60),
+            };
+        }
+
+        return timeLeft;
+    };
+
+    const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft());
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setTimeLeft(calculateTimeLeft());
+        }, 1000);
+
+        return () => clearTimeout(timer);
+    });
+
+    return (
+        <div className="flex items-center justify-center px-4">
+            <Card className="w-full max-w-2xl border-2 border-primary/20 bg-primary/5">
+                <CardHeader className="text-center">
+                    <div className="flex items-center justify-center text-primary">
+                        <Sparkles className="h-5 w-5 mr-2" />
+                        <CardTitle className="text-lg font-bold">Next Pushya Nakshatra</CardTitle>
+                    </div>
+                    <p className="text-2xl font-bold text-primary mt-2">28-Feb & 01-Mar - 2026</p>
+                    <p className="text-sm text-muted-foreground">Saturday-Sunday</p>
+                </CardHeader>
+                <CardContent>
+                    <div className="grid grid-cols-3 gap-4 text-center">
+                        <div className="p-4 bg-background rounded-lg shadow-md">
+                            <div className="text-3xl font-bold">{timeLeft.days}</div>
+                            <div className="text-sm text-muted-foreground">Days</div>
+                        </div>
+                        <div className="p-4 bg-background rounded-lg shadow-md">
+                            <div className="text-3xl font-bold">{timeLeft.hours}</div>
+                            <div className="text-sm text-muted-foreground">Hours</div>
+                        </div>
+                        <div className="p-4 bg-background rounded-lg shadow-md">
+                            <div className="text-3xl font-bold">{timeLeft.minutes}</div>
+                            <div className="text-sm text-muted-foreground">Minutes</div>
+                        </div>
+                    </div>
+                    <div className="text-center text-sm text-muted-foreground mt-4">
+                        <p>Starts: {nextPushyaDate.toLocaleString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })} on February 28, 2026</p>
+                        <p>Ends: {endDate.toLocaleString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })} on March 1, 2026</p>
+                    </div>
+                </CardContent>
+            </Card>
+        </div>
+    );
+};
+
+export default NextPushyaNakshatraCountdown;
