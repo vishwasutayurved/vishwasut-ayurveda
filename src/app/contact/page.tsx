@@ -45,15 +45,16 @@ export default function ContactPage() {
                     <Phone className="mr-4 mt-1 h-6 w-6 flex-shrink-0 text-primary" />
                     <div>
                       <h3 className="font-semibold">Phone Number</h3>
-                      <p className="text-foreground/70">+919270220033</p>
-                      <p className="text-foreground/70">+919975797624</p>
+                      <a href="tel:+919270220033" className="text-foreground/70 hover:text-primary">+919270220033</a>
+                      <br />
+                      <a href="tel:+919975797624" className="text-foreground/70 hover:text-primary">+919975797624</a>
                     </div>
                   </div>
                   <div className="flex items-start">
                     <Mail className="mr-4 mt-1 h-6 w-6 flex-shrink-0 text-primary" />
                     <div>
                       <h3 className="font-semibold">Email</h3>
-                      <p className="text-foreground/70">vishwasutayurved@gmail.com</p>
+                      <a href="mailto:vishwasutayurved@gmail.com" className="text-foreground/70 hover:text-primary">vishwasutayurved@gmail.com</a>
                     </div>
                   </div>
                 </CardContent>
