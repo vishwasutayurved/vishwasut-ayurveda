@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/card";
 import { FlipCard } from "@/components/ui/flip-card";
 import { WHATSAPP_NUMBER, WHATSAPP_PANCHAKARMA_MESSAGE } from "@/lib/constants";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export const metadata: Metadata = {
   title: "Panchkarma",
@@ -159,13 +160,36 @@ export default function PanchkarmaPage() {
                         {therapy.name}
                       </CardTitle>
                     </CardHeader>
-                    <CardContent className="flex-grow">
-                      <p>{therapy.description}</p>
-                    </CardContent>
+                    <ScrollArea className="flex-grow">
+                      <CardContent>
+                        <p>{therapy.description}</p>
+                      </CardContent>
+                    </ScrollArea>
                   </Card>
                 }
               />
             ))}
+          </div>
+        </section>
+
+        <section className="mx-auto max-w-4xl mt-24 text-center">
+          <h2 className="font-headline text-3xl font-bold text-primary md:text-4xl mb-8">
+            Book Your Panchakarma Appointment
+          </h2>
+          <p className="prose prose-lg dark:prose-invert mx-auto">
+            Ready to experience the rejuvenating benefits of Panchakarma? Contact us
+            to schedule your consultation with our Ayurvedic expert.
+          </p>
+          <div className="mt-8">
+            <Button asChild size="lg">
+              <a
+                href="https://api.whatsapp.com/send?phone=919911550185&text=Hello!%20I'm%20interested%20in%20booking%20a%20Panchakarma%20appointment."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Book on WhatsApp
+              </a>
+            </Button>
           </div>
         </section>
 
