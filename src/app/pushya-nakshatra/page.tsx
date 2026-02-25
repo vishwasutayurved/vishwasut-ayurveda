@@ -6,7 +6,6 @@ import { WHATSAPP_NUMBER, WHATSAPP_PUSHYA_NAKSHATRA_MESSAGE } from '@/lib/consta
 import { Metadata } from 'next';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import NextPushyaNakshatraCountdown from '@/components/pushya-nakshatra/countdown';
-import { upcomingPushyaNakshatraDates } from '@/lib/pushya-nakshatra-dates';
 import UpcomingDates from '@/components/pushya-nakshatra/upcoming-dates';
 
 export const metadata: Metadata = {
@@ -19,7 +18,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://firebasestorage.googleapis.com/v0/b/vishvasut-ayurved.appspot.com/o/images%2Fpushya-nakshatra-banner.jpg?alt=media&token=e3b0b9a3-a7f4-4a6e-b016-368297d025a6',
+        url: 'https://lh3.googleusercontent.com/pw/AP1GczOB0eEFXqQRdo-VWuu76uMCVh_aJiaa5tfN4V9aSS-np0cvHc0dh3Zb4AlIj98ePdqRxwdiWK_DzjIsHPcHzzbiwf0RrdC4UKuEFoJGWSvJdyFUf-crGi9qVt2rn7n7qK9G_At12hHO88uy4oHdVlp9=w1376-h768-s-no-gm?authuser=0',
         width: 1200,
         height: 630,
         alt: 'Pushya Nakshatra Auspicious Day',
@@ -27,23 +26,6 @@ export const metadata: Metadata = {
     ],
   },
 };
-
-const pushyaNakshatraContent = `
-<h2 class="text-2xl font-bold text-primary mb-4">What is Pushya Nakshatra?</h2>
-<p class="mb-4">Pushya is the eighth nakshatra in Indian astrology. It is considered the most auspicious among all the nakshatras. The symbol of this nakshatra is the udder of a cow, which represents nourishment and fulfillment. The presiding deity of Pushya Nakshatra is Brihaspati, the guru of the gods, who bestows wisdom, knowledge, and prosperity.</p>
-<p class="mb-4">The word "Pushya" itself means "to nourish," and this nakshatra is believed to provide the energy for growth, expansion, and good fortune. It is a time when positive energies are at their peak, making it an excellent period for starting new ventures, making important purchases, and engaging in spiritual activities.</p>
-<h3 class="text-xl font-bold text-primary mt-6 mb-4">Why is Pushya Nakshatra Important in Ayurveda?</h3>
-<p class="mb-4">In the field of Ayurveda, Pushya Nakshatra holds a special significance. It is considered the most favorable time for preparing and administering medicines, as well as for starting any kind of treatment or therapy. According to Ayurvedic texts, any medicine taken during Pushya Nakshatra has a more potent and lasting effect on the body.</p>
-<p class="mb-4">This is because the nourishing and healing energies of this nakshatra enhance the efficacy of the herbs and formulations, allowing them to penetrate deeper into the body\'s tissues (dhatus) and provide optimal results. It is also a great time for rejuvenation therapies like Panchakarma, as the body is more receptive to detoxification and healing during this period.</p>
-<p class="mb-4">At our clinic, we give special importance to Pushya Nakshatra by preparing Suvarnaprashan for kids, a unique Ayurvedic immunization method, on this auspicious day to boost their immunity and overall development.</p>
-<h3 class="text-xl font-bold text-primary mt-6 mb-4">Benefits of Starting Treatment on Pushya Nakshatra:</h3>
-<ul class="list-disc list-inside mb-4 pl-4">
-    <li class="mb-2"><strong>Enhanced Efficacy:</strong> Medicines and treatments are more effective.</li>
-    <li class="mb-2"><strong>Quicker Recovery:</strong> The healing process is accelerated.</li>
-    <li class="mb-2"><strong>Long-lasting Results:</strong> The benefits of the treatment are sustained for a longer period.</li>
-    <li class="mb-2"><strong>Boosted Immunity:</strong> It is an excellent time for therapies aimed at strengthening the immune system.</li>
-</ul>
-`;
 
 // const pushyaNakshatraDates2024 = [
 //   { month: "January", dates: [] },
@@ -67,7 +49,7 @@ export default function PushyaNakshatraPage() {
     <div className="bg-background">
       <div className="relative h-80 w-full md:h-[400px]">
         <Image
-          src="https://firebasestorage.googleapis.com/v0/b/vishvasut-ayurved.appspot.com/o/images%2Fpushya-nakshatra-banner.jpg?alt=media&token=e3b0b9a3-a7f4-4a6e-b016-368297d025a6"
+          src="https://lh3.googleusercontent.com/pw/AP1GczOB0eEFXqQRdo-VWuu76uMCVh_aJiaa5tfN4V9aSS-np0cvHc0dh3Zb4AlIj98ePdqRxwdiWK_DzjIsHPcHzzbiwf0RrdC4UKuEFoJGWSvJdyFUf-crGi9qVt2rn7n7qK9G_At12hHO88uy4oHdVlp9=w1376-h768-s-no-gm?authuser=0"
           alt="Pushya Nakshatra Banner"
           fill
           className="object-cover"
@@ -94,10 +76,22 @@ export default function PushyaNakshatraPage() {
             {/* Main Content */}
             <div className="lg:w-2/3">
               <article>
-                <div
-                  className="prose prose-lg dark:prose-invert max-w-none"
-                  dangerouslySetInnerHTML={{ __html: pushyaNakshatraContent }}
-                />
+                <div className="prose prose-lg dark:prose-invert max-w-none">
+                  <h2 className="text-2xl font-bold text-primary mb-4">What is Pushya Nakshatra?</h2>
+                  <p className="mb-4">Pushya is the eighth nakshatra in Indian astrology. It is considered the most auspicious among all the nakshatras. The symbol of this nakshatra is the udder of a cow, which represents nourishment and fulfillment. The presiding deity of Pushya Nakshatra is Brihaspati, the guru of the gods, who bestows wisdom, knowledge, and prosperity.</p>
+                  <p className="mb-4">The word "Pushya" itself means "to nourish," and this nakshatra is believed to provide the energy for growth, expansion, and good fortune. It is a time when positive energies are at their peak, making it an excellent period for starting new ventures, making important purchases, and engaging in spiritual activities.</p>
+                  <h3 className="text-xl font-bold text-primary mt-6 mb-4">Why is Pushya Nakshatra Important in Ayurveda?</h3>
+                  <p className="mb-4">In the field of Ayurveda, Pushya Nakshatra holds a special significance. It is considered the most favorable time for preparing and administering medicines, as well as for starting any kind of treatment or therapy. According to Ayurvedic texts, any medicine taken during Pushya Nakshatra has a more potent and lasting effect on the body.</p>
+                  <p className="mb-4">This is because the nourishing and healing energies of this nakshatra enhance the efficacy of the herbs and formulations, allowing them to penetrate deeper into the body\'s tissues (dhatus) and provide optimal results. It is also a great time for rejuvenation therapies like Panchakarma, as the body is more receptive to detoxification and healing during this period.</p>
+                  <p className="mb-4">At our clinic, we give special importance to Pushya Nakshatra by preparing Suvarnaprashan for kids, a unique Ayurvedic immunization method, on this auspicious day to boost their immunity and overall development.</p>
+                  <h3 className="text-xl font-bold text-primary mt-6 mb-4">Benefits of Starting Treatment on Pushya Nakshatra:</h3>
+                  <ul className="list-disc list-inside mb-4 pl-4">
+                    <li className="mb-2"><strong>Enhanced Efficacy:</strong> Medicines and treatments are more effective.</li>
+                    <li className="mb-2"><strong>Quicker Recovery:</strong> The healing process is accelerated.</li>
+                    <li className="mb-2"><strong>Long-lasting Results:</strong> The benefits of the treatment are sustained for a longer period.</li>
+                    <li className="mb-2"><strong>Boosted Immunity:</strong> It is an excellent time for therapies aimed at strengthening the immune system.</li>
+                  </ul>
+                </div>
               </article>
             </div>
 
