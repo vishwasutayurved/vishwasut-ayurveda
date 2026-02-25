@@ -1,7 +1,7 @@
 import { NavLink } from "@/components/layout/nav-link";
 import { HeroCarousel } from "@/components/home/hero-carousel";
 import { Button } from "@/components/ui/button";
-import { SOCIALKIT_WIDGET_ID, WHATSAPP_APPOINTMENT_MESSAGE, WHATSAPP_NUMBER } from "@/lib/constants";
+import { SOCIALKIT_WIDGET_ID, WHATSAPP_APPOINTMENT_MESSAGE, WHATSAPP_NUMBER, WHATSAPP_PUSHYA_NAKSHATRA_MESSAGE } from "@/lib/constants";
 import { Faq } from "@/components/home/faq";
 import { FeaturedProducts } from "@/components/home/featured-products";
 import { FeaturedBlogs } from "@/components/home/featured-blogs";
@@ -52,6 +52,36 @@ export default async function HomePage() {
       </section>
 
       <FeaturedProducts featuredProducts={featuredProducts} />
+      
+      {/* <section className="container mx-auto px-4 py-8 sm:py-12 scale-up-content-animation">
+        <div className="mx-auto max-w-10xl text-center">
+          <h2 className="font-headline text-4xl font-bold text-primary md:text-5xl">
+          What is Pushya Nakshatra?
+          </h2>
+          <p className="mt-6 text-base md:text-lg leading-relaxed text-foreground/80">
+          Pushya is the eighth nakshatra in Indian astrology. 
+          It is considered the most auspicious among all the nakshatras. 
+          The symbol of this nakshatra is the udder of a cow, which represents nourishment and fulfillment.
+          The presiding deity of Pushya Nakshatra is Brihaspati, 
+          the guru of the gods, who bestows wisdom, knowledge, and prosperity.
+          </p>
+          <div className="mt-8">
+            <Button
+              size="lg"
+              asChild
+              className="w-full sm:w-auto"
+              style={{ borderRadius: "100px" }}
+            >
+              <NavLink
+                href="/pushya-nakshatra/"
+              >
+                Read more about Pushya Nakshatra
+              </NavLink>
+            </Button>
+          </div>
+
+        </div>
+      </section> */}
 
       <FeaturedBlogs featuredBlogs={featuredBlogs} />
 
