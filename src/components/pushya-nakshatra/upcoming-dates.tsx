@@ -1,19 +1,50 @@
+'use client'
+
 import { Card, CardContent } from "@/components/ui/card";
+import { upcomingPushyaNakshatraDates } from "@/lib/pushya-nakshatra-dates";
 import { Calendar, Clock } from "lucide-react";
+import { useEffect, useState } from "react";
 
-interface UpcomingDate {
-  date: string;
-  day: string;
-  starts: string;
-  ends: string;
-  isNext?: boolean;
-}
+const UpcomingDates = () => {
+  const [upcomingPushyaNakshatraDateList, setUpcomingPushyaNakshatraDateList] = useState(upcomingPushyaNakshatraDates)
 
-interface UpcomingDatesProps {
-  upcomingPushyaNakshatraDates: UpcomingDate[];
-}
+  const markNextEvent = () => {
+    let isNextDateFound = false;
+    const now = new Date();
+    setUpcomingPushyaNakshatraDateList(prev =>
+      prev.map((event) => {
+        const year = event.date.slice(-4);
+        const monthMatch = event.date.match(/[A-Z][a-z]{2}/);
+        const dayMatch = event.date.match(/^\d{1,2}/);
 
-const UpcomingDates = ({ upcomingPushyaNakshatraDates }: UpcomingDatesProps) => {
+        if (!monthMatch || !dayMatch) {
+          return { ...event, isNext: false };
+        };
+
+        const monthStr = monthMatch[0];
+        const day = dayMatch[0];
+
+        const [time, period] = event.starts.split(' ');
+        let [hours, minutes] = time.split(':').map(Number);
+
+        if (period === 'PM' && hours < 12) hours += 12;
+        if (period === 'AM' && hours === 12) hours = 0;
+
+        const startDate = new Date(`${monthStr} ${day}, ${year} ${hours}:${minutes}:00`);
+
+        if (startDate > now && !isNextDateFound) {
+          isNextDateFound = true;
+          return { ...event, isNext: true }
+        }
+        return event;
+      })
+    );
+  }
+
+  useEffect(() => {
+    markNextEvent();
+  }, [])
+
   return (
     <div className="py-16 sm:py-24">
       <div className="container mx-auto px-4">
@@ -23,7 +54,7 @@ const UpcomingDates = ({ upcomingPushyaNakshatraDates }: UpcomingDatesProps) => 
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {upcomingPushyaNakshatraDates.map((item, index) => (
+          {upcomingPushyaNakshatraDateList.map((item, index) => (
             <Card
               key={index}
               className={`p-6 ${item.isNext ? 'border-2 border-primary' : ''}`}>

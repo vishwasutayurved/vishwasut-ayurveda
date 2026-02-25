@@ -86,8 +86,8 @@ export default function PushyaNakshatraPage() {
         <NextPushyaNakshatraCountdown />
       </div>
 
-      <UpcomingDates upcomingPushyaNakshatraDates={upcomingPushyaNakshatraDates} />
-      
+      <UpcomingDates />
+
       <div className="py-16 sm:py-12">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-12">
