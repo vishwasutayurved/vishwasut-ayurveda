@@ -12,3 +12,4 @@ Follow the steps to remove trailing slash implmentation.
 3. Modify nav-link.tsx component condition of ignoring progress bar.
 4. Modify condition at line no 87 in header.tsx component for highlight logic
 5. ((pathname === "/" && item.href === "/") || (pathname === (item.href + '/'))) This logic needs to be changed for point 3 & 4. Changed to this: (pathname === href).
+6. Update the Pushya Nakshatra URL
