@@ -1,7 +1,7 @@
 import { NavLink } from "@/components/layout/nav-link";
 import { HeroCarousel } from "@/components/home/hero-carousel";
 import { Button } from "@/components/ui/button";
-import { WHATSAPP_APPOINTMENT_MESSAGE, WHATSAPP_NUMBER } from "@/lib/constants";
+import { SOCIALKIT_WIDGET_ID, WHATSAPP_APPOINTMENT_MESSAGE, WHATSAPP_NUMBER } from "@/lib/constants";
 import { Faq } from "@/components/home/faq";
 import { FeaturedProducts } from "@/components/home/featured-products";
 import { FeaturedBlogs } from "@/components/home/featured-blogs";
@@ -67,7 +67,7 @@ export default async function HomePage() {
           </div>
           <div className="flex justify-center  scale-up-content-animation">
             <iframe
-              src="https://widgets.sociablekit.com/google-reviews/iframe/25644069"
+              src={`https://widgets.sociablekit.com/google-reviews/iframe/${SOCIALKIT_WIDGET_ID}`}
               width="100%"
               height="480"
               style={{ border: "none", overflow: "hidden" }}
