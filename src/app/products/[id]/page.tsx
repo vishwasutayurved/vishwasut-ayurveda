@@ -8,6 +8,7 @@ import { getProductById, getProducts } from '@/lib/firebase/firestore';
 import type { Product } from '@/lib/products';
 import { Metadata } from 'next';
 import { ProductImageGallery } from '@/components/product-image-gallery';
+import { ShareButtons } from '@/components/share-buttons';
 
 
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
@@ -104,6 +105,9 @@ export default async function ProductDetailPage({ params }: { params: { id: stri
                   </Card>
                 </div>
               )}
+            </div>
+             <div className="mt-8 flex justify-center">
+              <ShareButtons title={product.description} />
             </div>
           </div>
         </div>

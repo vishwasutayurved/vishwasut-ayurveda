@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ChevronLeft } from 'lucide-react';
+import { ShareButtons } from '@/components/share-buttons';
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const blog = await getBlogBySlug((await params).slug);
@@ -73,6 +74,9 @@ export default async function BlogPage({ params }: { params: { slug: string } })
               dangerouslySetInnerHTML={{ __html: blog.htmlBlogDetails }}
             />
           </article>
+          <div className="mt-8 flex justify-center">
+            <ShareButtons title={blog.description} />
+          </div>
         </div>
       </div>
     </div>
