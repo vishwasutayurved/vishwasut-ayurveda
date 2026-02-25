@@ -6,6 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { FlipCard } from "@/components/ui/flip-card";
 
 export const metadata: Metadata = {
   title: "Panchkarma",
@@ -132,24 +133,36 @@ export default function PanchkarmaPage() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {therapies.map((therapy) => (
-                <Card key={therapy.name} className="flex flex-col">
-                <div className="relative h-48 w-full">
-                  <Image
-                    src={therapy.imageUrl}
-                    alt={therapy.name}
-                    fill
-                    className="object-cover rounded-t-lg"
-                  />
-                </div>
-                <CardHeader>
-                  <CardTitle className="font-headline text-2xl font-bold">
-                    {therapy.name}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="flex-grow">
-                  <p>{therapy.description}</p>
-                </CardContent>
-              </Card>
+              <FlipCard
+                key={therapy.name}
+                className="h-96"
+                frontContent={
+                  <div className="relative h-full w-full">
+                    <Image
+                      src={therapy.imageUrl}
+                      alt={therapy.name}
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center p-4">
+                      <h3 className="text-white text-2xl font-bold font-headline">{therapy.name}</h3>
+                      <p className="text-white text-sm mt-2">Click to read more</p>
+                    </div>
+                  </div>
+                }
+                backContent={
+                  <Card className="flex flex-col h-full">
+                    <CardHeader>
+                      <CardTitle className="font-headline text-2xl font-bold">
+                        {therapy.name}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="flex-grow">
+                      <p>{therapy.description}</p>
+                    </CardContent>
+                  </Card>
+                }
+              />
             ))}
           </div>
         </section>
