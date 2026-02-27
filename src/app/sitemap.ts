@@ -95,6 +95,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             changeFrequency: 'yearly',
             priority: 0.7,
         },
+        {
+            url: appUrl + '/pushya-nakshatra/',
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 1,
+        },
         ...productEntries,
         ...blogEntries,
         ...treatmentsEntries
