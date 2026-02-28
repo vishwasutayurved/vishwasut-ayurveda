@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Cookies from "js-cookie";
 import { X } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -13,13 +14,16 @@ const AdvertisementPopup = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       const now = new Date();
-      const futureAdPopUpDate = sessionStorage.getItem(KEY_FEATURE_AD_POPUP_DATE);
-
+      const futureAdPopUpDate = Cookies.get(KEY_FEATURE_AD_POPUP_DATE);
       if (!futureAdPopUpDate) {
-        sessionStorage.setItem(KEY_FEATURE_AD_POPUP_DATE, new Date(now.getTime() + 60 * 60 * 1000).toISOString());
+        Cookies.set(KEY_FEATURE_AD_POPUP_DATE, new Date(now.getTime() + 60 * 60 * 1000).toISOString(), {
+          expires: new Date(now.getTime() + 60 * 60 * 1000)
+        });
         setIsOpen(true);
       } else if (futureAdPopUpDate && now > new Date(futureAdPopUpDate)) {
-        sessionStorage.setItem(KEY_FEATURE_AD_POPUP_DATE, new Date(now.getTime() + 60 * 60 * 1000).toISOString());
+        Cookies.set(KEY_FEATURE_AD_POPUP_DATE, new Date(now.getTime() + 60 * 60 * 1000).toISOString(), {
+          expires: new Date(now.getTime() + 60 * 60 * 1000)
+        });
         setIsOpen(true);
       }
     }, 2000);
