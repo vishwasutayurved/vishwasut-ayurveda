@@ -183,7 +183,7 @@ export default function PanchkarmaPage() {
           <div className="mt-8">
             <Button asChild size="lg">
               <a
-                href="https://api.whatsapp.com/send?phone=919911550185&text=Hello!%20I'm%20interested%20in%20booking%20a%20Panchakarma%20appointment."
+                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_PANCHAKARMA_MESSAGE)}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -291,7 +291,7 @@ export default function PanchkarmaPage() {
           <div className="mt-8">
             <Button asChild size="lg">
               <a
-                href={`https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(WHATSAPP_PANCHAKARMA_MESSAGE)}`}
+                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_PANCHAKARMA_MESSAGE)}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >

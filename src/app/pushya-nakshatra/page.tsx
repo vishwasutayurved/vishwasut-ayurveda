@@ -43,7 +43,7 @@ export const metadata: Metadata = {
 // ];
 
 export default function PushyaNakshatraPage() {
-  const whatsappUrl = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(WHATSAPP_PUSHYA_NAKSHATRA_MESSAGE)}`;
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_PUSHYA_NAKSHATRA_MESSAGE)}`;
 
   return (
     <div className="bg-background">
