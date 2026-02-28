@@ -6,6 +6,7 @@ import { Faq } from "@/components/home/faq";
 import { FeaturedProducts } from "@/components/home/featured-products";
 import { FeaturedBlogs } from "@/components/home/featured-blogs";
 import { getFeaturedBlogs, getFeaturedProducts } from "@/lib/firebase/firestore";
+import AdvertisementPopup from "@/components/home/advertisement-popup";
 
 export default async function HomePage() {
   const featuredProducts = await getFeaturedProducts();
@@ -13,6 +14,7 @@ export default async function HomePage() {
   
   return (
     <div className="flex flex-col">
+      <AdvertisementPopup />
       <section className="relative w-full">
         <HeroCarousel />
       </section>
