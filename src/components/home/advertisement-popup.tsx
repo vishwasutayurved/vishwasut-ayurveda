@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { X } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { KEY_FEATURE_AD_POPUP as KEY_FEATURE_AD_POPUP_DATE } from "@/lib/constants";
 
 const AdvertisementPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,8 +12,17 @@ const AdvertisementPopup = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsOpen(true);
-    }, 2000); 
+      const now = new Date();
+      const futureAdPopUpDate = sessionStorage.getItem(KEY_FEATURE_AD_POPUP_DATE);
+
+      if (!futureAdPopUpDate) {
+        sessionStorage.setItem(KEY_FEATURE_AD_POPUP_DATE, new Date(now.getTime() + 60 * 60 * 1000).toISOString());
+        setIsOpen(true);
+      } else if (futureAdPopUpDate && now > new Date(futureAdPopUpDate)) {
+        sessionStorage.setItem(KEY_FEATURE_AD_POPUP_DATE, new Date(now.getTime() + 60 * 60 * 1000).toISOString());
+        setIsOpen(true);
+      }
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -27,43 +37,45 @@ const AdvertisementPopup = () => {
 
   if (!isOpen) {
     return null;
-  }
-
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-      <div className={`relative max-w-lg w-full mx-4 bg-white rounded-lg shadow-lg p-6 ${isClosing ? 'fly-out-spinner-animation' : 'fly-in-spinner-animation'}`}>
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={handleClose}
-          className="absolute top-4 right-4"
-        >
-          <X size={24} />
-        </Button>
-        <div className="text-center">
-            <Image
-                src={"https://fonts.gstatic.com/s/e/notoemoji/latest/1f44f_1f3ff/512.gif"}
-                alt="Logo"
-                width={100}
-                height={100}
-                className="mx-auto mb-4 emoji-dance"
-            />
-          <h2 className="text-2xl font-bold mb-4">Welcome to Our Clinic!</h2>
-          <p>
-            We are happy to see you here. Check out our latest products and offers.
-          </p>
-          <Button asChild className="mt-4">
-            <a
-              href="/products"
-              onClick={handleClose}
-            >
-              Explore Products
-            </a>
+  } else {
+    return (
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+        <div className={`relative max-w-lg w-full mx-4 bg-white rounded-lg shadow-lg p-6 ${isClosing ? 'fly-out-spinner-animation' : 'fly-in-spinner-animation'}`}>
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={handleClose}
+            className="absolute top-4 right-4"
+          >
+            <X size={24} />
           </Button>
+          <div className="text-center">
+            <Image
+              src={"https://fonts.gstatic.com/s/e/notoemoji/latest/1f64f_1f3fb/512.gif"}
+              alt="Logo"
+              width={100}
+              height={100}
+              className="mx-auto mb-4 emoji-dance"
+            />
+            <h2 className="text-2xl font-bold mb-4">Welcome to Our Clinic!</h2>
+            <p>
+              We are happy to see you here. Check out our latest products and offers.
+            </p>
+            <Button asChild className="mt-4">
+              <a
+                href="/products" target="_blank"
+                onClick={handleClose}
+              >
+                Explore Products
+              </a>
+            </Button>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
+
+
 };
 
 export default AdvertisementPopup;

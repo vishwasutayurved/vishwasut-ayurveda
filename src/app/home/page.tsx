@@ -14,7 +14,6 @@ export default async function HomePage() {
   
   return (
     <div className="flex flex-col">
-      <AdvertisementPopup />
       <section className="relative w-full">
         <HeroCarousel />
       </section>
@@ -130,7 +129,10 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+      
       <Faq />
+      
+      <AdvertisementPopup />
     </div>
   );
 }

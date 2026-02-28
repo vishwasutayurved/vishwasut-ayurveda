@@ -13,6 +13,10 @@
 - Product Details: Show detailed information for each product, including ingredients, benefits, and usage instructions.
 - Treatments: Information about various treatments offered, including Panchakarma, disease-specific treatments, and wellness packages.
 - Firebase Integration: Utilize Firebase Firestore to store and manage product and blog data.
+- Testimonials: Display customer reviews and testimonials.
+- Instagram Feed: Embed an Instagram feed to showcase the latest updates.
+- Advertisement Popup: Show a promotional popup to visitors.
+- WhatsApp Integration: Allow users to book appointments via WhatsApp.
 
 ## Style Guidelines:
 
@@ -48,7 +52,7 @@ The project is currently in a foundational stage. The basic structure of the Nex
 
 - **Layout**: `Header`, `Footer`, `NavLink`, `TopLoader`
 - **UI**: A rich set of UI components are available in `src/components/ui`, including `Accordion`, `Button`, `Card`, `Carousel`, `Dialog`, `Form`, `Input`, `Sheet`, `Toast`, and more.
-- **Home Page**: `HeroCarousel`, `FeaturedBlogs`, `FeaturedProducts`, `Faq`
+- **Home Page**: `HeroCarousel`, `FeaturedBlogs`, `FeaturedProducts`, `Faq`, `AdvertisementPopup`
 - **About Page**: `ImageGallery`
 - **Pushya Nakshatra Page**: `Countdown`, `UpcomingDates`
 - **Theme**: `ThemeProvider`, `ThemeToggle`

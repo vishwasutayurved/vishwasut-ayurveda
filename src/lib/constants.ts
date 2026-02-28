@@ -7,3 +7,6 @@ export const WHATSAPP_PUSHYA_NAKSHATRA_MESSAGE = "Hello Dr. Nishant Dahake, I wo
 export const WHATSAPP_PANCHAKARMA_MESSAGE = "Hello Dr. Nishant Dahake, I would like to book an appointment for Panchakarma.";
 
 export const SOCIALKIT_WIDGET_ID = 25657608;
+
+
+export const KEY_FEATURE_AD_POPUP = "futureAdPopUp";
