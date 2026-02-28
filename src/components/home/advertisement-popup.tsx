@@ -11,7 +11,7 @@ const AdvertisementPopup = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      // setIsOpen(true);
+      setIsOpen(true);
     }, 2000); 
 
     return () => clearTimeout(timer);
@@ -22,7 +22,7 @@ const AdvertisementPopup = () => {
     setTimeout(() => {
       setIsOpen(false);
       setIsClosing(false);
-    }, 300); // Match animation duration
+    }, 500); // Match animation duration
   };
 
   if (!isOpen) {
@@ -42,11 +42,11 @@ const AdvertisementPopup = () => {
         </Button>
         <div className="text-center">
             <Image
-                src="/logo.png"
+                src={"https://fonts.gstatic.com/s/e/notoemoji/latest/1f44f_1f3ff/512.gif"}
                 alt="Logo"
                 width={100}
                 height={100}
-                className="mx-auto mb-4"
+                className="mx-auto mb-4 emoji-dance"
             />
           <h2 className="text-2xl font-bold mb-4">Welcome to Our Clinic!</h2>
           <p>
