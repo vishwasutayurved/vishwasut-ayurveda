@@ -6,6 +6,9 @@ import { firebaseConfig } from './config';
 import type { Product } from '@/lib/products';
 import type { Blog } from '@/lib/blogs';
 import { Treatments } from '../treatments';
+import { Advertisement } from '../advertisement';
+import { formatDate } from '../utils';
+import { get } from 'http';
 
 // Initialize Firebase
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
@@ -14,6 +17,7 @@ const db = getFirestore(app);
 const productsCollection = collection(db, 'products');
 const blogsCollection = collection(db, 'blogs');
 const treatmentsCollection = collection(db, 'treatments');
+const advertisementsCollection = collection(db, 'advertisement');
 
 // Function to get all products
 export async function getProducts(): Promise<Product[]> {
@@ -105,6 +109,28 @@ export async function getAllTreatments(): Promise<Treatments[]> {
         return snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as Treatments));
     } catch (error) {
         console.error("Error fetching blogs:", error);
+        return [];
+    }
+}
+
+// Function to get active ads blogs
+export async function getActiveAdvertisements(): Promise<Advertisement[]> {
+    try {
+
+        const snapshot = await getDocs(advertisementsCollection);
+
+        if (snapshot.docs.length === 0) return [];
+
+        const todayDate = formatDate(new Date(), "numeric", "2-digit", "2-digit", "en-CA", "Asia/Kolkata");
+
+        const resultAds = snapshot.docs.filter((data) => {
+            return (data.data().startDate <= todayDate &&
+                (data.data().endDate >= todayDate || data.data().isPermanent));
+        });
+
+        return resultAds.map(doc => ({ id: doc.id, ...doc.data() } as Advertisement));
+    } catch (error) {
+        console.error("Error fetching featured advertisements:", error);
         return [];
     }
 }

@@ -1,7 +1,12 @@
+import { getActiveAdvertisements } from "@/lib/firebase/firestore";
+import AdvertisementPopup from "../home/advertisement-popup";
 import { NavLink } from "./nav-link";
 import { Mail, MapPin, Phone } from "lucide-react";
 
-export function Footer() {
+//Do not create this as client component as beacsue this constains Firestore DB calls.
+export async function Footer() {
+  const advertisementList = await getActiveAdvertisements();
+  
   return (
     <footer className="bg-secondary/50">
       <div className="container mx-auto px-4 py-12">
@@ -59,6 +64,7 @@ export function Footer() {
           <p>&copy; {new Date().getFullYear()} Shri Vishvasuta Ayurved & Panchkarma Clinic. All Rights Reserved.</p>
         </div>
       </div>
+      <AdvertisementPopup advertisementData={advertisementList} />
     </footer>
   );
 }
