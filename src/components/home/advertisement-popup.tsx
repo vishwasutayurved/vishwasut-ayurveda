@@ -28,14 +28,41 @@ const AdvertisementPopup = ({ advertisementData }: { advertisementData: Advertis
       const now = new Date();
       const futureAdPopUpDate = Cookies.get(KEY_FEATURE_AD_POPUP_DATE);
       if (!futureAdPopUpDate) {
-        setAdvertisementToBeDisplayed(advertisementData[Math.floor(Math.random() * advertisementData.length)]);
-        Cookies.set(KEY_FEATURE_AD_POPUP_DATE, 'active', {
-          expires: new Date(now.getTime() + 10 * 60 * 1000),   //Expires in 10 mins.
+
+        let listOfDisplayedAdsIds: string[] = [];
+        let filteredDisplayAdsList: Advertisement[] = [];
+        let randomAdsIndex = 0;
+        const futureAdPopUpDateSession = sessionStorage.getItem(KEY_FEATURE_AD_POPUP_DATE);
+
+        if (futureAdPopUpDateSession) {
+          listOfDisplayedAdsIds = futureAdPopUpDateSession.split(",");
+        } else {
+          sessionStorage.setItem(KEY_FEATURE_AD_POPUP_DATE, "");
+        }
+
+        const isEveryAdsDisplayed = advertisementData.every((advertisement) => {
+          return listOfDisplayedAdsIds.includes(advertisement.id);
+        });
+
+        if (isEveryAdsDisplayed) {
+          sessionStorage.setItem(KEY_FEATURE_AD_POPUP_DATE, "");
+          listOfDisplayedAdsIds = [];
+        }
+        
+        filteredDisplayAdsList = advertisementData.filter((advertisement) => {
+          return !listOfDisplayedAdsIds.includes(advertisement.id);
+        });
+        randomAdsIndex = Math.floor(Math.random() * filteredDisplayAdsList.length);
+
+        setAdvertisementToBeDisplayed(filteredDisplayAdsList[randomAdsIndex]);
+        sessionStorage.setItem(KEY_FEATURE_AD_POPUP_DATE, listOfDisplayedAdsIds.concat(filteredDisplayAdsList[randomAdsIndex].id).join(","));
+        Cookies.set(KEY_FEATURE_AD_POPUP_DATE, KEY_FEATURE_AD_POPUP_DATE, {
+          expires: new Date(now.getTime() + 5 * 60 * 1000),   //Expires in 5 mins.
           path: "/"
         });
         setIsOpen(true);
       }
-    }, 10000);
+    }, 5000);
 
     return () => clearInterval(timer);
   }, [advertisementData]);
