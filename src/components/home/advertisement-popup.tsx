@@ -19,11 +19,6 @@ const AdvertisementPopup = ({ advertisementData }: { advertisementData: Advertis
       return;
     }
 
-    if (advertisementData.length === 1) {
-      setAdvertisementToBeDisplayed(advertisementData[0]);
-      return;
-    }
-
     const timer = setInterval(() => {
       const now = new Date();
       const futureAdPopUpDate = Cookies.get(KEY_FEATURE_AD_POPUP_DATE);
