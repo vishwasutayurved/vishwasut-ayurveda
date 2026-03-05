@@ -114,7 +114,7 @@ export async function getAllTreatments(): Promise<Treatments[]> {
 }
 
 // Function to get active ads blogs
-export async function getActiveAdvertisements(): Promise<Advertisement[]> {
+export async function getAllAdvertisements(): Promise<Advertisement[]> {
     try {
 
         const snapshot = await getDocs(advertisementsCollection);
@@ -128,7 +128,7 @@ export async function getActiveAdvertisements(): Promise<Advertisement[]> {
                 (data.data().endDate >= todayDate || data.data().isPermanent));
         });
 
-        return resultAds.map(doc => ({ id: doc.id, ...doc.data() } as Advertisement));
+        return snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as Advertisement));
     } catch (error) {
         console.error("Error fetching featured advertisements:", error);
         return [];

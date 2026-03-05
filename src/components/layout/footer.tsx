@@ -1,11 +1,11 @@
-import { getActiveAdvertisements } from "@/lib/firebase/firestore";
+import { getAllAdvertisements } from "@/lib/firebase/firestore";
 import AdvertisementPopup from "../home/advertisement-popup";
 import { NavLink } from "./nav-link";
 import { Mail, MapPin, Phone } from "lucide-react";
 
 //Do not create this as client component as beacsue this constains Firestore DB calls.
 export async function Footer() {
-  const advertisementList = await getActiveAdvertisements();
+  const advertisementList = await getAllAdvertisements();
   
   return (
     <footer className="bg-secondary/50">

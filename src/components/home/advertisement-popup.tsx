@@ -7,6 +7,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { KEY_FEATURE_AD_POPUP as KEY_FEATURE_AD_POPUP_DATE } from "@/lib/constants";
 import { Advertisement } from "@/lib/advertisement";
+import { formatDate } from "@/lib/utils";
 
 const AdvertisementPopup = ({ advertisementData }: { advertisementData: Advertisement[] }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,6 +19,13 @@ const AdvertisementPopup = ({ advertisementData }: { advertisementData: Advertis
       console.log("No cards available");
       return;
     }
+
+
+    const todayDate = formatDate(new Date(), "numeric", "2-digit", "2-digit", "en-CA", "Asia/Kolkata");
+    advertisementData = advertisementData.filter((data) => {
+      return (data.startDate <= todayDate &&
+        (data.endDate >= todayDate || data.isPermanent));
+    });
 
     const timer = setInterval(() => {
       const now = new Date();
@@ -43,7 +51,7 @@ const AdvertisementPopup = ({ advertisementData }: { advertisementData: Advertis
           sessionStorage.setItem(KEY_FEATURE_AD_POPUP_DATE, "");
           listOfDisplayedAdsIds = [];
         }
-        
+
         filteredDisplayAdsList = advertisementData.filter((advertisement) => {
           return !listOfDisplayedAdsIds.includes(advertisement.id);
         });
