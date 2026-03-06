@@ -23,13 +23,13 @@ const AdvertisementPopup = ({ advertisementData }: { advertisementData: Advertis
     const notificationPermission = Notification.permission;
 
     if (!notificationPrompted && notificationPermission !== "denied") {
-      const timer = setTimeout(() => {
-        if (notificationPrompted === "granted") {
-          setIsOpen(true);
-          setIsNotificationPermissionPopup(true);
-        } else {
+      setTimeout(() => {
+        if (notificationPermission === "granted") {
           getFCMToken();
           Cookies.set(NOTIFICATION_COOKIE_KEY, "prompted", { expires: 5 });
+        } else {
+          setIsOpen(true);
+          setIsNotificationPermissionPopup(true);
         }
 
       }, 8000); // Show after 8 seconds
