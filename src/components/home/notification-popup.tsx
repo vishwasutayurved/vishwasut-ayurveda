@@ -10,17 +10,20 @@ import { NOTIFICATION_COOKIE_KEY } from "@/lib/constants";
 interface NotificationPopupProps {
   openState: [boolean, React.Dispatch<React.SetStateAction<boolean>>];
   closingState: [boolean, React.Dispatch<React.SetStateAction<boolean>>];
+  notificationPermissionPopup: [boolean, React.Dispatch<React.SetStateAction<boolean>>];
 }
 
-const NotificationPopup = ({ openState, closingState }: NotificationPopupProps) => {
+const NotificationPopup = ({ openState, closingState, notificationPermissionPopup }: NotificationPopupProps) => {
   const [isOpen, setIsOpen] = openState;
   const [isClosing, setIsClosing] = closingState;
+  const [isNotificationPermissionPopup, setIsNotificationPermissionPopup] = notificationPermissionPopup;
 
   const handleClose = () => {
     setIsClosing(true);
     setTimeout(() => {
       setIsOpen(false);
       setIsClosing(false);
+      setIsNotificationPermissionPopup(false);
     }, 500); // Match animation duration
   };
 
@@ -44,7 +47,7 @@ const NotificationPopup = ({ openState, closingState }: NotificationPopupProps) 
     handleClose();
   };
 
-  if (!isOpen) {
+  if (!isOpen && !isNotificationPermissionPopup) {
     return null;
   }
 

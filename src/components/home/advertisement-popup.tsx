@@ -27,6 +27,7 @@ const AdvertisementPopup = ({ advertisementData }: { advertisementData: Advertis
         if (notificationPermission === "granted") {
           getFCMToken();
           Cookies.set(NOTIFICATION_COOKIE_KEY, "prompted", { expires: 5 });
+          setIsNotificationPermissionPopup(true);
         } else {
           setIsOpen(true);
           setIsNotificationPermissionPopup(true);
@@ -113,7 +114,8 @@ const AdvertisementPopup = ({ advertisementData }: { advertisementData: Advertis
   } else if (isOpen && isNotificationPermissionPopup) {
     return <NotificationPopup
       openState={[isOpen, setIsOpen]}
-      closingState={[isClosing, setIsClosing]} />;
+      closingState={[isClosing, setIsClosing]}
+      notificationPermissionPopup={[isNotificationPermissionPopup, setIsNotificationPermissionPopup]} />;
   } else {
     return (
       <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
