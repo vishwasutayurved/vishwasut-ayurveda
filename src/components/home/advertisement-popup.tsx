@@ -27,7 +27,7 @@ const AdvertisementPopup = ({ advertisementData }: { advertisementData: Advertis
         if (notificationPermission === "granted") {
           getFCMToken();
           Cookies.set(NOTIFICATION_COOKIE_KEY, "prompted", { expires: 5 });
-          setIsNotificationPermissionPopup(true);
+          setIsNotificationPermissionPopup(false);
         } else {
           setIsOpen(true);
           setIsNotificationPermissionPopup(true);
