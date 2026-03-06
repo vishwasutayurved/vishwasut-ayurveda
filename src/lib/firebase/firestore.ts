@@ -1,23 +1,21 @@
 
 import { cache } from 'react';
-import { initializeApp, getApps, getApp } from 'firebase/app';
-import { getFirestore, collection, getDocs, doc, getDoc, query, where } from 'firebase/firestore';
-import { firebaseConfig } from './config';
+import { getFirestore, collection, getDocs, doc, getDoc, query, where, updateDoc, arrayUnion, setDoc } from 'firebase/firestore';
+import { firebaseApp } from './config';
 import type { Product } from '@/lib/products';
 import type { Blog } from '@/lib/blogs';
 import { Treatments } from '../treatments';
 import { Advertisement } from '../advertisement';
 import { formatDate } from '../utils';
-import { get } from 'http';
 
 // Initialize Firebase
-const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
-const db = getFirestore(app);
+const db = getFirestore(firebaseApp);
 
 const productsCollection = collection(db, 'products');
 const blogsCollection = collection(db, 'blogs');
 const treatmentsCollection = collection(db, 'treatments');
 const advertisementsCollection = collection(db, 'advertisement');
+
 
 // Function to get all products
 export async function getProducts(): Promise<Product[]> {
@@ -132,5 +130,17 @@ export async function getAllAdvertisements(): Promise<Advertisement[]> {
     } catch (error) {
         console.error("Error fetching featured advertisements:", error);
         return [];
+    }
+}
+
+
+export async function addFCMTokenInDB(token: string) {
+    try {
+        const docRef = doc(db, 'configuration', 'tokens');
+        await setDoc(docRef, {
+            fcmTokens: arrayUnion(token)
+        }, { merge: true });
+    } catch (error) {
+        console.log(error);
     }
 }

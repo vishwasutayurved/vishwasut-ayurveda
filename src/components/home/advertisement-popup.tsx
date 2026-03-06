@@ -5,21 +5,44 @@ import Cookies from "js-cookie";
 import { X } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { KEY_FEATURE_AD_POPUP as KEY_FEATURE_AD_POPUP_DATE } from "@/lib/constants";
+import { KEY_FEATURE_AD_POPUP as KEY_FEATURE_AD_POPUP_DATE, NOTIFICATION_COOKIE_KEY } from "@/lib/constants";
 import { Advertisement } from "@/lib/advertisement";
 import { formatDate } from "@/lib/utils";
+import NotificationPopup from "./notification-popup";
+import { getFCMToken } from "@/lib/firebase/messaging";
 
 const AdvertisementPopup = ({ advertisementData }: { advertisementData: Advertisement[] }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
+  const [isNotificationPermissionPopup, setIsNotificationPermissionPopup] = useState(false);
   const [advertisementToBeDisplayed, setAdvertisementToBeDisplayed] = useState<Advertisement>(advertisementData[0]);
+
+
+  function registerForNotification() {
+    const notificationPrompted = Cookies.get(NOTIFICATION_COOKIE_KEY);
+    const notificationPermission = Notification.permission;
+
+    if (!notificationPrompted && notificationPermission !== "denied") {
+      const timer = setTimeout(() => {
+        if (notificationPrompted === "granted") {
+          setIsOpen(true);
+          setIsNotificationPermissionPopup(true);
+        } else {
+          getFCMToken();
+          Cookies.set(NOTIFICATION_COOKIE_KEY, "prompted", { expires: 5 });
+        }
+
+      }, 8000); // Show after 8 seconds
+
+    }
+  }
+
 
   useEffect(() => {
     if (advertisementData.length === 0) {
       console.log("No cards available");
       return;
     }
-
 
     const todayDate = formatDate(new Date(), "numeric", "2-digit", "2-digit", "en-CA", "Asia/Kolkata");
     advertisementData = advertisementData.filter((data) => {
@@ -28,6 +51,9 @@ const AdvertisementPopup = ({ advertisementData }: { advertisementData: Advertis
     });
 
     const timer = setInterval(() => {
+
+      registerForNotification();
+
       const now = new Date();
       const futureAdPopUpDate = Cookies.get(KEY_FEATURE_AD_POPUP_DATE);
       if (!futureAdPopUpDate) {
@@ -67,12 +93,16 @@ const AdvertisementPopup = ({ advertisementData }: { advertisementData: Advertis
       }
     }, 5000);
 
-    return () => clearInterval(timer);
+    return () => {
+
+      clearInterval(timer);
+    }
   }, [advertisementData]);
 
   const handleClose = () => {
     setIsClosing(true);
     setTimeout(() => {
+      setIsNotificationPermissionPopup(false);
       setIsOpen(false);
       setIsClosing(false);
     }, 500); // Match animation duration
@@ -80,6 +110,10 @@ const AdvertisementPopup = ({ advertisementData }: { advertisementData: Advertis
 
   if (!isOpen) {
     return null;
+  } else if (isOpen && isNotificationPermissionPopup) {
+    return <NotificationPopup
+      openState={[isOpen, setIsOpen]}
+      closingState={[isClosing, setIsClosing]} />;
   } else {
     return (
       <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">

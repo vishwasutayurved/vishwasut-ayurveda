@@ -1,3 +1,4 @@
+import { initializeApp, getApps, getApp } from 'firebase/app';
 
 // Follow this guide to obtain your Firebase config object:
 // https://firebase.google.com/docs/web/setup#get-config-object
@@ -9,3 +10,6 @@ export const firebaseConfig = {
   messagingSenderId: "405199693218",
   appId: "1:405199693218:web:5b3c7c737a449c04917efb"
 };
+
+
+export const firebaseApp = !getApps().length ? initializeApp(firebaseConfig) : getApp();

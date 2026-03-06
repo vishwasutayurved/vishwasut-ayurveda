@@ -1,28 +1,20 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Cookies from "js-cookie";
 import { Bell, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { getFCMToken } from "@/lib/firebase/messaging";
+import { NOTIFICATION_COOKIE_KEY } from "@/lib/constants";
 
-const NOTIFICATION_COOKIE_KEY = "notification_prompt";
+interface NotificationPopupProps {
+  openState: [boolean, React.Dispatch<React.SetStateAction<boolean>>];
+  closingState: [boolean, React.Dispatch<React.SetStateAction<boolean>>];
+}
 
-const NotificationPopup = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isClosing, setIsClosing] = useState(false);
-
-  useEffect(() => {
-    const notificationPrompted = Cookies.get(NOTIFICATION_COOKIE_KEY);
-    const notificationPermission = Notification.permission;
-
-    if (!notificationPrompted && notificationPermission !== "granted" && notificationPermission !== "denied") {
-      const timer = setTimeout(() => {
-        setIsOpen(true);
-      }, 8000); // Show after 8 seconds
-
-      return () => clearTimeout(timer);
-    }
-  }, []);
+const NotificationPopup = ({ openState, closingState }: NotificationPopupProps) => {
+  const [isOpen, setIsOpen] = openState;
+  const [isClosing, setIsClosing] = closingState;
 
   const handleClose = () => {
     setIsClosing(true);
@@ -36,15 +28,15 @@ const NotificationPopup = () => {
     const permission = await Notification.requestPermission();
     if (permission === "granted") {
       console.log("Notification permission granted.");
-      new Notification("Welcome!", {
-        body: "You will now receive notifications from our site.",
-        icon: "/logo.png",
-      });
+      handleClose();
+      const token = await getFCMToken();
+      if (token) {
+        console.log("Successfully retrieved FCM Token.");
+      }
     } else {
       console.log("Notification permission denied.");
     }
-    Cookies.set(NOTIFICATION_COOKIE_KEY, "prompted", { expires: 365 }); // Remember for a year
-    handleClose();
+    Cookies.set(NOTIFICATION_COOKIE_KEY, "prompted", { expires: 5 }); // Remember for 5 days.
   };
 
   const handleLater = () => {
@@ -59,9 +51,8 @@ const NotificationPopup = () => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
       <div
-        className={`relative max-w-sm w-full mx-4 bg-white rounded-lg shadow-lg p-6 text-center ${
-          isClosing ? "fly-out-spinner-animation" : "fly-in-spinner-animation"
-        }`}
+        className={`relative max-w-sm w-full mx-4 bg-white rounded-lg shadow-lg p-6 text-center ${isClosing ? "fly-out-spinner-animation" : "fly-in-spinner-animation"
+          }`}
       >
         <div className="mx-auto mb-4 h-16 w-16 flex items-center justify-center rounded-full bg-green-100 text-green-600 animate-bounce">
           <Bell size={40} />

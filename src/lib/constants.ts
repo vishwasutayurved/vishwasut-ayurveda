@@ -10,3 +10,4 @@ export const SOCIALKIT_WIDGET_ID = 25657608;
 
 
 export const KEY_FEATURE_AD_POPUP = "futureAdPopUp";
+export const NOTIFICATION_COOKIE_KEY = "notification_prompt";
