@@ -45,8 +45,12 @@ const AdvertisementPopup = ({ advertisementData }: { advertisementData: Advertis
       return;
     }
 
-    registerForNotification();
-    
+    try {
+      registerForNotification();
+    } catch(error) {
+      console.error("Unable to setup notification.");
+    }
+
     const todayDate = formatDate(new Date(), "numeric", "2-digit", "2-digit", "en-CA", "Asia/Kolkata");
     advertisementData = advertisementData.filter((data) => {
       return (data.startDate <= todayDate &&
