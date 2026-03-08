@@ -15,9 +15,17 @@ const messaging = firebase.messaging();
 // This handler will be triggered when the app is in the background or terminated.
 messaging.onBackgroundMessage((payload) => {
     if (payload.data) {
-        self.registration.showNotification(payload.data.title, {
-            body: payload.data.body,
-            icon: "/logo.png",
-        });
+        // const { title, body } = payload.data;
+        // self.registration.showNotification(title, {
+        //     body: body,
+        //     icon: "/logo.png",
+        //     data: { url: "https://vishwasutayurveda.web.app/" }
+        // });
     }
+});
+
+
+self.addEventListener("notificationclick", function (event) {
+    event.notification.close();
+    event.waitUntil(clients.openWindow(event.notification.data.url));
 });
