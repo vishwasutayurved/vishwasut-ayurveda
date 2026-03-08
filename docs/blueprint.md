@@ -2,72 +2,80 @@
 
 ## Core Features:
 
-- Blog: Read articles and posts about Ayurveda and wellness.
-- About Us: Display a comprehensive 'About Us' section detailing the clinic's history, philosophy, and the practitioners' expertise.
-- Contact Form: Enable users to easily send inquiries and book appointments.
-- Site Navigation: Provide easy navigation with the app site.
-- Image Banner: Implement a banner with auto-sliding images related to Ayurveda.
-- Pushya Nakshatra: A dedicated page with a countdown to the next Pushya Nakshatra and a list of upcoming dates.
-- Personalized Wellness Tips: Implement an AI tool that suggests personalized wellness tips based on user input about their lifestyle.
-- Product Listing: Display a list of Ayurvedic products available for purchase.
-- Product Details: Show detailed information for each product, including ingredients, benefits, and usage instructions.
-- Treatments: Information about various treatments offered, including Panchakarma, disease-specific treatments, and wellness packages.
-- Firebase Integration: Utilize Firebase Firestore to store and manage product and blog data.
-- Testimonials: Display customer reviews and testimonials.
-- Instagram Feed: Embed an Instagram feed to showcase the latest updates.
-- Advertisement Popup: Show a promotional popup to visitors.
-- WhatsApp Integration: Allow users to book appointments via WhatsApp.
+- **Blog**: Read articles and posts about Ayurveda and wellness, fetched from Firebase Firestore.
+- **Product Listing**: Display a list of Ayurvedic products available for purchase, with data managed in Firestore.
+- **Product Details**: Show detailed information for each product.
+- **Treatments**: Information about various treatments offered, including Panchakarma, disease-specific treatments, and wellness packages.
+- **Pushya Nakshatra**: A dedicated page with a countdown to the next Pushya Nakshatra and a list of upcoming dates.
+- **Site Navigation**: A clear and responsive navigation header and a comprehensive footer.
+- **Contact Form**: A dedicated page to allow users to send inquiries.
+- **About Us**: A section detailing the clinic's history, philosophy, and practitioners.
+- **Home Page**: A comprehensive landing page featuring:
+    - Hero Carousel
+    - Featured Products
+    - Featured Blogs
+    - FAQ Section
+    - Advertisement Popup
+- **Firebase Integration**: Utilizes Firebase Firestore for data management (products, blogs) and Firebase Messaging for push notifications.
+- **Theme Customization**: Light and dark mode support.
 
-## Style Guidelines:
+### Planned Features:
 
-- Primary color: Earthy green (#8FBC8F) to evoke a sense of nature and healing.
-- Background color: Muted brown (#F5F5DC) to provide a calm and grounding backdrop.
-- Accent color: Gold (#D4A27A) for highlights and calls to action to represent purity and enlightenment.
-- Body and headline font: 'Literata', serif, for a readable and classic look, ideal for conveying trust and expertise.
-- Modular grid layout with clear section separation to promote readability and a professional feel.
-- Smooth transitions and subtle hover effects for an engaging user experience.
-- Use line icons that match the earthy and natural theme, and maintain simplicity to reinforce the serene ambiance.
+- **Personalized Wellness Tips**: An AI tool to suggest personalized wellness tips.
+- **Testimonials**: A section to display customer reviews and testimonials.
+- **Instagram Feed**: Embedding an Instagram feed to showcase the latest updates.
+- **WhatsApp Integration**: A more direct way for users to book appointments.
+- **E-commerce**: Full shopping cart and checkout functionality.
+
+## Tech Stack & Style:
+
+- **Framework**: Next.js (App Router)
+- **Styling**: Tailwind CSS
+- **UI Components**: Shadcn/UI - A collection of accessible and composable components built on Radix UI.
+- **Forms**: React Hook Form with Zod for validation.
+- **Backend**: Firebase (Firestore, Messaging).
+- **Primary color**: Earthy green (#8FBC8F)
+- **Background color**: Muted brown (#F5F5DC)
+- **Accent color**: Gold (#D4A27A)
+- **Font**: 'Literata', serif, for a classic and trustworthy feel.
 
 ## Current Status:
 
-The project is currently in a foundational stage. The basic structure of the Next.js application has been set up, and key pages and components have been created.
+The project has a solid foundation with a well-structured Next.js application. Most of the core informational pages and the data display from Firebase are implemented. The UI is rich and consistent, thanks to the Shadcn/UI component library.
 
 ### Existing Pages:
 
-- Home (`src/app/page.tsx` and `src/app/home/page.tsx`): The main landing page.
-- About (`src/app/about/page.tsx`): A page to describe the clinic.
-- Contact (`src/app/contact/page.tsx`): A page with a contact form.
-- Products (`src/app/products/page.tsx`): A page to list Ayurvedic products.
-- Product Details (`src/app/products/[id]/page.tsx`): A dynamic page to show details for a specific product.
-- Blogs (`src/app/blogs/page.tsx`): A page to list all blog posts.
-- Blog Details (`src/app/blogs/[slug]/page.tsx`): A dynamic page to show a single blog post.
-- Pushya Nakshatra (`src/app/pushya-nakshatra/page.tsx`): Page with countdown and dates.
-- Treatments:
-    - Diseases (`src/app/treatments/diseases/page.tsx`): Page for disease-specific treatments.
-    - Packages (`src/app/treatments/packages/page.tsx`): Page for treatment packages.
-    - Panchkarma (`src/app/treatments/panchkarma/page.tsx`): Page for Panchkarma treatments.
+- **Home**: `src/app/home/page.tsx`
+- **About**: `src/app/about/page.tsx`
+- **Contact**: `src/app/contact/page.tsx`
+- **Products**: `src/app/products/page.tsx`
+- **Product Details**: `src/app/products/[id]/page.tsx`
+- **Blogs**: `src/app/blogs/page.tsx`
+- **Blog Details**: `src/app/blogs/[slug]/page.tsx`
+- **Pushya Nakshatra**: `src/app/pushya-nakshatra/page.tsx`
+- **Treatments**:
+    - Diseases: `src/app/treatments/diseases/page.tsx`
+    - Packages: `src/app/treatments/packages/page.tsx`
+    - Panchkarma: `src/app/treatments/panchkarma/page.tsx`
 
+### Key Components:
 
-### Existing Components:
-
-- **Layout**: `Header`, `Footer`, `NavLink`, `TopLoader`
-- **UI**: A rich set of UI components are available in `src/components/ui`, including `Accordion`, `Button`, `Card`, `Carousel`, `Dialog`, `Form`, `Input`, `Sheet`, `Toast`, and more.
-- **Home Page**: `HeroCarousel`, `FeaturedBlogs`, `FeaturedProducts`, `Faq`, `AdvertisementPopup`
-- **About Page**: `ImageGallery`
-- **Pushya Nakshatra Page**: `Countdown`, `UpcomingDates`
-- **Theme**: `ThemeProvider`, `ThemeToggle`
-
-### Firebase Integration:
-
-- Firebase is configured in the project (`src/lib/firebase/config.ts`).
-- Firestore is used to fetch data for products and blogs (`src/lib/firebase/firestore.ts`).
+- **Layout**: `Header`, `Footer`, `NavLink`, `TopLoader` (`src/components/layout/`)
+- **UI**: A rich set of UI components are in `src/components/ui`, including `Accordion`, `Button`, `Card`, `Carousel`, `Dialog`, `Form`, `Input`, `Sheet`, `Toast`, etc.
+- **Home Page**: `HeroCarousel`, `FeaturedBlogs`, `FeaturedProducts`, `Faq`, `AdvertisementPopup` (`src/components/home/`)
+- **Firebase**: Configuration and service modules are set up in `src/lib/firebase/`.
 
 ## Next Steps & Future Development:
 
-- **Content Population**: Populate the pages and blog with actual content, including text, images, and product information.
-- **Contact Form Logic**: Implement the logic for the contact form to send emails or store inquiries in Firestore.
-- **Personalized Wellness Tips**: Develop the AI-powered wellness tips feature. This will likely involve creating a new API route and integrating with a third-party AI service.
-- **Authentication**: If user-specific features are planned (e.g., saving wellness tips, order history), implement user authentication using Firebase Authentication.
-- **Shopping Cart & Checkout**: If the products are to be sold directly, a full e-commerce flow with a shopping cart and payment gateway integration will be necessary.
-- **Testing**: Write unit and integration tests to ensure the application is robust and reliable.
-- **Deployment**: The project is set up for deployment on Firebase Hosting.
+1.  **Content Population**: Populate all pages and the blog with high-quality, final content (text, images).
+2.  **Contact Form Logic**: Implement the backend logic for the contact form to actually send emails or store inquiries in Firestore.
+3.  **Implement Planned Features**:
+    - Develop the AI-powered wellness tips feature.
+    - Create components and pages for Testimonials.
+    - Integrate the Instagram feed on the home page or a dedicated section.
+4.  **E-commerce Implementation**: If products are to be sold directly, this will be a major effort involving:
+    - Shopping cart state management.
+    - A checkout flow.
+    - Integration with a payment gateway.
+5.  **Testing**: Write unit and integration tests for key components and functionality to ensure the application is robust.
+6.  **Deployment**: The project is configured for deployment with Firebase Hosting, as seen in `firebase.json` and `package.json` scripts. The final step will be to run the deployment command.
