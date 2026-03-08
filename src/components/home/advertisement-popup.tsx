@@ -45,6 +45,8 @@ const AdvertisementPopup = ({ advertisementData }: { advertisementData: Advertis
       return;
     }
 
+    registerForNotification();
+    
     const todayDate = formatDate(new Date(), "numeric", "2-digit", "2-digit", "en-CA", "Asia/Kolkata");
     advertisementData = advertisementData.filter((data) => {
       return (data.startDate <= todayDate &&
@@ -52,8 +54,6 @@ const AdvertisementPopup = ({ advertisementData }: { advertisementData: Advertis
     });
 
     const timer = setInterval(() => {
-
-      registerForNotification();
 
       const now = new Date();
       const futureAdPopUpDate = Cookies.get(KEY_FEATURE_AD_POPUP_DATE);

@@ -18,18 +18,18 @@ export const getFCMToken = async () => {
   }
 
   try {
-    let serviceWorkerRegistration = undefined;
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/firebase-messaging-sw.js')
-        .then((registration) => {
-          console.log('Service Worker registered with scope:', registration.scope);
-          serviceWorkerRegistration = registration;
-        });
-    }
+    // let serviceWorkerRegistration = undefined;
+    // if ('serviceWorker' in navigator) {
+    //   navigator.serviceWorker.register('/firebase-messaging-sw.js')
+    //     .then((registration) => {
+    //       console.log('Service Worker registered with scope:', registration.scope);
+    //       serviceWorkerRegistration = registration;
+    //     });
+    // }
 
     const token = await getToken(messagingInstance, {
       vapidKey: VAPID_KEY,
-      serviceWorkerRegistration,
+      // serviceWorkerRegistration,
     });
 
     if (token) {
