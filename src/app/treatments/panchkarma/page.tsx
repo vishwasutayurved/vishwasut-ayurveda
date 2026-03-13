@@ -39,13 +39,13 @@ const therapies = [
     name: "Nasya",
     description:
       "This therapy is highly effective in cleansing and purifying the head region. The treatment begins with a gentle massage and the application of warmth to the head and shoulders. Following this, medicated nasal drops are administered into both nostrils. This process helps cleanse the entire head area and alleviates various conditions, including headaches, neurological discomfort, hair-related disorders, sleep disturbances, nervous system imbalances, sinus infections, chronic nasal discharge, and breathing difficulties.",
-      imageUrl: "https://images.unsplash.com/photo-1605200332828-a627237c89f9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      imageUrl: "https://lh3.googleusercontent.com/pw/AP1GczPrJq0AX7vEvcNYtBaOL1RGFTJmwmZd77-tyU-jPkXh6kmEyTKiTNlyt_ffivSZ-lTpns9h-coqv2oVgbtGm9FHJgjfaa9Rgy6InI00MHlp_hDhfdlJ5uGBcnwdjP_zhVhA20i3iOVpt1jRZ8o3D7Hm=w913-h913-s-no-gm?authuser=0",
   },
   {
     name: "Raktamokshan",
     description:
       "This treatment is designed to purify the blood and is highly effective for health conditions that arise from blood impurities. It may be applied either to a specific area or to the entire body, depending on the condition. This therapy is particularly beneficial for various skin disorders such as psoriasis and dermatitis, as well as for localized problems including infections and skin discoloration.",
-      imageUrl: "https://images.unsplash.com/photo-1512291319078-3a1e9c5b0c78?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      imageUrl: "https://lh3.googleusercontent.com/pw/AP1GczOLp5X50Hcsi6JVZVnGwSlcIu3UPBbaCCmUHIXXqCd2fMXjNtqPsu3fneUmZ0BaggIkaXbbVp4EUudcgXBlrAuGV3J9B9SBcrNeU2i6O5Fv7i6M4u1qRh8EyNlUlFXehpR-qrXoHCXRNMYUSpTVdaBo=w913-h913-s-no-gm?authuser=0",
   },
 ];
 
