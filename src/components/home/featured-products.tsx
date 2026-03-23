@@ -53,10 +53,10 @@ export const FeaturedProducts = ({featuredProducts}: {featuredProducts: Product[
         >
           <div className="container mx-auto px-4">
             <div className="mx-auto mb-12 max-w-2xl text-center">
-              <h3 className="font-headline text-3xl font-bold md:text-4xl">
+              <h3 className="font-headline text-4xl font-bold text-primary md:text-5xl">
                 Featured Products
               </h3>
-              <p className="mt-4 text-foreground/70">
+              <p className="mt-6 text-base md:text-lg leading-relaxed text-foreground/80">
                 Handpicked selections to support your wellness journey.
               </p>
             </div>

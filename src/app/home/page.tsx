@@ -6,6 +6,7 @@ import { Faq } from "@/components/home/faq";
 import { FeaturedProducts } from "@/components/home/featured-products";
 import { FeaturedBlogs } from "@/components/home/featured-blogs";
 import { getFeaturedBlogs, getFeaturedProducts } from "@/lib/firebase/firestore";
+import { WhatAyurvedaCanTreat } from "@/components/home/what-ayurveda-can-treat";
 
 export default async function HomePage() {
   const featuredProducts = await getFeaturedProducts();
@@ -50,6 +51,8 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+      
+      <WhatAyurvedaCanTreat />
 
       <FeaturedProducts featuredProducts={featuredProducts} />
       
@@ -88,10 +91,10 @@ export default async function HomePage() {
       <section className="py-8 sm:py-12">
         <div className="container mx-auto px-4">
           <div className="mx-auto mb-12 max-w-2xl text-center">
-            <h3 className="font-headline text-3xl font-bold md:text-4xl">
+            <h3 className="font-headline text-4xl font-bold text-primary md:text-5xl">
               Testimonial
             </h3>
-            <p className="mt-4 text-foreground/70">
+            <p className="mt-6 text-base md:text-lg leading-relaxed text-foreground/80">
               Please hear out from our all happy customer's.
             </p>
           </div>
@@ -110,10 +113,10 @@ export default async function HomePage() {
       <section className="py-8 sm:py-12">
         <div className="container mx-auto px-4">
           <div className="mx-auto mb-12 max-w-2xl text-center">
-            <h3 className="font-headline text-3xl font-bold md:text-4xl">
+            <h3 className="font-headline text-4xl font-bold text-primary md:text-5xl">
               Our Instagram
             </h3>
-            <p className="mt-4 text-foreground/70">
+            <p className="mt-6 text-base md:text-lg leading-relaxed text-foreground/80">
               Follow us on Instagram for the latest updates and wellness tips.
             </p>
           </div>
