@@ -64,7 +64,8 @@ export async function Footer() {
           <p>&copy; {new Date().getFullYear()} Shri Vishvasuta Ayurved & Panchkarma Clinic. All Rights Reserved.</p>
         </div>
       </div>
-      <AdvertisementPopup advertisementData={advertisementList} />
+      
+      {/* <AdvertisementPopup advertisementData={advertisementList} /> */}
     </footer>
   );
 }
