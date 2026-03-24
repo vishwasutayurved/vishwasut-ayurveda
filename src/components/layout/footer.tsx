@@ -65,7 +65,7 @@ export async function Footer() {
         </div>
       </div>
       
-      {/* <AdvertisementPopup advertisementData={advertisementList} /> */}
+      <AdvertisementPopup advertisementData={advertisementList} />
     </footer>
   );
 }
