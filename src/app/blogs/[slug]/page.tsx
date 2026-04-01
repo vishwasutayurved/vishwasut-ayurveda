@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
   return {
     title: blog.title,
-    description: blog.content,
+    description: blog.title,
     openGraph: {
       url: "https://vishwasutayurveda.web.app/",
       type: "website",
