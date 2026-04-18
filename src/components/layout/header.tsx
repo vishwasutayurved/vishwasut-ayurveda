@@ -62,7 +62,7 @@ export function Header() {
                 <DropdownMenu key={item.label}>
                   <DropdownMenuTrigger asChild>
                     <Button variant="ghost" className={cn(
-                      "flex items-center text-lg font-medium transition-colors hover:text-primary sm:text-sm px-3",
+                      "flex items-center text-lg font-medium transition-colors sm:text-sm px-3",
                       item.subItems.some(sub => pathname.startsWith(sub.href)) ? "text-primary" : "text-foreground/60"
                     )}>
                       {item.label}
