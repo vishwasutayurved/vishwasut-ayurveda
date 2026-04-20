@@ -35,7 +35,7 @@ export function HeroBanner() {
       <div className="container mx-auto text-center px-4">
         {/* Headline */}
         <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl font-extrabold tracking-tight text-red-600 sm:text-5xl md:text-6xl">
+            <h1 className="text-4xl font-extrabold tracking-tight text-red-600 sm:text-5xl md:text-6xl md:whitespace-nowrap">
                 Still Not Getting Better?
             </h1>
             <p className="mt-4 text-xl md:text-2xl font-medium text-foreground">

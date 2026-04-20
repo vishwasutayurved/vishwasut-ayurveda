@@ -10,6 +10,7 @@ import { DoctorStats } from "@/components/home/doctor-stats";
 import { HeroBanner } from "@/components/home/hero-banner";
 import Image from "next/image";
 import { Specialization } from "@/components/home/specialization";
+import { HowItWorks } from '@/components/home/how-it-works';
 
 export default async function HomePage() {
   // Fetch featured products and blogs from Firestore
@@ -55,6 +56,9 @@ export default async function HomePage() {
 
       {/* Specialization Section */}
       <Specialization />
+
+      {/* How It Works Section */}
+      <HowItWorks />
 
       {/* Introduction Section */}
       {/* <section className="container mx-auto px-4 py-8 sm:py-12 scale-up-content-animation">

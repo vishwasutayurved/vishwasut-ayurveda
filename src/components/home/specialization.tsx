@@ -52,12 +52,12 @@ const specializations = [
 
 export function Specialization() {
   return (
-    <section className="container mx-auto px-4 py-8 sm:py-12 scale-up-content-animation">
+    <section className="container mx-auto px-4 py-8 sm:py-12">
       <div className="mx-auto max-w-10xl text-center">
         <h2 className="font-headline text-4xl font-bold text-primary md:text-5xl">
           Our Specialisation
         </h2>
-        <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-8">
+        <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 gap-8 scale-up-content-animation">
           {specializations.map((specialization) => (
             <div
               key={specialization.name}
