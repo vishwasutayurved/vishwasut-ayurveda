@@ -26,7 +26,7 @@ export default async function HomePage() {
 
 
   return (
-    <div className="container flex flex-col">
+    <div className="flex flex-col">
       {/* Hero Banner Section */}
       <HeroBanner />
 
