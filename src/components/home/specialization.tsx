@@ -6,47 +6,47 @@ import { Button } from "../ui/button";
 const specializations = [
   {
     name: "Joint and spine disorders",
-    icon: "https://drvani.piahc.com/assets/images/image23.jpg?v=e7e27d87",
+    icon: "https://lh3.googleusercontent.com/pw/AP1GczPMBkKVGbJiMPY9ezH4lKnhsbFMHag8KLG5tsy3gqDMBCe_gkYtDwgQiAcPgQ0gM0Ng-pMXuaTYRRmxZU7qGZAEPzGf_2l71rYA1Bec1VldKHDf2vzZ6cqmP-QmyM1BBce4gTZPlTOuSkY5ySP8o3Db=w600-h600-s-no-gm?authuser=0",
   },
   {
     name: "Stress, Anxiety & Insomnia",
-    icon: "https://drvani.piahc.com/assets/images/image20.jpg?v=e7e27d87",
+    icon: "https://lh3.googleusercontent.com/pw/AP1GczMsA2VsL718JjMlISbKN1c1sXwWf9wv2lyXO6YurMEiYQLwfUNocJN4anT6Lwx3MDy2XwsoY1zp-W0sddjxWYUsyUvGdW_0G86jMsG97TjMTa9tt_zipZ3Bi1suxerUNEm-WkH78-QThJCQu4MPrXAd=w600-h600-s-no-gm?authuser=0",
   },
   {
     name: "Acidity & Gut issues",
-    icon: "https://lh3.googleusercontent.com/pw/AP1GczMLNIz3urocKN-AUl7HU4thXegHj19E1K7QkwAniBPZNADZOzd7WdbaJfi0QbMr4VnH2penBo6js78xorO_TuVBeJmGZu8JhY5pUh5Xgg2tFqoLDFnoJEDOGQId2Hh-wePdlRZuXs3e5u2UOMTHqEUg=w913-h913-s-no-gm?authuser=0",
+    icon: "https://lh3.googleusercontent.com/pw/AP1GczMPMIhp_Q7tKUoXu_cUDRzr0CTk6yHk0ppk58vTvj7q3nO-La7ux0cIzYWSFNg9AAyW57RBpvKwJItJmDdFemJg8ZyMfY65N3-3CoC83MODm8PusOeK7Qdu_RqSHaRNrVvpTjyB0D7UB0LZInUif-Ub=w600-h600-s-no-gm?authuser=0",
   },
   {
     name: "Skin & Hair",
-    icon: "https://drvani.piahc.com/assets/images/image28.jpg?v=e7e27d87",
+    icon: "https://lh3.googleusercontent.com/pw/AP1GczND--eZrolLee2XymtgwlHx0Di1lqC9vxmOPDhivrHly9iWpCNjeE7YzHm83a3-1trcT6ZKq-ga6xS_7PE16jPWA47cc3kiErtrKbngzXepv-YS5SWdk_N4VBDfYXhTtUaokJfD8WCeAREEqZiNO1X3=w598-h600-s-no-gm?authuser=0",
   },
   {
     name: "PCOD & Gynecological issues",
-    icon: "https://lh3.googleusercontent.com/pw/AP1GczPRAlbEAg0qJiW2ptrgITRtEnRBb0clyzIq9jJlVvOV1tTXypFACNzg2hn27hj55l8JqbAjAvzcQj0LG2tkENA3CPxU6SsDpQsm4DE1uQEhovG6W7fiPOkfxiqSybpyB9eBURhkoEnd7YphvRI2FCDr=w913-h913-s-no-gm?authuser=0",
+    icon: "https://lh3.googleusercontent.com/pw/AP1GczNF2cDuf8Jc7X4iLUVzYYZ79JR_rGiZQZK1i4uEFoXOn6f2C91cLEnTLUL6cHdDJS761igxMEw0REWEtGmrgIlhZD4QYt1Ciz6qdSx9WbbozBxpABUPC_91V78T9Di5lSDYsGMLpsyj-gSRuL2mYeDH=w600-h600-s-no-gm?authuser=0",
   },
   {
     name: "Diabetes",
-    icon: "https://drvani.piahc.com/assets/images/image26.jpg?v=e7e27d87",
+    icon: "https://lh3.googleusercontent.com/pw/AP1GczOXBmfqCORB7e-WBDl3u0BBF1446qwfJ7E2xO9Tpgjie1km2GC6_vyGBAAHHW8QYTc1pY5nLsE48C5Z2igSSLOrFvS2fSlh_6y_r037mCq99L1tQ33UyUX5mQHbXgh6aN2oj_fKO9RrMGHeJwLO3R2g=w598-h600-s-no-gm?authuser=0",
   },
   {
     name: "Hypertension",
-    icon: "https://drvani.piahc.com/assets/images/image27.jpg?v=e7e27d87",
+    icon: "https://lh3.googleusercontent.com/pw/AP1GczPx50bPPeRxtQCVv1sXNfKwvf8V5V3W6I1MlBJ6a5KnhWhjdTP1Pkt863w4eQ2xeOyroMio6R884gQv-GYpwQxdDWpzQIaFbPn91yyRZWu2-GRUJprzsuVG6QWiVc01TJHGZumuaH-qTvJB8k0QjkuX=w600-h600-s-no-gm?authuser=0",
   },
   {
     name: "Thyroid",
-    icon: "https://drvani.piahc.com/assets/images/image31.jpg?v=e7e27d87",
+    icon: "https://lh3.googleusercontent.com/pw/AP1GczMupR_HO3bqGlwXx-dfDCO-1GqUmqtqQxwMHYRd1tPWPwbOnfJtDAzi0cDgsbjugE8IXcQLfI6wvteEr-BseIoDyZaci0m1g_EwMvLcZXfSxeZ2qxocedthOXoRWE6VWzBEvfsxt9CN3aXq-a6VZi9P=w598-h600-s-no-gm?authuser=0",
   },
   {
     name: "Male & Female Infertility",
-    icon: "https://drvani.piahc.com/assets/images/image34.jpg?v=e7e27d87",
+    icon: "https://lh3.googleusercontent.com/pw/AP1GczNaaG9Tkrz57J_CbQ6soKy_TltLx7vWyr9e3p4N8VV7KgCmh06m6UernaI2Zyl_cJj9RluKpch_-cvvEhmSBHTOaSF50RyBLJcVKSLg5njiCuIDA_BszgAwMFG3DN4eKBvtFD5zN-MvYjHLVPTJGkE8=w600-h600-s-no-gm?authuser=0",
   },
   {
     name: "Asthma & Respiratory Disorders",
-    icon: "https://lh3.googleusercontent.com/pw/AP1GczO1oAR9ks_q30laSu4cV3fEzUvxBf7R1JHf0aI3XIb7hP5TIZAVxb0O2EfvmnPcJu4rHiEAVREqjdnirrqx-o9QI64X2kkPFwY-uKjNUxLrANBtxs4GBc9BL82uGN245lslDQTsJTIXqW8WUbE5ASTN=w744-h744-s-no-gm?authuser=0",
+    icon: "https://lh3.googleusercontent.com/pw/AP1GczOSGPpm6QGN_K0nMIp99BD1SYnawTzfO2xzUXY90h-Btagtm2T15Mdut36HVQWTuAiKprA6cBZY_NmSa4-XCkrneSB8ic5ihfTyKx5XcZVnLHmJA6XnPEPvyWJiuPTJX-2yyIYHtcL4hvDHDOVwveKS=w600-h600-s-no-gm?authuser=0",
   },
   {
     name: "Liver Issues",
-    icon: "https://drvani.piahc.com/assets/images/image25.jpg?v=e7e27d87",
+    icon: "https://lh3.googleusercontent.com/pw/AP1GczMxPlo3IKjuXr99bEQ39kK7l3jkluO2iYz0nmM8Wwp3pStYaRPX1fHhelMTsTzeMsOXcNMhKEf_SBG-GDnT1ssly0oSyt5dRpkGi_kzCwxDEDB1DVC8xbi2XVJdZuGYrKfHU4V1jiCmuNcWnbTAvXm3=w600-h600-s-no-gm?authuser=0",
   },
 ];
 
