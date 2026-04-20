@@ -8,7 +8,7 @@ export function WhatAyurvedaCanTreat() {
         <h2 className="font-headline text-4xl font-bold text-primary md:text-5xl">
           What Ayurveda can treat?
         </h2>
-        <p className="mt-6 text-base md:text-lg leading-relaxed text-foreground/80">
+        <p className="mt-6 text-base md:text-lg leading-relaxed text-muted-foreground">
           Ayurveda is a natural healing system that focuses on restoring balance in the body,
           mind, and spirit 🌿. It can help manage a wide range of conditions such as
           digestive problems like acidity and bloating, stress and anxiety, sleep issues,

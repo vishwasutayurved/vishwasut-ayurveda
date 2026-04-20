@@ -8,22 +8,22 @@ import { Clock, Languages, HeartPulse, Stethoscope } from 'lucide-react';
 
 const infoItems = [
     {
-      icon: <Stethoscope className="w-8 h-8 text-amber-600" />,
+      icon: <Stethoscope className="w-8 h-8 text-primary" />,
       label: "Consultation",
       value: "Online & In-Clinic",
     },
     {
-      icon: <Languages className="w-8 h-8 text-amber-600" />,
+      icon: <Languages className="w-8 h-8 text-primary" />,
       label: "Languages",
       value: "English, Hindi, Marathi",
     },
     {
-      icon: <HeartPulse className="w-8 h-8 text-amber-600" />,
+      icon: <HeartPulse className="w-8 h-8 text-primary" />,
       label: "Specialties",
       value: "Panchkarma, Gut Health",
     },
     {
-      icon: <Clock className="w-8 h-8 text-amber-600" />,
+      icon: <Clock className="w-8 h-8 text-primary" />,
       label: "Timings",
       value: "10am - 7pm",
     },
@@ -31,17 +31,17 @@ const infoItems = [
 
 export function HeroBanner() {
   return (
-    <section className="w-full bg-stone-50 py-12 md:py-20" style={{backgroundImage: "url('/background.svg')"}}>
+    <section className="w-full py-12 md:py-20">
       <div className="container mx-auto text-center px-4">
         {/* Headline */}
         <div className="max-w-4xl mx-auto">
             <h1 className="text-4xl font-extrabold tracking-tight text-red-600 sm:text-5xl md:text-6xl">
                 Still Not Getting Better?
             </h1>
-            <p className="mt-4 text-xl md:text-2xl font-medium text-stone-800">
-                Because you’re treating symptoms—not the cause.
+            <p className="mt-4 text-xl md:text-2xl font-medium text-foreground">
+                Because you’re treating symptoms — not the cause.
             </p>
-            <p className="mt-6 text-sm md:text-lg leading-relaxed text-stone-600">
+            <p className="mt-6 text-sm md:text-lg leading-relaxed text-foreground/80">
               From <strong className='text-primary'>Gut issues</strong> and stress to <strong className='text-primary'>PCOD</strong>, <strong className='text-primary'>diabetes</strong>, <strong className='text-primary'>skin</strong>, <strong className='text-primary'>spine</strong>, and <strong className='text-primary'>infertility</strong> — our Ayurvedic approach targets the root to restore real health.
             </p>
         </div>
@@ -60,17 +60,17 @@ export function HeroBanner() {
           </div>
 
           {/* Info Box */}
-          <div className="bg-white rounded-2xl shadow-lg p-6">
+          <div className="bg-card rounded-2xl shadow-lg p-6">
             <div className="grid grid-cols-2 gap-6">
                 {infoItems.map((item) => (
-                    <div key={item.label} className="flex flex-col items-center justify-center p-4 rounded-lg bg-stone-50 border border-stone-200/80">
+                    <div key={item.label} className="flex flex-col items-center justify-center p-4 rounded-lg bg-background border">
                         {item.icon}
-                        <p className="mt-3 text-xs font-semibold text-stone-500 tracking-wider uppercase">{item.label}</p>
-                        <p className="mt-1 text-base font-bold text-stone-800">{item.value}</p>
+                        <p className="mt-3 text-xs font-semibold text-muted-foreground tracking-wider uppercase">{item.label}</p>
+                        <p className="mt-1 text-base font-bold text-foreground">{item.value}</p>
                     </div>
                 ))}
             </div>
-            <Button asChild size="lg" className="w-full mt-6 bg-amber-600 hover:bg-amber-700">
+            <Button asChild size="lg" className="w-full mt-6">
               <NavLink 
                 openInNewTab={true}
                 href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_APPOINTMENT_MESSAGE)}`}>
