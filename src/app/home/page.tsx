@@ -6,37 +6,41 @@ import { FeaturedProducts } from "@/components/home/featured-products";
 import { FeaturedBlogs } from "@/components/home/featured-blogs";
 import { getFeaturedBlogs, getFeaturedProducts } from "@/lib/firebase/firestore";
 import { WhatAyurvedaCanTreat } from "@/components/home/what-ayurveda-can-treat";
-import Image from "next/image";
 import { DoctorStats } from "@/components/home/doctor-stats";
+import { HeroBanner } from "@/components/home/hero-banner";
+import Image from "next/image";
 
 export default async function HomePage() {
   // Fetch featured products and blogs from Firestore
   const featuredProducts = await getFeaturedProducts();
   const featuredBlogs = await getFeaturedBlogs();
 
-  // Define the main slide content
-  const slide = {
+  const aboutDoctor = {
     src: "https://fazlaninaturesnest.com/wp-content/uploads/2024/02/relaxed-man-enjoying-back-massage-with-herbal-compress-during-spa-treatment-2.webp",
     alt: "Panchakarma therapy setup",
     title: "Dr. Nishant Dahake",
     hint: "spa therapy",
   };
 
+
   return (
-    <div className="flex flex-col">
+    <div className="container flex flex-col">
+      {/* Hero Banner Section */}
+      <HeroBanner />
+
       {/* Hero Section */}
       <div className="relative h-[60vh] md:h-[80vh] w-11/12 mx-auto my-8 rounded-lg overflow-hidden">
         <Image
-          src={slide.src}
-          alt={slide.alt}
-          data-ai-hint={slide.hint}
+          src={aboutDoctor.src}
+          alt={aboutDoctor.alt}
+          data-ai-hint={aboutDoctor.hint}
           fill
           className="object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
         <div className="absolute bottom-0 left-0 p-4 sm:p-8 md:p-12 w-full md:w-2/3 lg:w-1/2 text-white">
           <h1 className="font-headline text-3xl sm:text-4xl md:text-6xl font-bold drop-shadow-lg">
-            {slide.title}
+            {aboutDoctor.title}
           </h1>
           <ul className="mt-2 sm:mt-4 text-base sm:text-lg md:text-xl list-disc list-inside drop-shadow-md">
             <li>BAMS, MD (Ayurveda)</li>

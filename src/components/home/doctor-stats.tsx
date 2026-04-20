@@ -85,10 +85,10 @@ export function DoctorStats() {
   };
 
   return (
-    <section ref={sectionRef} className="bg-white py-12 sm:py-16">
+    <section ref={sectionRef} className="bg-stone-50 py-12 sm:py-16" style={{backgroundImage: "url('/background.svg')"}}>
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-4xl">
-          <div className="rounded-lg bg-stone-100 p-6 text-center shadow-sm">
+          <div className="rounded-lg bg-white/60 backdrop-blur-sm p-6 text-center shadow-sm border border-stone-200/50">
             <p className="text-base leading-relaxed text-stone-700 md:text-lg">
               Dr. Nishant Dahake is a young, energetic Ayurvedic doctor delivering result-focused
               treatment for a wide range of conditions, blending traditional healing with modern
@@ -98,7 +98,7 @@ export function DoctorStats() {
           <div className="mt-12 grid grid-cols-3 text-center divide-x divide-stone-300">
             {stats.map((stat, index) => (
               <div key={stat.label} className="flex flex-col items-center px-4">
-                <p className="text-2xl font-bold tracking-tight text-primary sm:text-4xl md:text-5xl">
+                <p className="text-2xl font-bold tracking-tight text-amber-700 sm:text-4xl md:text-5xl">
                   {formatValue(currentValues[index], index)}
                 </p>
                 <p className="mt-2 text-xs text-center text-stone-600 whitespace-pre-line md:text-base">{stat.label}</p>
