@@ -9,6 +9,7 @@ import { WhatAyurvedaCanTreat } from "@/components/home/what-ayurveda-can-treat"
 import { DoctorStats } from "@/components/home/doctor-stats";
 import { HeroBanner } from "@/components/home/hero-banner";
 import Image from "next/image";
+import { Specialization } from "@/components/home/specialization";
 
 export default async function HomePage() {
   // Fetch featured products and blogs from Firestore
@@ -52,8 +53,11 @@ export default async function HomePage() {
       {/* Doctor Stats Section */}
       <DoctorStats />
 
+      {/* Specialization Section */}
+      <Specialization />
+
       {/* Introduction Section */}
-      <section className="container mx-auto px-4 py-8 sm:py-12 scale-up-content-animation">
+      {/* <section className="container mx-auto px-4 py-8 sm:py-12 scale-up-content-animation">
         <div className="mx-auto max-w-10xl text-center">
           <h2 className="font-headline text-4xl font-bold text-primary md:text-5xl">
             Embrace Balance, Embrace Life
@@ -85,10 +89,10 @@ export default async function HomePage() {
             </Button>
           </div>
         </div>
-      </section>
+      </section>  */}
 
       {/* What Ayurveda Can Treat Section */}
-      <WhatAyurvedaCanTreat />
+      {/* <WhatAyurvedaCanTreat /> */}
 
       {/* Featured Products Section */}
       <FeaturedProducts featuredProducts={featuredProducts} />
