@@ -7,6 +7,7 @@ import { Footer } from '@/components/layout/footer';
 import { ThemeProvider } from '@/components/theme-provider';
 import { TopLoader } from '@/components/layout/top-loader';
 import { Suspense } from 'react';
+import { StickyNotification } from '@/components/layout/sticky-notification';
 
 export const metadata: Metadata = {
   title: {
@@ -69,6 +70,7 @@ export default function RootLayout({
             <Footer />
           </div>
           <Toaster />
+          <StickyNotification />
         </ThemeProvider>
         <Script async
           id="tawk-to-script"
