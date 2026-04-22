@@ -61,6 +61,29 @@ export default async function HomePage() {
       {/* Specialization Section */}
       <Specialization />
 
+      {/* Testimonial Section */}
+      <section className="py-8 sm:py-12">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto mb-12 max-w-2xl text-center">
+            <h3 className="font-headline text-4xl font-bold text-primary md:text-5xl">
+              Testimonial
+            </h3>
+            <p className="mt-6 text-base md:text-lg leading-relaxed text-foreground/80">
+              Please hear out from our all happy customer's.
+            </p>
+          </div>
+          <div className="flex justify-center scale-up-content-animation">
+            <iframe
+              src={`https://widgets.sociablekit.com/google-reviews/iframe/${SOCIALKIT_WIDGET_ID}`}
+              frameBorder="0"
+              width="100%"
+              height="480"
+              title="Google Reviews"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
       {/* How It Works Section */}
       <HowItWorks />
 
@@ -144,28 +167,6 @@ export default async function HomePage() {
       {/* Featured Blogs Section */}
       <FeaturedBlogs featuredBlogs={featuredBlogs} />
 
-      {/* Testimonial Section */}
-      <section className="py-8 sm:py-12">
-        <div className="container mx-auto px-4">
-          <div className="mx-auto mb-12 max-w-2xl text-center">
-            <h3 className="font-headline text-4xl font-bold text-primary md:text-5xl">
-              Testimonial
-            </h3>
-            <p className="mt-6 text-base md:text-lg leading-relaxed text-foreground/80">
-              Please hear out from our all happy customer's.
-            </p>
-          </div>
-          <div className="flex justify-center scale-up-content-animation">
-            <iframe
-              src={`https://widgets.sociablekit.com/google-reviews/iframe/${SOCIALKIT_WIDGET_ID}`}
-              frameBorder="0"
-              width="100%"
-              height="480"
-              title="Google Reviews"
-            ></iframe>
-          </div>
-        </div>
-      </section>
 
       {/* Instagram Section */}
       <section className="py-8 sm:py-12">
