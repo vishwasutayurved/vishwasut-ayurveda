@@ -1,6 +1,6 @@
 import { NavLink } from "@/components/layout/nav-link";
 import { Button } from "@/components/ui/button";
-import { SOCIALKIT_WIDGET_ID, WHATSAPP_APPOINTMENT_MESSAGE, WHATSAPP_NUMBER } from "@/lib/constants";
+import { PANCHAKARMA_THERAPIES, SOCIALKIT_WIDGET_ID, WHATSAPP_APPOINTMENT_MESSAGE, WHATSAPP_NUMBER } from "@/lib/constants";
 import { Faq } from "@/components/home/faq";
 import { FeaturedProducts } from "@/components/home/featured-products";
 import { FeaturedBlogs } from "@/components/home/featured-blogs";
@@ -11,6 +11,10 @@ import { HeroBanner } from "@/components/home/hero-banner";
 import Image from "next/image";
 import { Specialization } from "@/components/home/specialization";
 import { HowItWorks } from '@/components/home/how-it-works';
+import { FlipCard } from "@/components/ui/flip-card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import OurCentre from "@/components/home/our-centre";
 
 export default async function HomePage() {
   // Fetch featured products and blogs from Firestore
@@ -60,43 +64,50 @@ export default async function HomePage() {
       {/* How It Works Section */}
       <HowItWorks />
 
-      {/* Introduction Section */}
-      {/* <section className="container mx-auto px-4 py-8 sm:py-12 scale-up-content-animation">
-        <div className="mx-auto max-w-10xl text-center">
-          <h2 className="font-headline text-4xl font-bold text-primary md:text-5xl">
-            Embrace Balance, Embrace Life
-          </h2>
-          <p className="mt-6 text-base md:text-lg leading-relaxed text-foreground/80">
-            At Shri Vishvasuta Ayurved & Panchkarma Clinic, we believe in the
-            timeless wisdom of Ayurveda to restore harmony and vitality. Our
-            holistic approach addresses the root cause of imbalance, guiding you
-            on a transformative journey to optimal health and well-being.
-            <br />
-            Heal from the root with the Ayurveda, One-to-One personalized
-            consultation.
-          </p>
-          <div className="mt-8">
-            <Button
-              size="lg"
-              asChild
-              className="w-full sm:w-auto"
-              style={{ borderRadius: "100px" }}
-            >
-              <NavLink
-                openInNewTab={true}
-                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-                  WHATSAPP_APPOINTMENT_MESSAGE
-                )}`}
-              >
-                Book an appointment Now
-              </NavLink>
-            </Button>
-          </div>
+      {/* Panchakarma Therapies */}
+      <section className="container mx-auto px-4 py-8 sm:py-12">
+        <h2 className="font-headline text-3xl font-bold text-primary md:text-4xl text-center mb-12">
+          Panchakarma Therapies
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+          {PANCHAKARMA_THERAPIES.map((therapy) => (
+            <FlipCard
+              key={therapy.name}
+              className="h-96"
+              frontContent={
+                <div className="relative h-full w-full">
+                  <Image
+                    src={therapy.imageUrl}
+                    alt={therapy.name}
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center p-4">
+                    <h3 className="text-white text-2xl font-bold font-headline">{therapy.name}</h3>
+                    <p className="text-white text-sm mt-2">Click to read more</p>
+                  </div>
+                </div>
+              }
+              backContent={
+                <Card className="flex flex-col h-full">
+                  <CardHeader>
+                    <CardTitle className="font-headline text-2xl font-bold">
+                      {therapy.name}
+                    </CardTitle>
+                  </CardHeader>
+                  <ScrollArea className="flex-grow">
+                    <CardContent>
+                      <p>{therapy.description}</p>
+                    </CardContent>
+                  </ScrollArea>
+                </Card>
+              }
+            />
+          ))}
         </div>
-      </section>  */}
+      </section>
 
-      {/* What Ayurveda Can Treat Section */}
-      {/* <WhatAyurvedaCanTreat /> */}
+      <OurCentre />
 
       {/* Featured Products Section */}
       <FeaturedProducts featuredProducts={featuredProducts} />

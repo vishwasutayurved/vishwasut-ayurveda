@@ -8,46 +8,13 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { FlipCard } from "@/components/ui/flip-card";
-import { WHATSAPP_NUMBER, WHATSAPP_PANCHAKARMA_MESSAGE } from "@/lib/constants";
+import { PANCHAKARMA_THERAPIES, WHATSAPP_NUMBER, WHATSAPP_PANCHAKARMA_MESSAGE } from "@/lib/constants";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
 export const metadata: Metadata = {
   title: "Panchkarma",
   description: "Panchkarma treatment.",
 };
-
-const therapies = [
-  {
-    name: "Vaman",
-    description:
-      "In this therapy, the patient undergoes both internal and external oil massages along with warm poultice treatments over several days, supported by specific Ayurvedic medicines. Once the toxins are softened and move toward the upper regions of the body, herbal preparations are administered to induce therapeutic vomiting, often followed by a special medicinal soup. This process effectively eliminates harmful substances from the body. Vamana therapy is particularly recommended for conditions associated with excess kapha, such as obesity, asthma, and hyperacidity.",
-      imageUrl: "https://lh3.googleusercontent.com/pw/AP1GczPz2mG51M_4hRHKnWoUdSCnn7oigGQ-iXrd4fQwZwNkBTULc5S0OHXLZ1_sATKRF-UPlCXXOWs1S76vCdsdVNIKf7UUOt8IfOKDbNS-JTgP919fiOtRhod1ago0cCdvX2n2o5oLXVqHYi6YdCm6EOVb=w913-h913-s-no-gm?authuser=0",
-  },
-  {
-    name: "Virechan",
-    description:
-      "In Virechana therapy, toxins are eliminated from the body through the cleansing of the bowels. During this procedure, the patient receives both internal and external oleation treatments along with heat therapy. Afterward, a natural herbal laxative is administered to cleanse the intestines, aiding in the removal of accumulated toxins. This therapy is primarily recommended for pitta-dominant conditions such as herpes zoster, jaundice, colitis, and celiac disease.",
-      imageUrl: "https://lh3.googleusercontent.com/pw/AP1GczOVVUkKo3heNnW9TfYlbBkC1-GGqimRsvcvtgnyX7eMdbw5ulSa6xgnopqgSaV8cY856POZeyE7AIxDxq-04rrjCX1gIxx8E1xyIvdBLgPwwTnmJrEMwKMEPslDsGajck0R6LKdf_9RoCLMLmLFJ-tw=w609-h913-s-no-gm?authuser=0",
-  },
-  {
-    name: "Basti",
-    description:
-      "In Ayurveda, administering medicated substances through enema therapy is a specialized and effective approach for treating various illnesses, particularly chronic and complex conditions. Depending on the nature of the disorder, carefully prepared herbal decoctions, oils, ghee, or milk are introduced through the rectum, producing significant therapeutic benefits. This treatment is especially effective for disorders caused by an imbalance in vata, such as arthritis, hemorrhoids, and chronic constipation.",
-      imageUrl: "https://lh3.googleusercontent.com/pw/AP1GczO_JcRw4imjXzwEclwoUPqlXsliXd-cs25oGsVVcsqibVgRgXSamLF_s2976N8zXjscfCo98pu5tRP3fhPVVf4CmxVtUD9A5QqVbGAGb2LfgwfUVeBuB1C40zxo-pGztSfuwq0zeJpXk_c71TrZE-yF=w609-h913-s-no-gm?authuser=0",
-  },
-  {
-    name: "Nasya",
-    description:
-      "This therapy is highly effective in cleansing and purifying the head region. The treatment begins with a gentle massage and the application of warmth to the head and shoulders. Following this, medicated nasal drops are administered into both nostrils. This process helps cleanse the entire head area and alleviates various conditions, including headaches, neurological discomfort, hair-related disorders, sleep disturbances, nervous system imbalances, sinus infections, chronic nasal discharge, and breathing difficulties.",
-      imageUrl: "https://lh3.googleusercontent.com/pw/AP1GczPrJq0AX7vEvcNYtBaOL1RGFTJmwmZd77-tyU-jPkXh6kmEyTKiTNlyt_ffivSZ-lTpns9h-coqv2oVgbtGm9FHJgjfaa9Rgy6InI00MHlp_hDhfdlJ5uGBcnwdjP_zhVhA20i3iOVpt1jRZ8o3D7Hm=w913-h913-s-no-gm?authuser=0",
-  },
-  {
-    name: "Raktamokshan",
-    description:
-      "This treatment is designed to purify the blood and is highly effective for health conditions that arise from blood impurities. It may be applied either to a specific area or to the entire body, depending on the condition. This therapy is particularly beneficial for various skin disorders such as psoriasis and dermatitis, as well as for localized problems including infections and skin discoloration.",
-      imageUrl: "https://lh3.googleusercontent.com/pw/AP1GczOLp5X50Hcsi6JVZVnGwSlcIu3UPBbaCCmUHIXXqCd2fMXjNtqPsu3fneUmZ0BaggIkaXbbVp4EUudcgXBlrAuGV3J9B9SBcrNeU2i6O5Fv7i6M4u1qRh8EyNlUlFXehpR-qrXoHCXRNMYUSpTVdaBo=w913-h913-s-no-gm?authuser=0",
-  },
-];
 
 export default function PanchkarmaPage() {
   return (
@@ -135,7 +102,7 @@ export default function PanchkarmaPage() {
             The Five Panchakarma Therapies
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            {therapies.map((therapy) => (
+            {PANCHAKARMA_THERAPIES.map((therapy) => (
               <FlipCard
                 key={therapy.name}
                 className="h-96"
@@ -224,62 +191,62 @@ export default function PanchkarmaPage() {
             What Can I Expect from Panchakarma Therapy?
           </h2>
           <p>
-          The Panchakarma cleansing process affects individuals on multiple levels, 
-          influencing the mind, body, and emotions. During the course of treatment, 
-          many people experience what is known as a <b>healing crisis.</b> This is a natural part of the 
-          recovery process and often indicates that the body is actively eliminating toxins and moving toward 
-          improved health and balance.
+            The Panchakarma cleansing process affects individuals on multiple levels,
+            influencing the mind, body, and emotions. During the course of treatment,
+            many people experience what is known as a <b>healing crisis.</b> This is a natural part of the
+            recovery process and often indicates that the body is actively eliminating toxins and moving toward
+            improved health and balance.
           </p>
           <h2 className="font-headline text-2xl font-bold text-primary md:text-3xl mt-16 mb-8">
             Panchakarma Purifies the Body and Mind
           </h2>
           <p>
-          According to Ayurveda, maintaining good health depends on our ability to fully process every aspect 
-          of life—absorbing what is beneficial and releasing what is not. When we are unable to properly digest food, 
-          experiences, or emotions, toxins accumulate in the body’s tissues, causing imbalance and eventually 
-          leading to illness. Panchakarma is a specialized cleansing therapy designed to eliminate these stored 
-          toxins, restore balance, and support the body’s natural healing abilities.
+            According to Ayurveda, maintaining good health depends on our ability to fully process every aspect
+            of life—absorbing what is beneficial and releasing what is not. When we are unable to properly digest food,
+            experiences, or emotions, toxins accumulate in the body’s tissues, causing imbalance and eventually
+            leading to illness. Panchakarma is a specialized cleansing therapy designed to eliminate these stored
+            toxins, restore balance, and support the body’s natural healing abilities.
           </p>
 
           <h3 className="font-headline text-xl font-bold text-primary md:text-2xl mt-12 mb-6">
             The Foundation of Health and Well-being
           </h3>
           <p>
-          When toxins accumulate in the body, they obstruct the free flow of energy, 
-          signals, and nutrients throughout the system. In Ayurveda, this buildup is considered 
-          a primary cause of most illnesses. A common example occurs when the body struggles 
-          to process excess fat and cholesterol, which then collect in the blood vessels and arteries. 
-          Over time, this can impede blood circulation and increase the risk of serious conditions such as heart attacks.
+            When toxins accumulate in the body, they obstruct the free flow of energy,
+            signals, and nutrients throughout the system. In Ayurveda, this buildup is considered
+            a primary cause of most illnesses. A common example occurs when the body struggles
+            to process excess fat and cholesterol, which then collect in the blood vessels and arteries.
+            Over time, this can impede blood circulation and increase the risk of serious conditions such as heart attacks.
           </p>
           <br />
           <p>
-          While it is easy to notice how food impacts the body, it’s equally important to recognize that the brain 
-          and heart are constantly processing energy and information. In Ayurveda, your emotional agni, or digestive fire, 
-          helps you navigate and metabolize feelings and emotions—whether it’s the warmth of a loved one’s smile, the surprise 
-          of unexpected feedback at work, or the excitement of a new relationship—allowing your mind and heart to stay balanced and healthy.
+            While it is easy to notice how food impacts the body, it’s equally important to recognize that the brain
+            and heart are constantly processing energy and information. In Ayurveda, your emotional agni, or digestive fire,
+            helps you navigate and metabolize feelings and emotions—whether it’s the warmth of a loved one’s smile, the surprise
+            of unexpected feedback at work, or the excitement of a new relationship—allowing your mind and heart to stay balanced and healthy.
           </p>
           <h3 className="font-headline text-xl font-bold text-primary md:text-2xl mt-12 mb-6">
             Restoring the Body’s Innate Balance
           </h3>
           <p>
-          When your emotional agni, or digestive fire, is functioning properly, you can absorb what is beneficial 
-          from your experiences and release what is not. If emotions are not properly processed, it is similar to having 
-          undigested food, leaving harmful residues in the body. In fact, unresolved anger, prolonged sadness, and lingering guilt 
-          can often cause more disruption to one’s well-being than physical digestive issues, affecting both the mind and body.
+            When your emotional agni, or digestive fire, is functioning properly, you can absorb what is beneficial
+            from your experiences and release what is not. If emotions are not properly processed, it is similar to having
+            undigested food, leaving harmful residues in the body. In fact, unresolved anger, prolonged sadness, and lingering guilt
+            can often cause more disruption to one’s well-being than physical digestive issues, affecting both the mind and body.
           </p>
           <br />
           <p>
-          To maintain optimal health, it is essential to support strong digestion and eliminate harmful toxins from the body. Panchakarma offers a natural, 
-          holistic approach to cleanse the system, restore the body’s inner balance, and revitalize energy, promoting overall well-being.
+            To maintain optimal health, it is essential to support strong digestion and eliminate harmful toxins from the body. Panchakarma offers a natural,
+            holistic approach to cleanse the system, restore the body’s inner balance, and revitalize energy, promoting overall well-being.
           </p>
           <p className="rounded-lg border bg-card text-card-foreground shadow-sm p-6 mt-12">
-            <strong>Note: </strong>Panchakarma treatments are not recommended during fever, injuries, or pregnancy. 
-            It is essential to consult a qualified and experienced Ayurvedic doctor before beginning any therapy. 
+            <strong>Note: </strong>Panchakarma treatments are not recommended during fever, injuries, or pregnancy.
+            It is essential to consult a qualified and experienced Ayurvedic doctor before beginning any therapy.
             This ensures that the treatment is carefully tailored to your individual health needs and current condition, maximizing safety and effectiveness.
           </p>
         </article>
 
-        
+
         <section className="mx-auto max-w-4xl mt-24 text-center">
           <h2 className="font-headline text-3xl font-bold text-primary md:text-4xl mb-8">
             Book Your Panchakarma Appointment
