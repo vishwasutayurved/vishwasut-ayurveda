@@ -31,7 +31,7 @@ export default function OurCentre() {
                             </li>
                             <li className="flex items-center">
                                 <Calendar className="w-6 h-6 mr-3 text-gray-500" />
-                                <span className="font-semibold">Mon - Sat: 09:00 AM – 09:00 PM</span>
+                                <span className="font-semibold">Mon - Sat: 09:00 AM – 09:00 PM (Prior Appointment)</span>
                             </li>
                             <li className="flex items-start">
                                 <Phone className="w-6 h-6 mr-3 text-gray-500" />
