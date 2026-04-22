@@ -2,7 +2,7 @@ export const siteConfig = {
   url: "https://vishwasutayurveda.web.app",
 };
 export const WHATSAPP_NUMBER = "+919270220033";
-export const WHATSAPP_APPOINTMENT_MESSAGE = "Hello Dr Nishant, \nI want to book an Online / Offline appointment with you Please let me know the time slots available";
+export const WHATSAPP_APPOINTMENT_MESSAGE = "Hello Dr Nishant, I want to book an Online / Offline appointment with you Please let me know the time slots available";
 export const WHATSAPP_PUSHYA_NAKSHATRA_MESSAGE = "Hello Dr. Nishant Dahake, I would like to book an appointment for Pushya Nakshatra.";
 export const WHATSAPP_PANCHAKARMA_MESSAGE = "Hello Dr. Nishant Dahake, I would like to book an appointment for Panchakarma.";
 
