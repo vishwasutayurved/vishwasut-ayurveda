@@ -25,7 +25,7 @@ const infoItems = [
     {
       icon: <Clock className="w-8 h-8 text-primary" />,
       label: "Timings",
-      value: "10am - 7pm",
+      value: "9 AM - 9 PM",
     },
   ];
 
