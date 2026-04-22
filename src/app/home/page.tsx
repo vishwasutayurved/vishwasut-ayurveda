@@ -15,6 +15,7 @@ import { FlipCard } from "@/components/ui/flip-card";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import OurCentre from "@/components/home/our-centre";
+import SuccessStories from "@/components/home/success-stories";
 
 export default async function HomePage() {
   // Fetch featured products and blogs from Firestore
@@ -60,6 +61,9 @@ export default async function HomePage() {
 
       {/* Specialization Section */}
       <Specialization />
+
+      {/* Success Stories Section */}
+      <SuccessStories />
 
       {/* Testimonial Section */}
       <section className="py-8 sm:py-12">
@@ -130,6 +134,7 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* Our center */}
       <OurCentre />
 
       {/* Featured Products Section */}
