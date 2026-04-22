@@ -42,7 +42,7 @@ export function HeroBanner() {
                 Because you’re treating symptoms — not the cause.
             </p>
             <p className="mt-6 text-sm md:text-lg leading-relaxed text-foreground/80">
-              From <strong className='text-primary'>Gut Issues</strong> and <strong>Stress</strong> to <strong className='text-primary'>PCOD</strong>, <strong className='text-primary'>Diabetes</strong>, <strong className='text-primary'>Skin</strong>, <strong className='text-primary'>Spine</strong>, and <strong className='text-primary'>Infertility</strong> — our Ayurvedic approach targets the root to restore real health.
+              From <strong className='text-primary'>Gut Issues</strong> and <strong className='text-primary'>Stress</strong> to <strong className='text-primary'>PCOD</strong>, <strong className='text-primary'>Diabetes</strong>, <strong className='text-primary'>Skin</strong>, <strong className='text-primary'>Spine</strong>, and <strong className='text-primary'>Infertility</strong> — our Ayurvedic approach targets the root to restore real health.
             </p>
         </div>
 
