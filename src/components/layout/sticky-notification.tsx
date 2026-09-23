@@ -12,7 +12,7 @@ export function StickyNotification() {
           <p className="font-bold text-lg">Book Consultation Now!</p>
           <p className="text-md">
             <span className="line-through mr-2">₹500</span>
-            <span className="font-bold">₹199</span>
+            <span className="font-bold">₹300</span>
           </p>
         </div>
         <Button asChild className="bg-white text-amber-700 hover:bg-stone-100">
